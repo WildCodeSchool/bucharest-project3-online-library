@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 
-import ProfileCourseCard from './components/ProfileCourseCard'
+import ProfileCourseCard from './components/ProfileCourseCard/ProfileCourseCard'
 import './App.css';
 
 function App() {

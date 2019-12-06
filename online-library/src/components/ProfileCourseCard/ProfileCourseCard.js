@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../App.css';
+import './ProfileCourseCard.css';
 
 class ProfileCourseCard extends React.Component{
     constructor(props){

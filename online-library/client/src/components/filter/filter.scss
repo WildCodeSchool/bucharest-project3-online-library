@@ -1,0 +1,60 @@
+.filterMain {
+    margin-top: 15px;
+}
+
+.filterTop{
+    margin-bottom: 15px;
+}
+
+.filterInput{
+    width: 18%;
+    height: 2%;
+    margin-left: 0.5%!important;
+    margin-right: 0.5%!important;
+}
+
+.MuiOutlinedInput-input{
+    padding: 10px 14px!important;
+}
+
+// PLACEHOLDER WITHIN THE FILTERS
+.MuiInputLabel-outlined{
+    // font-size: 0.9rem!important;
+    line-height: 20%!important;
+}
+// PLACEHOLDER WITHIN THE FILTERS
+
+.MuiTypography-body1{
+    color: #828282;
+    font-weight: bold!important;
+}
+
+// SELECT/DROPDOWN STYLING
+label + .MuiInput-formControl {
+    margin-top: 0px!important;
+}
+
+#categoryLabel{
+    line-height: 0;
+}
+
+.MuiCheckbox-colorPrimary.Mui-checked{
+    color: #75B1A9!important;
+}
+
+.MuiFormLabel-root.Mui-focused{
+    color: #75B1A9!important;
+}
+
+.MuiOutlinedInput-root.Mui-focused
+.MuiOutlinedInput-notchedOutline {
+    border-color: #75B1A9!important;
+}
+
+.MuiInput-underline:after{
+    border-bottom: #75B1A9!important;
+}
+
+.MuiInputBase-root{
+    line-height: 1.6em!important;
+}

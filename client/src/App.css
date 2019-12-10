@@ -1,0 +1,55 @@
+.App {
+  text-align: center;
+}
+
+/* PROFILE COURSE CARD STYLES */
+.profileCourseCardMain{
+  margin:0 auto;
+  width: 700px;
+  height:140px;
+  border: 1px solid #A1BE95;
+  border-radius: 8px;
+  box-shadow: 0px 2px 3px #A1BE95;
+}
+
+.profileCourseCardMain header{
+  height: 36.48px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  background: #A1BE95;
+  font-size: 20px;
+  color: #FFF;
+  text-align:left;
+  display:flex;
+  align-items: center;
+}
+
+.profileCourseCardMain header h3{
+  margin-left: 14px;
+  font-weight: 400;
+}
+
+.profileCourseCardBody{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.profileCourseCardMain h4{
+font-size: 18px;
+font-weight: 400;
+}
+
+.profileCourseCardMain button{
+  width: 225.44px;
+  height: 24.65px;
+  background: #75B1A9;
+  border-radius: 4px;
+  font-size: 15px;
+}
+
+.profileCourseCardMain button a{
+  color:#FFF;
+  text-decoration: none;
+}

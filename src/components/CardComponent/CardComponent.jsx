@@ -38,30 +38,18 @@ class CardComponent extends React.Component {
         <div className="cardContainer">
           <div
             className="headerCard"
-            style={{ backgroundColor: this.state.headerColor }}
+            style={{ backgroundColor: this.props.headerColor }}
           >
-            <span className="chapterTitle">Chapter Title</span>
+  <span className="chapterTitle">{this.props.chapterTitle}</span>
             <IconButton aria-label="delete" className='deleteButton'>
               <DeleteIcon className='deleteIcon' style={this.state.admin ? {} : { display: 'none' }}/>
             </IconButton>
           </div>
           <div className="cardInfoWrapper">
             <p className="titleCcard">Title Card</p>
-            <p className="textCard">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-              congue eros egestas aliquet viverra. Mauris feugiat ultrices odio
-              variualiqua. Curabitur vestibulum, quam et dignissim porttitor,
-              diam erat varius est Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit. Duis congue eros egestas aliquet viverra. Mauris
-              feugiat ultrices odio variualiqua. Curabitur vestibulum, quam et
-              dignissim porttitor, diam erat varius est, Lorem ipsum dolor sit
-              amet, consectetur adipiscing elit. Duis congue.{" "}
-            </p>
-            <p className="keywordsCard">
-              Fusce nec tempus dolor, eu egestas magna. eu egestas magna. Fusce
-              nec tempus dolor, eu egestas magna. eu egestas magna.
-            </p>
-            <p className="dateAdded">Adaugat: 10.12.2019</p>
+    <p className="textCard">{this.props.textCard}</p>
+    <p className="keywordsCard">{this.props.keywordsCard}</p>
+    <p className="dateAdded">Adaugat: {this.props.date}</p>
             <div className="buttonContainer">
               <Button
                 color="inherit"

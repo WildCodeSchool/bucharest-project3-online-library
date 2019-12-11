@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,IAAI,CAAC;EACD,MAAM,EAAC,CAAC;EACR,OAAO,EAAE,CAAC;CACb",
+    "sources": [
+        "AdminAllCourses.scss"
+    ],
+    "names": [],
+    "file": "AdminAllCourses.css"
+}

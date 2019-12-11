@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import TextField from '@material-ui/core/TextField';
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
@@ -8,6 +8,8 @@ import InputLabel from '@material-ui/core/InputLabel'
 import Checkbox from '@material-ui/core/Checkbox';
 
 import './filter.css'
+
+const categories = ['Materiale Traininguri', 'Info admistrative', 'Materiale coordonatori', 'Jocuri', 'Ateliere', 'Suporturi de curs', 'Psihologie']
 
 class Filter extends React.Component{
     constructor(props){
@@ -21,6 +23,7 @@ class Filter extends React.Component{
             nonCompleted : false
         }
     }
+
 
     handleChangeKeyword = (e) => {
         this.setState({ keyword: e.target.value })
@@ -47,6 +50,8 @@ class Filter extends React.Component{
     }
 
     render(){
+        console.log("keyword : " + this.state.keyword)
+        console.log("category : " + this.state.category)
         return(
             <div className="filterMain">
                 <form action="">
@@ -57,18 +62,23 @@ class Filter extends React.Component{
                         <FormControl className="filterInput">
                             <InputLabel id="categoryLabel">Category</InputLabel>
                             <Select
-                            labelId="demo-simple-select-autowidth-label"
-                            id="demo-simple-select-autowidth"
-                            value={this.state.category}
-                            onChange={this.handleChangeCategory}
-                            autoWidth
-                            >
-                            <MenuItem value="">
-                                <em>None</em>
-                            </MenuItem>
-                            <MenuItem value={'Maths'}>Maths</MenuItem>
-                            <MenuItem value={'History'}>History</MenuItem>
-                            <MenuItem value={'Economics'}>Economics</MenuItem>
+                                    labelId="demo-simple-select-autowidth-label"
+                                    id="demo-simple-select-autowidth"
+                                    value={this.state.category}
+                                    onClick={this.handleChangeCategory}
+                                    autoWidth
+                                    >
+                                    <MenuItem value="none">
+                                        <em>None</em>
+                                    </MenuItem>
+                                    {categories.map((item, index) => {
+                                        return <MenuItem 
+                                                    value={item} key={index}
+                                                    >{item}</MenuItem>
+                                    })}
+                                    <MenuItem value={'Maths'}>Maths</MenuItem>
+                                    <MenuItem value={'History'}>History</MenuItem>
+                                    <MenuItem value={'Economics'}>Economics</MenuItem>
                             </Select>
                         </FormControl>
 

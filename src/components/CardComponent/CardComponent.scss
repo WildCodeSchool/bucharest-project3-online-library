@@ -1,0 +1,113 @@
+$colorCarnation : #FA5457;
+$colorWhite: #FFFFFF;
+$colorAlto: #D3D3D3;
+$colorAcapulco: #75B1A9;
+$colorSilver: #C8C8C8;
+
+$widthTablet: 768px;
+$withDesktop: 1280px;
+
+html {
+    font-size: 10px;
+}
+
+.cardContainer {
+    max-width: 35rem;
+    border: .1em solid $colorAlto;
+    box-sizing: border-box;
+    border-radius: 1em;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.headerCard {
+    padding: 1em;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.chapterTitle {
+    color: $colorWhite;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.cardInfoWrapper {
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+.titleCcard {
+    font-size: 1.8rem;
+    text-align: center;
+    margin: 0;
+    padding-bottom: .277em;
+}
+
+.textCard {
+    margin: 0;
+    text-align: justify;
+    font-size: 1.2rem;
+}
+
+.keywordsCard {
+    font-size: 1 rem;
+    font-weight: bold;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: space-around;
+}
+
+.dateAdded {
+    font-size: 1.2rem;
+    margin: 0;
+    margin: 1em 0;
+}
+
+.completedButton {
+    &.MuiButton-colorInherit {
+        background-color: $colorSilver; 
+    }
+    &.MuiButton-text {
+        color: $colorWhite;
+        font-size: 1.2rem;
+    }  
+    .MuiButton-label {
+        padding: .143em;
+    }
+}
+
+.courseLinkButton {
+    &.MuiButton-colorInherit {
+        background-color: $colorAcapulco; 
+    }
+    &.MuiButton-text {
+        color: $colorWhite;
+        font-size: 1.4rem;
+        font-weight: bold;
+    }
+    .MuiButton-label {
+        padding: .143em;
+    }  
+}
+
+.deleteIcon {
+    &.MuiSvgIcon-root  {
+        font-size: 2em;
+        color: $colorWhite;
+    }
+}
+
+.deleteButton {
+    display: block;
+    &.MuiIconButton-root {
+        padding:0;
+    }
+}
+
+.notShow {
+    display: none;
+}

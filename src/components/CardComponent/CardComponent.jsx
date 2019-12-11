@@ -40,7 +40,7 @@ class CardComponent extends React.Component {
             className="headerCard"
             style={{ backgroundColor: this.props.headerColor }}
           >
-  <span className="chapterTitle">{this.props.chapterTitle}</span>
+  <span className="chapterTitle">{this.props.chapterCard}</span>
             <IconButton aria-label="delete" className='deleteButton'>
               <DeleteIcon className='deleteIcon' style={this.state.admin ? {} : { display: 'none' }}/>
             </IconButton>

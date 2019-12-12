@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+    font-family: Helvetica, sans-serif;
+    background-color: white;
+}
+
+a {
+    color: white;
+}
+
+.footer {
+    background-color: #75B1A9;
+    box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, .1);
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+    margin-top: 700px;
+}
+
+.text {
+    margin-left: 20px;
+    color: white;
+}

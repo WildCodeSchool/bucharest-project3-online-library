@@ -4,6 +4,7 @@ import Navbar from './Components/NavbarComponent/Navbar';
 import Footer from './Components/Footer';
 import { Switch, Route } from 'react-router-dom';
 import CompletedComp from './Components/CompletedComponent';
+import PPInformationComponent from './Components/PPInformationComponent';
 
 const Home = '';
 const Courses = '';
@@ -22,7 +23,7 @@ class App extends React.Component {
     console.log(this.state.ModalOpen);
     return (
       <div>
-        <button onClick={this.HandleModal} id="myBtn">Completed</button>
+        {/* <button onClick={this.HandleModal} id="myBtn">Completed</button>
         <CompletedComp OpenModal={this.state.ModalOpen}>
 
         </CompletedComp>
@@ -32,8 +33,8 @@ class App extends React.Component {
           <Route path="/profile" component={Profile} />
         </Switch>
         <Navbar />
-        <Footer />
-
+        <Footer /> */}
+        <PPInformationComponent/>
       </div>
     );
   }

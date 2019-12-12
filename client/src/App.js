@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Navbar from './Components/NavbarComponent/Navbar';
-import Footer from './Components/Footer';
+import Footer from './Components/Footer/Footer';
 import { Switch, Route } from 'react-router-dom';
 
 const Home='';

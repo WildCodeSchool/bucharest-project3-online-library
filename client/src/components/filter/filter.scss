@@ -2,12 +2,21 @@
     margin-top: 15px;
 }
 
+.filterBtn {
+    font-size: 1.5rem;
+    font-weight: 700;
+    width: 75%;
+    text-align: left;
+    color:#828282;
+    border: none;
+}
+
 .filterTop{
     margin-bottom: 15px;
 }
 
 .filterInput{
-    width: 18%;
+    width: 23%;
     height: 2%;
     margin-left: 0.5%!important;
     margin-right: 0.5%!important;
@@ -15,6 +24,14 @@
 
 .MuiOutlinedInput-input{
     padding: 10px 14px!important;
+}
+
+.MuiTypography-body1 {
+    font-size: 1.8rem!important;
+}
+
+.MuiInputLabel-formControl {
+    top: -2px!important;
 }
 
 // PLACEHOLDER WITHIN THE FILTERS
@@ -35,7 +52,13 @@ label + .MuiInput-formControl {
 }
 
 #categoryLabel{
-    line-height: 0;
+    top: -13px!important;
+    left: 10px!important;
+}
+
+.MuiSelect-icon{
+// RELATIVE POSITION ALLOWS FOR ALIGNING THE SELECT ARROW PROPERLY
+    position: relative!important;
 }
 
 .MuiCheckbox-colorPrimary.Mui-checked{
@@ -57,6 +80,15 @@ label + .MuiInput-formControl {
 
 .MuiInputBase-root{
     line-height: 1.6em!important;
+    font-size: 1.5rem!important;
+}
+
+.MuiFormLabel-root{
+    font-size: 1.5rem!important;
+}
+
+.MuiMenuItem-root{
+    font-size: 1.5rem!important;
 }
 
 @media only screen and (max-width: 768px) {
@@ -68,25 +100,38 @@ label + .MuiInput-formControl {
         margin-bottom: 15px;
         display:flex!important;
         flex-direction: column!important;
+        align-items: center;
     }
 
     .filterBottom {
         margin-bottom: 15px;
         display:flex!important;
         flex-direction: column!important;
+        align-items: center!important;
+    }
+
+    .filterCheckboxesContainer{
+        display:flex!important;
+        flex-direction: column!important;
+        align-items: flex-start!important;    
     }
 
     .filterInput{
-        width: 60%;
+        width: 70%;
         height: 2%;
         margin-top:3%!important;
-        margin-left: 2.5%!important;
-        margin-right: 0.5%!important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    #categoryLabel{
+        top: -7px!important;
+        left: 10px!important;
     }
 
     .checkboxInput{
         margin-top:0%!important;
-        margin-left: 2.5%!important;
+        margin-left: 0!important;
     }
     
     .MuiOutlinedInput-input{

@@ -20,7 +20,9 @@ class Filter extends React.Component{
             category: '',
             important : false,
             completed : false,
-            nonCompleted : false
+            nonCompleted : false,
+
+            filterDisplay :'none'
         }
     }
 
@@ -49,13 +51,28 @@ class Filter extends React.Component{
         this.setState({ nonCompleted : !this.state.nonCompleted})
     }
 
+    showFilter = () => {
+        this.state.filterDisplay === 'none' 
+        ? this.setState({filterDisplay : 'block'}) 
+        : this.setState({filterDisplay : 'none'})
+    }
+
+    FilterArrow = () => {
+        return this.state.filterDisplay === 'none'
+        ? <span>&#9654;</span>
+        :
+        <span>&#9660;</span>
+    }
+
     render(){
-        console.log("keyword : " + this.state.keyword)
-        console.log("category : " + this.state.category)
         return(
             <div className="filterMain">
+                <button onClick={this.showFilter} className="filterBtn">
+                    <this.FilterArrow /> Filter
+                </button>
+
                 <form action="">
-                    <div className="row">
+                    <div className="row filterRow" style={{display: this.state.filterDisplay}}>
                         <div className="filterTop">
                         <TextField id="outlined-basic" label="Keywords" value={this.state.keyword} className="filterInput" variant="outlined" onChange={this.handleChangeKeyword}/>
                         <TextField id="outlined-basic" label="Title" value={this.state.title} className="filterInput filterInputCenter" variant="outlined" onChange={this.handleChangeTitle}/>
@@ -81,32 +98,38 @@ class Filter extends React.Component{
                                     <MenuItem value={'Economics'}>Economics</MenuItem>
                             </Select>
                         </FormControl>
-
-
-
-
-
-
-
                         </div>
+
                         <div className="filterBottom">
-                        <FormControlLabel
-                            className="checkboxInput"
-                            control={
-                                <Checkbox checked={this.state.important} onChange={this.handleChangeImportant} value="Important" color="primary" />} label="Important" 
-                        />
-                        <FormControlLabel
-                                                    className="checkboxInput"
-
-                            control={
-                                <Checkbox checked={this.state.completed} onChange={this.handleChangeCompleted} value="Completed" color="primary" />} label="Completed" 
-                        />
-                        <FormControlLabel
-                                                    className="checkboxInput"
-
-                            control={
-                        <Checkbox checked={this.state.nonCompleted} onChange={this.handleChangeNonCompleted} value="Non-Completed" color="primary" />} label="Non-Completed" 
-                        />
+                            <div className="filterCheckboxesContainer">
+                                <FormControlLabel className="checkboxInput"
+                                    control={
+                                        <Checkbox 
+                                            checked={this.state.important} 
+                                            onChange={this.handleChangeImportant} 
+                                            value="Important" 
+                                            color="primary" />} 
+                                            label="Important" 
+                                        />
+                                <FormControlLabel className="checkboxInput"
+                                    control={
+                                        <Checkbox 
+                                            checked={this.state.completed} 
+                                            onChange={this.handleChangeCompleted} 
+                                            value="Completed" 
+                                            color="primary" />} 
+                                            label="Completed" 
+                                        />
+                                <FormControlLabel className="checkboxInput"
+                                    control={
+                                        <Checkbox 
+                                            checked={this.state.nonCompleted} 
+                                            onChange={this.handleChangeNonCompleted} 
+                                            value="Non-Completed" 
+                                            color="primary" />} 
+                                            label="Non-Completed" 
+                                    />
+                            </div>
                         </div>
                     </div>
                 </form>

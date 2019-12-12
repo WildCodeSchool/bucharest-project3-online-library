@@ -2,3 +2,74 @@ body {
     margin:0;
     padding: 0;
 }
+
+.AdminAllCoursesMain h1 {
+    font-size: 3.9rem;
+    color: #75B1A9;
+}
+
+.AdminAllCoursesMain h2 {
+    font-size: 5.9rem;
+    color: #75B1A9;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    position: absolute;
+    top: 11%;
+    right: 7%;
+}
+
+.AdminAllCoursesFilter{
+    margin-top: 4%;
+}
+
+.AdminCourseCardContainer {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2%;
+}
+
+@media only screen and (min-width: 768px) {
+    .AdminCourseCardContainer {
+        width: 95%;
+        margin: 0 auto;
+        display:flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        margin-top: 2%;
+    }
+
+    .AdminAllCoursesMain h2 {
+        font-size: 6.9rem;
+        color: #75B1A9;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        position: absolute;
+        top: 9%;
+        right: 15%;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .AdminCourseCardContainer {
+        width:85%;
+        margin: 0 auto;
+        display:flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        margin-top: 2%;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .AdminCourseCardContainer {
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 2%;
+    }
+}

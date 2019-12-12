@@ -1,0 +1,123 @@
+html {
+  font-size: 10px;
+}
+
+.cardContainer {
+  max-width: 35rem;
+  border: 0.1em solid #D3D3D3;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 1em;
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  margin-top: 30px;
+}
+
+.headerCard {
+  padding: 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.chapterTitle {
+  color: #FFFFFF;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.cardInfoWrapper {
+  padding: 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.titleCcard {
+  font-size: 1.8rem;
+  text-align: center;
+  margin: 0;
+  padding-bottom: .277em;
+}
+
+.textCard {
+  margin: 0;
+  text-align: justify;
+  font-size: 1.2rem;
+}
+
+.keywordsCard {
+  font-size: 1 rem;
+  font-weight: bold;
+}
+
+.buttonContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.dateAdded {
+  font-size: 1.2rem;
+  margin: 0;
+  margin: 1em 0;
+}
+
+.completedButton.MuiButton-colorInherit {
+  background-color: #C8C8C8;
+}
+
+.completedButton.MuiButton-text {
+  color: #FFFFFF;
+  font-size: 1.2rem;
+}
+
+.completedButton .MuiButton-label {
+  padding: .143em;
+}
+
+.courseLinkButton.MuiButton-colorInherit {
+  background-color: #75B1A9;
+}
+
+.courseLinkButton.MuiButton-text {
+  color: #FFFFFF;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.courseLinkButton .MuiButton-label {
+  padding: .143em;
+}
+
+.deleteIcon {
+  cursor: pointer;
+}
+
+.deleteIcon.MuiSvgIcon-root {
+  font-size: 2em;
+  color: #FFFFFF;
+}
+
+.deleteButton {
+  cursor: pointer;
+  display: block;
+}
+
+.deleteButton.MuiIconButton-root {
+  padding: 0;
+}
+
+.notShow {
+  display: none;
+}
+/*# sourceMappingURL=CardComponent.css.map */

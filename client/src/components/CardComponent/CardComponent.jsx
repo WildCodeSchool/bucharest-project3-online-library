@@ -34,7 +34,6 @@ class CardComponent extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
         <div className="cardContainer">
           <div
             className="headerCard"
@@ -69,7 +68,6 @@ class CardComponent extends React.Component {
             </div>
           </div>
         </div>
-      </React.Fragment>
     );
   }
 }

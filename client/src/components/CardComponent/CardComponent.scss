@@ -12,11 +12,14 @@ html {
 }
 
 .cardContainer {
-    max-width: 35rem;
+    text-align: center;
     border: .1em solid $colorAlto;
     box-sizing: border-box;
     border-radius: 1em;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    margin: 0 auto;
+    flex-basis: 100%;
+    margin-bottom: 2em;
 }
 
 .headerCard {

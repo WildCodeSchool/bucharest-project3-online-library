@@ -1,0 +1,20 @@
+$widthMobile: 768px;
+$widthTablet: 1280px;
+
+html {
+    font-size: 10px;
+}
+
+.container {
+    
+}
+
+.mainContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1em;
+    box-sizing: border-box;
+}

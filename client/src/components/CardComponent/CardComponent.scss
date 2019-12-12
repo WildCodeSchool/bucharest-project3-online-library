@@ -4,8 +4,8 @@ $colorAlto: #D3D3D3;
 $colorAcapulco: #75B1A9;
 $colorSilver: #C8C8C8;
 
-$widthTablet: 768px;
-$withDesktop: 1280px;
+$widthMobile: 768px;
+$withTablet: 1280px;
 
 html {
     font-size: 10px;
@@ -18,8 +18,20 @@ html {
     border-radius: 1em;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     margin: 0 auto;
-    flex-basis: 100%;
     margin-bottom: 2em;
+    width: 35rem;
+    min-height: 25rem;
+    display: flex;
+    flex-basis: 90%;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media (min-width: $widthMobile) {
+        flex-basis: 40%;
+    }
+    @media (min-width: $withTablet) {
+        flex-basis: 30%;
+    }
 }
 
 .headerCard {

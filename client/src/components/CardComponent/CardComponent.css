@@ -11,9 +11,35 @@ html {
   -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
           box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   margin: 0 auto;
-  -ms-flex-preferred-size: 100%;
-      flex-basis: 100%;
   margin-bottom: 2em;
+  width: 35rem;
+  min-height: 25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-preferred-size: 90%;
+      flex-basis: 90%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+  .cardContainer {
+    -ms-flex-preferred-size: 40%;
+        flex-basis: 40%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .cardContainer {
+    -ms-flex-preferred-size: 30%;
+        flex-basis: 30%;
+  }
 }
 
 .headerCard {

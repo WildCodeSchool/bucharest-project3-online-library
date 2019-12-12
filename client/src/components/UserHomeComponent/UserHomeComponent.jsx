@@ -2,7 +2,7 @@ import React from "react";
 import CardComponent from "../CardComponent/CardComponent.jsx";
 import "../UserHomeComponent/UserHomeComponent.scss";
 
-class UserCardComponent extends React.Component {
+class UserHomeComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -20,8 +20,8 @@ class UserCardComponent extends React.Component {
     return (
       <div className="container">
         <header className="headerContainer">
-            <h1 className="titleWelcome">Hello</h1>
-            <h2 className="subtitleWelcome">BLABLA</h2>
+    <h1 className="titleWelcome">Hello {this.props.userName}</h1>
+            <h2 className="subtitleWelcome">Here you have the recently added courses</h2>
         </header>
         <main className="mainContainer">
           <CardComponent
@@ -72,4 +72,4 @@ class UserCardComponent extends React.Component {
   }
 }
 
-export default UserCardComponent;
+export default UserHomeComponent;

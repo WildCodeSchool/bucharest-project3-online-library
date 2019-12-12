@@ -2,6 +2,12 @@ html {
   font-size: 10px;
 }
 
+.headerContainer {
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+}
+
 .mainContainer {
   display: -webkit-box;
   display: -ms-flexbox;

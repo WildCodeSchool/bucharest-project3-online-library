@@ -1,0 +1,128 @@
+$colorCarnation : #FA5457;
+$colorWhite: #FFFFFF;
+$colorAlto: #D3D3D3;
+$colorAcapulco: #75B1A9;
+$colorSilver: #C8C8C8;
+
+$widthMobile: 768px;
+$withTablet: 1280px;
+
+// html {
+//     font-size: 10px;
+// }
+
+.cardContainer {
+    text-align: center;
+    border: .1em solid $colorAlto;
+    box-sizing: border-box;
+    border-radius: 1em;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    margin: 0 auto;
+    margin-bottom: 2em;
+    width: 21.88rem;
+    min-height: 15.63rem;
+    display: flex;
+    flex-basis: 90%;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media (min-width: $widthMobile) {
+        flex-basis: 40%;
+    }
+    @media (min-width: $withTablet) {
+        flex-basis: 30%;
+    }
+}
+
+.headerCard {
+    padding: 1em;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.chapterTitle {
+    color: $colorWhite;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.cardInfoWrapper {
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+.titleCcard {
+    font-size: 1.125rem;
+    text-align: center;
+    margin: 0;
+    padding-bottom: .277em;
+}
+
+.textCard {
+    margin: 0;
+    text-align: justify;
+    font-size: 0.75rem;
+}
+
+.keywordsCard {
+    font-size: 0.625rem;
+    font-weight: bold;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: space-around;
+}
+
+.dateAdded {
+    font-size: 0.825rem;
+    margin: 0;
+    margin: 1em 0;
+}
+
+.completedButton {
+    &.MuiButton-colorInherit {
+        background-color: $colorSilver; 
+    }
+    &.MuiButton-text {
+        color: $colorWhite;
+        font-size: 1rem;
+    }  
+    .MuiButton-label {
+        padding: .143em;
+    }
+}
+
+.courseLinkButton {
+    &.MuiButton-colorInherit {
+        background-color: $colorAcapulco; 
+    }
+    &.MuiButton-text {
+        color: $colorWhite;
+        font-size: 1rem;
+        font-weight: bold;
+    }
+    .MuiButton-label {
+        padding: .143em;
+    }  
+}
+
+.deleteIcon {
+    &.MuiSvgIcon-root  {
+        font-size: 2em;
+        color: $colorWhite;
+    }
+}
+
+.deleteButton {
+    display: block;
+    &.MuiIconButton-root {
+        padding:0;
+    }
+}
+
+.notShow {
+    display: none;
+}

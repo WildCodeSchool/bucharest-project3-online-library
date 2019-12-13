@@ -1,0 +1,143 @@
+.cardContainer {
+  text-align: center;
+  border: 0.1em solid #D3D3D3;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 1em;
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  margin: 0 auto;
+  margin-bottom: 2em;
+  width: 21.88rem;
+  min-height: 15.63rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-preferred-size: 90%;
+      flex-basis: 90%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+  .cardContainer {
+    -ms-flex-preferred-size: 40%;
+        flex-basis: 40%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .cardContainer {
+    -ms-flex-preferred-size: 30%;
+        flex-basis: 30%;
+  }
+}
+
+.headerCard {
+  padding: 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.chapterTitle {
+  color: #FFFFFF;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.cardInfoWrapper {
+  padding: 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.titleCcard {
+  font-size: 1.125rem;
+  text-align: center;
+  margin: 0;
+  padding-bottom: .277em;
+}
+
+.textCard {
+  margin: 0;
+  text-align: justify;
+  font-size: 0.75rem;
+}
+
+.keywordsCard {
+  font-size: 0.625rem;
+  font-weight: bold;
+}
+
+.buttonContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.dateAdded {
+  font-size: 0.825rem;
+  margin: 0;
+  margin: 1em 0;
+}
+
+.completedButton.MuiButton-colorInherit {
+  background-color: #C8C8C8;
+}
+
+.completedButton.MuiButton-text {
+  color: #FFFFFF;
+  font-size: 1rem;
+}
+
+.completedButton .MuiButton-label {
+  padding: .143em;
+}
+
+.courseLinkButton.MuiButton-colorInherit {
+  background-color: #75B1A9;
+}
+
+.courseLinkButton.MuiButton-text {
+  color: #FFFFFF;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.courseLinkButton .MuiButton-label {
+  padding: .143em;
+}
+
+.deleteIcon.MuiSvgIcon-root {
+  font-size: 2em;
+  color: #FFFFFF;
+}
+
+.deleteButton {
+  display: block;
+}
+
+.deleteButton.MuiIconButton-root {
+  padding: 0;
+}
+
+.notShow {
+  display: none;
+}
+/*# sourceMappingURL=CardComponent.css.map */

@@ -1,0 +1,30 @@
+$widthMobile: 768px;
+$widthTablet: 1280px;
+
+// html {
+//     font-size: 10px;
+// }
+
+.headerContainer {
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+}
+
+.mainContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+.titleWelcome {
+    margin: 4.25rem 0 0;
+}
+
+.subtitleWelcome {
+    margin: 0.625rem;
+}

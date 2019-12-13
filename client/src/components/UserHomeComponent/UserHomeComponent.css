@@ -1,0 +1,31 @@
+.headerContainer {
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+}
+
+.mainContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.titleWelcome {
+  margin: 4.25rem 0 0;
+}
+
+.subtitleWelcome {
+  margin: 0.625rem;
+}
+/*# sourceMappingURL=UserHomeComponent.css.map */

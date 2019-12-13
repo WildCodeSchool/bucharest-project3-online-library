@@ -23,7 +23,7 @@ render() {
                     <h2 class="text"> Bravo!</h2>
                 </div>
                 <div class="modal-body">
-                    <div class="image">
+                    <div class="trophy">
                         <img src={Trophy} alt='trophy' style={{width:'30%', height:'30%',float:'center'}}/>
                     </div>
                     <p class="text1">citat despre copii</p>

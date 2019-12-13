@@ -5,26 +5,23 @@
             align-items: center;
             justify-content: center;
         }
-    }
-    
-    .headerMain {
-        width: 500px;
-        margin-left: 25px;
-        background-color: lightgray;
-        opacity: 0, 5;
-        padding: 30px;
-        border-radius: 5px;
-    }
-    
-    .column {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-    
-    .MuiFilledInput-root {
-        background-color: #ffffff !important;
+        .headerMain {
+            width: 500px;
+            margin-left: 25px;
+            background-color: lightgray;
+            opacity: 0, 5;
+            padding: 30px;
+            border-radius: 5px;
+        }
+        .column {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .MuiFilledInput-root {
+            background-color: #ffffff !important;
+        }
     }
     
     @media only screen and (min-width: 768px) {

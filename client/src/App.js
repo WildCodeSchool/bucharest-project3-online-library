@@ -23,7 +23,7 @@ class App extends React.Component {
     console.log(this.state.ModalOpen);
     return (
       <div>
-        {/* <button onClick={this.HandleModal} id="myBtn">Completed</button>
+        <button onClick={this.HandleModal} id="myBtn">Completed</button>
         <CompletedComp OpenModal={this.state.ModalOpen}>
 
         </CompletedComp>
@@ -33,7 +33,7 @@ class App extends React.Component {
           <Route path="/profile" component={Profile} />
         </Switch>
         <Navbar />
-        <Footer /> */}
+        <Footer /> 
         <PPInformationComponent/>
       </div>
     );

@@ -3,17 +3,19 @@ import React from 'react';
 import './App.css';
 import '../src/Components/UserHomeComponent/UserHomeComponent';
 
-import Navbar from './Components/NavbarComponent/Navbar';
-import Footer from './Components/Footer/Footer';
-import Login from './Components/Login/Login';
-import SignUpPage from './Components/SignUp/SignUp';
-import UserHomeComponent from '../src/Components/UserHomeComponent/UserHomeComponent';
+import LoginPageComplete from '../src/Components/LoginPageComplete/LoginPageComplete'
+import UserHomePageComplete from '../src/Components/UserHomePageComplete/UserHomePageComplete'
+import SignUpPageComplete from '../src/Components/SignUpPageComplete/SignUpPageComplete';
+
 
 import { Switch, Route } from 'react-router-dom';
 
 const Home='';
 const Courses='';
 const Profile='';
+// const SignUpPage='';
+// const LoginPage='';
+// const UserHomePage='';
 
 class App extends React.Component {
   constructor(props) {
@@ -30,12 +32,12 @@ class App extends React.Component {
           <Route exact path="/" component={Home} />
           <Route path="/courses" component={Courses} />
           <Route path="/profile" component={Profile} />
+          {/* <Route path='/signUpPage' component={SignUpPageComplete}/> */}
         </Switch>
-        <Navbar />
-        {/* <Login/> */}
-        <SignUpPage/>
+        {/* <LoginPageComplete/> */}
+        <SignUpPageComplete/>
+          {/* <UserHomePageComplete/> */}
         {/* <UserHomeComponent userName = {this.state.userName}/> */}
-        <Footer />
       </React.Fragment>
     );
   }

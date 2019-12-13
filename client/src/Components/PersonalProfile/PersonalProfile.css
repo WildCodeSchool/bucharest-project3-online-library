@@ -1,0 +1,100 @@
+/* Left side */
+
+@media only screen and (max-width: 768px) {
+    .pp-main {
+        width: 95vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.headerMain {
+    width: 500px;
+    margin-left: 25px;
+    background-color: lightgray;
+    opacity: 0, 5;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.column {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.MuiFilledInput-root {
+    background-color: #ffffff !important;
+}
+
+@media only screen and (min-width: 768px) {
+    .pp-main {
+        width: 95vw;
+        display: flex;
+        /* align-items: center;
+        justify-content: center; */
+    }
+    .headerMain {
+        position: absolute;
+        top: 14%;
+        left: 4%;
+        width: 500px;
+        background-color: lightgray;
+        opacity: 0, 5;
+        padding: 30px;
+        border-radius: 5px;
+    }
+    .column {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .MuiFilledInput-root {
+        background-color: #ffffff !important;
+    }
+}
+
+
+/* Right Side */
+
+.search-container {
+    /* float: right; */
+    position: absolute;
+    right: 8%;
+    top: 14%;
+}
+
+.searchBtn {
+    padding: 7px 7px;
+    margin-top: 7px;
+    margin-right: 8px;
+    background-color: white;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px 30px 30px 30px;
+    width: 38px;
+    position: relative;
+    height: 38px;
+    top: -1px;
+    right: 40px;
+}
+
+.searchBtn:hover {
+    background: #ccc;
+}
+
+.searchField {
+    font-size: 23px;
+    padding: 8px;
+    border-radius: 30px 30px 30px 30px;
+    border: none;
+    background-color: lightgray;
+}
+
+::placeholder {
+    color: white;
+}

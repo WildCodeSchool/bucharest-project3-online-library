@@ -1,6 +1,18 @@
 import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField';
-import icon from './icon.png'
+import icon from './icon.png';
+import './PersonalProfile.css';
+import ProfileCourseCard from '../ProfileCourseCard/ProfileCourseCard';
+
+
+const courses=[
+    {chapterTitle:'Psiho',
+      courseTitle:'How to..',
+    courseLink:'http//.dasdadasdfa' },
+    {chapterTitle:'God',
+    courseTitle:'Cum sa..',
+  courseLink:'http//.dasdadasdfdsadasrewtre241324a' }
+      ]
 
 
 class PersonalProfile extends Component {
@@ -120,8 +132,12 @@ class PersonalProfile extends Component {
                     <div class="search-container">
                         <form action="/action_page.php">
                             <input className='searchField' type="text" placeholder="Search.." name="search" />
-                            <button className='searchBtn' type="submit"><img src={icon} alt='search'/></button>
+                            <button className='searchBtn' type="submit"><img src={icon} alt='search' /></button>
                         </form>
+
+                        {courses.map((item, i) => {
+                            return <ProfileCourseCard {...item} key={i} />
+                        })}
                     </div>
 
                 </div>

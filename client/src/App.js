@@ -6,6 +6,7 @@ import '../src/Components/UserHomeComponent/UserHomeComponent';
 import Navbar from './Components/NavbarComponent/Navbar';
 import Footer from './Components/Footer/Footer';
 import Login from './Components/Login/Login';
+import SignUpPage from './Components/SignUp/SignUp';
 import UserHomeComponent from '../src/Components/UserHomeComponent/UserHomeComponent';
 
 import { Switch, Route } from 'react-router-dom';
@@ -32,7 +33,8 @@ class App extends React.Component {
         </Switch>
         <Navbar />
         {/* <Login/> */}
-        <UserHomeComponent userName = {this.state.userName}/>
+        <SignUpPage/>
+        {/* <UserHomeComponent userName = {this.state.userName}/> */}
         <Footer />
       </React.Fragment>
     );

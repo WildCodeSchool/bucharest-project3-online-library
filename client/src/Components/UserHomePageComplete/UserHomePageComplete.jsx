@@ -5,11 +5,23 @@ import UserHomeComponent from '../UserHomeComponent/UserHomeComponent';
 import Footer from '../Footer/Footer';
 
 class UserHomePageComplete extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+          userName: 'Ana',
+          admin: false
+        };
+      }
+
     render(){
         return(
             <React.Fragment>
                 <Navbar/>
-                <UserHomeComponent/>
+                if(this.state.admin){
+
+                } else {
+                    <UserHomeComponent userName = {this.state.userName}/>
+                }
                 <Footer />
             </React.Fragment>
         );

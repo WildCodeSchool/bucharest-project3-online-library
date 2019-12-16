@@ -4,13 +4,25 @@
     display: grid;
     bottom: 0;
     position: relative;
-    margin-top: 5%;
+    margin-top: 2%;
     width: 100%;
 }
 
 .psw {
     padding: 9px;
 }
+
+/* .psw a:link {
+    text-decoration: none;
+} */
+
+.creareCont {
+    padding: 9px;
+}
+
+/* .creareCont a:link {
+    text-decoration: none;
+} */
 
 @media screen and (max-width: 300px) {
     span.psw {
@@ -84,7 +96,6 @@
 .logInTitle h1 {
     font-size: 4rem;
     color: rgba(0, 0, 0, 0.582)
-
 }
 
 .logInTitle {
@@ -131,7 +142,6 @@
 @media only screen and (max-width: 768px) {
     .main {
         width: 100vw;
-
     }
     .logInInput {
         width: 90%;
@@ -274,6 +284,20 @@
     text-align: center;
 }
 
-.psw > a {
+.creareCont > a:link {
     color: blue;
+    text-decoration: none;
+}
+
+.psw >a:link {
+    color: blue;
+    text-decoration: none;
+}
+
+.creareCont {
+    margin-bottom: 9px;
+}
+
+.creareCont > label { 
+    margin-top: 9px;
 }

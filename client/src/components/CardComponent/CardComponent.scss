@@ -7,10 +7,6 @@ $colorSilver: #C8C8C8;
 $widthMobile: 768px;
 $withTablet: 1280px;
 
-// html {
-//     font-size: 10px;
-// }
-
 .cardContainer {
     text-align: center;
     border: .1em solid $colorAlto;
@@ -40,6 +36,7 @@ $withTablet: 1280px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    border: .1em solid $colorCarnation;
 }
 
 .chapterTitle {

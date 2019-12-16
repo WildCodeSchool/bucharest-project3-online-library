@@ -15,13 +15,14 @@ class Navbar extends Component {
                 <input class="menu-btn" type="checkbox" id="menu-btn" />
                 <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
                 <ul class="menu">
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/courses">Courses</Link></li>
-                    <li><Link to="/profile">Profile</Link></li>
+                    <li><Link to="/acasa">Home</Link></li>
+                    <li><Link to="/cursuri">Courses</Link></li>
+                    <li><Link to="/profil">Profile</Link></li>
                 </ul>
             </header>
 
         );
     }
 }
-export default Navbar
+
+export default Navbar;

@@ -48,11 +48,11 @@ class SignUp extends React.Component{
             <div className="main">
                 <header>
                     <div className="container-fluid headerMain">
-                        <nav className="headerNav">
+                        {/* <nav className="headerNav">
                             <a href="">Home</a>
                             <a href="">Courses</a>
                             <a href="">Profiles</a>
-                        </nav>
+                        </nav> */}
                         <div className="logoPlaceholder">
                             <img src="https://via.placeholder.com/157x45" alt="logo"/>
                         </div>

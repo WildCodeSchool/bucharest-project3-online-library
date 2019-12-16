@@ -41,7 +41,7 @@ a {
   display: block;
   float: right;
   font-size: 2em;
-  padding: 10px 20px;
+  padding: 19px 20px;
   text-decoration: none;
 }
 
@@ -51,6 +51,7 @@ a {
   max-height: 0;
   -webkit-transition: max-height .2s ease-out;
   transition: max-height .2s ease-out;
+  font-size: 1.9rem;
 }
 
 /* menu icon */

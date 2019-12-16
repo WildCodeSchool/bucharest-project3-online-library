@@ -104,4 +104,26 @@ body {
     margin-top: 2%;
   }
 }
+
+@media only screen and (min-width: 1642px) {
+  .AdminCourseCardContainer {
+    width: 75%;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    margin-top: 2%;
+  }
+}
 /*# sourceMappingURL=AdminAllCourses.css.map */

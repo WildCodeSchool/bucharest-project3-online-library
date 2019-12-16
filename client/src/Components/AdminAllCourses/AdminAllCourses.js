@@ -96,9 +96,9 @@ class AdminAllCourses extends React.Component{
                 <div className='AdminAllCoursesTitle'>
                     <h1>All Courses</h1>
                 </div>
-                <div className='AdminAllCoursesAddBtn'>
+                {/* <div className='AdminAllCoursesAddBtn'>
                     {this.AddCards()}
-                </div>
+                </div> */}
                 <div className='AdminAllCoursesFilter'>
                     <Filter />
                 </div>

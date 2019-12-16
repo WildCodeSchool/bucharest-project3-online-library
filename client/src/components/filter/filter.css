@@ -11,6 +11,10 @@
   border: none;
 }
 
+.filterRow {
+  margin-top: 15px;
+}
+
 .filterTop {
   margin-bottom: 15px;
 }

@@ -73,3 +73,17 @@ body {
         margin-top: 2%;
     }
 }
+
+
+@media only screen and (min-width:1642px) {
+    .AdminCourseCardContainer {
+        width:75%;
+        margin: 0 auto;
+        display:flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        margin-top: 2%;
+    }
+}

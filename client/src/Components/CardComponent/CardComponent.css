@@ -3,7 +3,8 @@ html {
 }
 
 .cardContainer {
-  max-width: 35rem;
+  width: 35rem;
+  height: 21rem;
   border: 0.1em solid #D3D3D3;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;

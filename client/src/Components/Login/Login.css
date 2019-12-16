@@ -4,12 +4,24 @@
     display: grid;
     bottom: 0;
     position: relative;
-    margin-top: 5%;
+    margin-top: 2%;
     width: 100%;
 }
 
 .psw {
     padding: 9px;
+}
+
+.psw a:link {
+    text-decoration: none;
+}
+
+.creareCont {
+    padding: 9px;
+}
+
+.creareCont a:link {
+    text-decoration: none;
 }
 
 @media screen and (max-width: 300px) {

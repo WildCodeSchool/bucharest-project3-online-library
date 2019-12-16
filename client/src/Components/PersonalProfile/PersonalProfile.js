@@ -6,11 +6,20 @@ import ProfileCourseCard from '../ProfileCourseCard/ProfileCourseCard';
 
 
 const courses=[
-    {chapterTitle:'Psiho',
+    {chapterTitle:'Love',
       courseTitle:'How to..',
     courseLink:'http//.dasdadasdfa' },
-    {chapterTitle:'God',
-    courseTitle:'Cum sa..',
+    {chapterTitle:'Love',
+    courseTitle:'How to..',
+  courseLink:'http//.dasdadasdfdsadasrewtre241324a' },
+  {chapterTitle:'Love',
+    courseTitle:'How to..',
+  courseLink:'http//.dasdadasdfdsadasrewtre241324a' },
+  {chapterTitle:'Love',
+    courseTitle:'How to..',
+  courseLink:'http//.dasdadasdfdsadasrewtre241324a' },
+  {chapterTitle:'Love',
+    courseTitle:'How to..',
   courseLink:'http//.dasdadasdfdsadasrewtre241324a' }
       ]
 
@@ -32,13 +41,12 @@ class PersonalProfile extends Component {
 
     render() {
         return (
-            <div>
-                <div >
-
-                    <div className="base">
-                        <div className="pp-main" >
-                            <div className="container-fluid headerMain">
-                                <form className="formMain" autoComplete="off">
+            <div className='pp-container'> 
+                <div className="leftSide">
+                    <div className="pp-base">
+                        {/* <div className="pp-main" >
+                            <div className="container-fluid pp-headerMain"> */}
+                                <form className="pp-formMain" autoComplete="off">
                                     <div className="column">
                                         <TextField
 
@@ -50,6 +58,7 @@ class PersonalProfile extends Component {
                                             value={this.state.nume}
                                         // onChange={this.handleChange('nume')}
                                         />
+
                                         <TextField
 
                                             id="filled-required"
@@ -123,14 +132,14 @@ class PersonalProfile extends Component {
                                         />
                                     </div>
                                 </form>
-                            </div>
-                        </div>
+                            {/* </div>
+                        </div> */}
                     </div>
                 </div>
 
                 <div className='rightSide'>
                     <div class="search-container">
-                        <form action="/action_page.php">
+                        <form className='searchStyle' action="/action_page.php">
                             <input className='searchField' type="text" placeholder="Search.." name="search" />
                             <button className='searchBtn' type="submit"><img src={icon} alt='search' /></button>
                         </form>
@@ -139,7 +148,6 @@ class PersonalProfile extends Component {
                             return <ProfileCourseCard {...item} key={i} />
                         })}
                     </div>
-
                 </div>
 
             </div>

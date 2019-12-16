@@ -1,17 +1,55 @@
-/* Left side */
-
-@media only screen and (max-width: 768px) {
-    .pp-main {
-        width: 95vw;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+.pp-container {
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.headerMain {
+.pp-base {
+    width: 80%;
+    background-color: lightgray;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 11px -2px rgba(0, 0, 0, 0.75);
+}
+
+.pp-formMain {
+    width: 90%;
+    display: contents;
+}
+
+.MuiFilledInput-underline:after {
+    border-bottom: 2px solid #FA5457!important;
+}
+
+.MuiFormLabel-root {
+    color: rgba(0, 0, 0, 0.54)!important;
+}
+
+.leftSide {
+    /* background-color: rgba(82, 208, 240, 0.753); */
+    flex: 1 1 50%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-top: 8%;
+    padding-bottom: 30px;
+    max-height: 710px;
+}
+
+.rightSide {
+    /* background-color: rgba(255, 230, 0, 0.753); */
+    flex: 1 1 50%;
+    text-align: center;
+    margin-top: 8%;
+    text-align: center;
+    justify-content: center;
+}
+
+
+/* Left side */
+
+.pp-headerMain {
     width: 500px;
-    margin-left: 25px;
+    /* align-content: center; */
     background-color: lightgray;
     opacity: 0, 5;
     padding: 30px;
@@ -29,31 +67,17 @@
     background-color: #ffffff !important;
 }
 
-@media only screen and (min-width: 768px) {
-    .pp-main {
-        width: 95vw;
-        display: flex;
-        /* align-items: center;
-        justify-content: center; */
+@media only screen and (max-width: 768px) {
+    .leftSide {
+        /* background-color: rgba(82, 208, 240, 0.753); */
+        flex: 1 1 100%;
+        margin-top: 8%;
     }
-    .headerMain {
-        position: absolute;
-        top: 14%;
-        left: 4%;
-        width: 500px;
-        background-color: lightgray;
-        opacity: 0, 5;
-        padding: 30px;
-        border-radius: 5px;
-    }
-    .column {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-    .MuiFilledInput-root {
-        background-color: #ffffff !important;
+    .rightSide {
+        /* background-color: rgba(255, 230, 0, 0.753); */
+        flex: 1 1 100%;
+        text-align: center;
+        margin-top: 3%;
     }
 }
 
@@ -61,10 +85,7 @@
 /* Right Side */
 
 .search-container {
-    /* float: right; */
-    position: absolute;
-    right: 8%;
-    top: 14%;
+    padding-bottom: 30px;
 }
 
 .searchBtn {
@@ -83,8 +104,12 @@
     right: 40px;
 }
 
+.searchStyle {
+    width: 107%;
+}
+
 .searchBtn:hover {
-    background: #ccc;
+    background: #75B1A9;
 }
 
 .searchField {
@@ -96,5 +121,5 @@
 }
 
 ::placeholder {
-    color: white;
+    color: rgb(255, 255, 255);
 }

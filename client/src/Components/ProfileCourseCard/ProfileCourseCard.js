@@ -23,7 +23,7 @@ class ProfileCourseCard extends React.Component{
                         {this.props.courseTitle}
                     </h4>
                     <button>
-                        <a href={this.props.courseLink}>Link to Course</a>
+                        <a href={this.props.courseLink}>Link catre curs</a>
                     </button>
                 </div>
             </div>

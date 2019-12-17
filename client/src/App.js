@@ -20,10 +20,10 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/" component={LoginPageComplete} />
           <Route path="/creareCont" component={SignUpPageComplete} />
-          <Route path="/acasa" component={UserHomePageComplete} />
-          <Route path='/cursuri' component={AdminAllCourses} />
-          <Route path="/profil" component={PersonalProfilePageComplete} />
-          <Route path="/utilizatorii" component={AllUsersTable} />
+          <Route path="/acasa" render={ () => <UserHomePageComplete admin={true} /> } />
+          <Route path='/cursuri' render={ () => <AdminAllCourses admin={true} /> } />
+          <Route path="/profil" render={ () => <PersonalProfilePageComplete admin={true} /> } /> 
+          <Route path="/utilizatorii" render={ () => < AllUsersTable admin={true} /> } /> 
         </Switch>
       </React.Fragment>
     );

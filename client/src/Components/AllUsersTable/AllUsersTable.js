@@ -13,7 +13,44 @@ class AllUsersTable extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      products: [],
+      products: [{
+        id: 1,
+        prenume: 'John ',
+        nume: 'Doe',
+        judetul: 'Bucuresti',
+        centrul: 'Bucuresti'
+      },{
+        id: 3,
+        prenume: 'Eloise',
+        nume: 'Peck',
+        judetul: 'Sinaia',
+        centrul: 'Sinaia'
+      },{
+        id: 4,
+        prenume: 'Mark',
+        nume: 'Storey',
+        judetul: 'Brasov',
+        centrul: 'Brasov'
+      },{
+        id: 5,
+        prenume: 'Haya',
+        nume: 'Hamilton',
+        judetul: 'Sibiu',
+        centrul: 'Sibiu'
+      },{
+        id: 6,
+        prenume: 'Siyana',
+        nume: 'Cantu',
+        judetul: 'Cluj',
+        centrul: 'Cluj'
+      },{
+        id: 7,
+        prenume: 'Lana',
+        nume: 'Duncan',
+        judetul: 'Bucuresti',
+        centrul: 'Bucuresti'
+      },
+    ],
       columns: this.headerArray,
       UpdatedColumns: this.headerArray,
     }
@@ -27,27 +64,27 @@ class AllUsersTable extends React.Component{
     sort: true
   },
   {
-    dataField: 'name',
+    dataField: 'prenume',
     text: 'Prenume',
     name: 'Prenume',
     value: 'Prenume',
     // filter: textFilter()
   },
   {
-    dataField: 'price',
+    dataField: 'nume',
     text: 'Nume',
     name: 'Nume',
     value: 'Nume',
     sort: true
   },
   {
-    dataField: 'link',
+    dataField: 'judetul',
     text: 'Judetul',
     name: 'Judetul',
     value: 'Judetul'
   },
   {
-    dataField: 'link',
+    dataField: 'centrul',
     text: 'Centrul',
     name: 'Centrul',
     value: 'Centrul'
@@ -91,14 +128,14 @@ class AllUsersTable extends React.Component{
   render(){
     return (
     <div className="allUsersMain">
-        <Navbar />
+        <Navbar admin={this.props.admin} />
         <h1>All Users</h1>
       <div className="tableSelectContainer">
             <Select data={this.state.columns}
                     filteredFromSelect={this.updatedTableFromSelect}
                     addColumn={this.addToTableFromSelect}
             />
-            <div className="container" style={{ marginTop: 50 }}>
+            <div className="container" style={{ marginTop: 50, textAlign:'center', fontSize: '1.3rem'}}>
                     <BootstrapTable 
                     striped
                     hover

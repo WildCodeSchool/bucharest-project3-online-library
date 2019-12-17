@@ -4,7 +4,9 @@
 
 .allUsersMain h1 {
     margin-top: 17%;
-    text-align: center;
+	text-align: center;
+	font-size: 3.9rem;
+	color: #75B1A9;
 }
 
 .tableSelectContainer{
@@ -198,6 +200,25 @@
     }
     .allUsersMain h1 {
         margin-top: 12%;
-        text-align: center;
+		text-align: center;
+		font-size: 3.9rem;
+        color: #75B1A9;
     }
+  }
+
+  @media only screen and (min-width: 1050px) {
+	.allUsersMain h1 {
+		margin-top: 7%;
+		font-size: 3.9rem;
+        color: #75B1A9;
+	}
+  }
+
+  .dropdown{
+	  display:none;
+  }
+
+  thead{
+	  background-color: rgba(0, 0, 0, 0.26);
+	  height:2%;
   }

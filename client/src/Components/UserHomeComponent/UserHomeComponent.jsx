@@ -1,6 +1,6 @@
 import React from "react";
 import CardComponent from "../CardComponent/CardComponent.jsx";
-import  "../UserHomeComponent/UserHomeComponent.scss";
+import  "./UserHomeComponent.scss";
 
 class UserHomeComponent extends React.Component {
   constructor(props) {

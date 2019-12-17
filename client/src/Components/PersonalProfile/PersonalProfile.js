@@ -56,82 +56,81 @@ class PersonalProfile extends Component {
             {/* <div className="pp-main" >
                             <div className="container-fluid pp-headerMain"> */}
             <form className="pp-formMain" autoComplete="off">
-              <div className="column">
+              <div className="pp-column">
                 <TextField
                   id="filled-required"
                   label="Nume"
-                  className="signUpInput signUpInputLeft"
                   margin="normal"
                   variant="filled"
                   value={this.state.nume}
                   // onChange={this.handleChange('nume')}
                 />
-
+               
                 <TextField
                   id="filled-required"
                   label="Prenume"
-                  className="signUpInput signUpInputRight"
                   margin="normal"
                   variant="filled"
                   value={this.state.prenume}
                   // onChange={this.handleChange('prenume')}
                 />
+
                 <TextField
                   id="filled-required"
                   label="Email"
                   type="email"
-                  className="signUpInput signUpInputLeft"
                   margin="normal"
                   variant="filled"
                   value={this.state.email}
                   // onChange={this.handleChange('email')}
                 />
+
                 <TextField
                   id="filled-required"
                   label="Judetul in care esti voluntar"
-                  className="signUpInput signUpInputLeft"
                   margin="normal"
                   variant="filled"
                   value={this.state.judetul}
                   // onChange={this.handleChange('judetul')}
                 />
+    
+
                 <TextField
                   id="filled-required"
                   label="Centrul in care esti voluntar"
-                  className="signUpInput signUpInputRight"
                   margin="normal"
                   variant="filled"
                   value={this.state.centrul}
                   // onChange={this.handleChange('centrul')}
                 />
+      
                 <TextField
                   id="filled-required"
                   label="Numarul contractului de voluntar"
-                  className="signUpInput signUpInputLeft"
                   margin="normal"
                   variant="filled"
                   value={this.state.contractului}
                   // onChange={this.handleChange('contractului')}
                 />
+              
                 <TextField
                   id="filled-required"
                   label="Data semnarii contractului de voluntar"
-                  className="signUpInput signUpInputRight"
                   margin="normal"
                   variant="filled"
                   value={this.state.dataSemnarii}
                   // onChange={this.handleChange('dataSemnarii')}
                 />
+                
                 <TextField
                   id="filled-required"
                   label="Numar Telefon"
-                  className="signUpInput signUpInputRight"
                   margin="normal"
                   variant="filled"
                   value={this.state.telefon}
                   // onChange={this.handleChange('numarTelefon')}
                 />
-              </div>
+                </div>
             </form>
             {/* </div>
                         </div> */}

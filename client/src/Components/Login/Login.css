@@ -1,6 +1,6 @@
 .container2 {
     padding-top: 16px;
-    padding-bottom: 16px;
+    padding-bottom: 50px;
     display: grid;
     bottom: 0;
     position: relative;
@@ -12,13 +12,19 @@
     padding: 9px;
 }
 
+
 /* .psw a:link {
     text-decoration: none;
 } */
 
-.creareCont {
-    padding: 9px;
+.forgotPasswordAnchor {
+    color: blue;
 }
+
+.createAccountAnchor {
+    color: blue;
+}
+
 
 /* .creareCont a:link {
     text-decoration: none;
@@ -95,7 +101,7 @@
 
 .logInTitle h1 {
     font-size: 4rem;
-    color: rgba(0, 0, 0, 0.582)
+    color: #75B1A9;
 }
 
 .logInTitle {
@@ -284,12 +290,12 @@
     text-align: center;
 }
 
-.creareCont > a:link {
+.creareCont a:link {
     color: blue;
     text-decoration: none;
 }
 
-.psw >a:link {
+.psw>a:link {
     color: blue;
     text-decoration: none;
 }
@@ -298,6 +304,6 @@
     margin-bottom: 9px;
 }
 
-.creareCont > label { 
+.creareCont>label {
     margin-top: 9px;
 }

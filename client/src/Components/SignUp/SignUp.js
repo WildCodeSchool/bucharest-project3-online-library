@@ -67,7 +67,7 @@ class SignUp extends React.Component{
                                 <TextField
                                     required
                                     id="filled-required"
-                                    label="nume"
+                                    label="Nume"
                                     className="signUpInput signUpInputLeft"
                                     margin="normal"
                                     variant="filled"
@@ -77,7 +77,7 @@ class SignUp extends React.Component{
                                 <TextField
                                     required
                                     id="filled-required"
-                                    label="prenume"
+                                    label="Prenume"
                                     className="signUpInput signUpInputRight"
                                     margin="normal"
                                     variant="filled"
@@ -90,7 +90,7 @@ class SignUp extends React.Component{
                                 <TextField
                                     required
                                     id="filled-required"
-                                    label="email"
+                                    label="Email"
                                     type="email"
                                     className="signUpInput signUpInputLeft"
                                     margin="normal"

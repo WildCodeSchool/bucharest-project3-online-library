@@ -96,7 +96,7 @@ class AdminAllCourses extends React.Component{
                         textCard={item.textCard}
                         keywordsCard={item.keywordsCard}
                         date={item.date}
-                        admin={this.state.admin}
+                        admin={true}
                         i={index}
                         toDelete={this.cardToDeleteFromBtn}
                         />

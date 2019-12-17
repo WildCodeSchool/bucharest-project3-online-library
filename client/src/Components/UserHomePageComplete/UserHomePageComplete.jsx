@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Navbar from '../NavbarComponent/Navbar'
+import Navbar from '../NavbarComponent/Navbar';
 import UserHomeComponent from '../UserHomeComponent/UserHomeComponent';
 import Footer from '../Footer/Footer';
 
@@ -17,11 +17,12 @@ class UserHomePageComplete extends React.Component {
         return(
             <React.Fragment>
                 <Navbar/>
-                if(this.state.admin){
+                if(this.state.admin) {
 
                 } else {
                     <UserHomeComponent userName = {this.state.userName}/>
                 }
+              
                 <Footer />
             </React.Fragment>
         );

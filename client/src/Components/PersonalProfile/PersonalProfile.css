@@ -1,0 +1,154 @@
+.pp-container {
+    display: flex;
+    flex-wrap: wrap;
+
+    flex-grow: 1;
+    overflow: auto;
+    min-height: 2em;
+}
+
+.pp-base {
+    width: 80%;
+    background-color: lightgray;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 11px -2px rgba(0, 0, 0, 0.75);
+}
+
+/* .pp-formMain {
+    width: 90%;
+    display: contents;
+} */
+
+.MuiFilledInput-underline:after {
+    border-bottom: 2px solid #FA5457!important;
+}
+
+.MuiFormLabel-root {
+    color: rgba(0, 0, 0, 0.54)!important;
+}
+
+.leftSide {
+    /* background-color: rgba(82, 208, 240, 0.753); */
+    flex: 1 1 50%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items:center;
+    margin-top: 8%;
+    padding-bottom: 30px;
+    max-height: 710px;
+}
+
+.rightSide {
+    /* background-color: rgba(255, 230, 0, 0.753); */
+    flex: 1 1 50%;
+    text-align: center;
+    margin-top: 8%;
+    text-align: center;
+    justify-content: center;
+}
+
+
+/* Left side */
+
+.pp-headerMain {
+    width: 500px;
+    /* align-content: center; */
+    background-color: lightgray;
+    opacity: 0, 5;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.column {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.MuiFilledInput-root {
+    background-color: #ffffff !important;
+}
+
+@media only screen and (max-width: 768px) {
+    .leftSide {
+        /* background-color: rgba(82, 208, 240, 0.753); */
+        flex: 1 1 100%;
+        margin-top: 8%;
+    }
+    .rightSide {
+        /* background-color: rgba(255, 230, 0, 0.753); */
+        flex: 1 1 100%;
+        text-align: center;
+        margin-top: 3%;
+    }
+}
+
+
+/* Right Side */
+
+.search-container {
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.searchBtn {
+    padding: 7px 7px;
+    background-color: white;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 38px;
+    position: absolute;
+    height: 38px;
+    right: 3px;
+}
+
+.searchStyle {
+    width: 100%;
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchBtn:hover {
+    background: #75B1A9;
+}
+
+.MuiFormControl-root .searchField {
+    font-size: 23px;
+    box-sizing: border-box;
+    padding: 8px;
+    border-radius: 30px 30px 30px 30px;
+    border: none;
+    background-color: lightgray;
+    width: 100%;
+}
+
+::placeholder {
+    color: rgb(255, 255, 255);
+}
+
+.searchBarWrapper {
+    width: 85%;
+    margin: 0 auto 10px ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.rightSide .profileCourseCardMain {
+    margin: 10px auto;
+}
+
+.cardsWrapper {
+    display: flex;
+    flex-direction: column;
+}

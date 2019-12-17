@@ -1,0 +1,138 @@
+/* PROFILE COURSE CARD STYLES */
+
+.profileCourseCardMain {
+    margin: 0 auto;
+    width: 85%;
+    height: 140px;
+    border: 1px solid #A1BE95;
+    border-radius: 8px;
+    -webkit-box-shadow: 0px 2px 3px #A1BE95;
+    box-shadow: 0px 2px 3px #A1BE95;
+    margin-top: 30px;
+}
+
+.profileCourseCardMain header {
+    height: 36.48px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    background: #A1BE95;
+    font-size: 20px;
+    color: #FFF;
+    text-align: left;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.profileCourseCardMain header h3 {
+    margin-left: 14px;
+    font-weight: 400;
+}
+
+.profileCourseCardBody {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.profileCourseCardMain h4 {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.profileCourseCardMain button {
+    width: 35%;
+    height: 24.65px;
+    background: #75B1A9;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    border: none;
+}
+
+.profileCourseCardMain button:active {
+    transform: translateY(4px);
+}
+
+.profileCourseCardMain button:hover {
+    background: rgb(100, 151, 144);
+    cursor: pointer;
+}
+
+.profileCourseCardMain button a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .profileCourseCardMain button {
+        width: 40%;
+        height: 24.65px;
+        background: #75B1A9;
+        border-radius: 4px;
+        font-size: 0.7rem;
+    }
+    .profileCourseCardMain header {
+        height: 36.48px;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        background: #A1BE95;
+        font-size: 1rem;
+        color: #FFF;
+        text-align: left;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+    .profileCourseCardMain h4 {
+        font-size: 0.9em;
+        font-weight: 400;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .profileCourseCardMain button {
+        width: 50%;
+        height: 24.65px;
+        background: #75B1A9;
+        border-radius: 4px;
+        font-size: 0.7rem;
+    }
+    .profileCourseCardMain header {
+        height: 36.48px;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        background: #A1BE95;
+        font-size: 0.8rem;
+        color: #FFF;
+        text-align: left;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+    .profileCourseCardMain h4 {
+        font-size: 0.7em;
+        font-weight: 400;
+    }
+}
+
+
+/*# sourceMappingURL=ProfileCourseCard.css.map */

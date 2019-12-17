@@ -18,6 +18,7 @@ a {
     width: 100%;
     z-index: 3;
     top: 0;
+    flex-shrink: 0;
 }
 
 .header ul {

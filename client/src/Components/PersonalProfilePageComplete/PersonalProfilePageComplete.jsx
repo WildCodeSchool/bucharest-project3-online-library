@@ -17,7 +17,7 @@ class PersonalProfilePageComplete extends React.Component {
     render(){
         return(
             <div className="personalProfilePageContainer">
-                <Navbar/>
+                <Navbar admin={this.props.admin}/>
                 <PersonalProfile/>
                 <Footer />
             </div>

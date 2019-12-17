@@ -24,10 +24,34 @@
 }
 
 .titleWelcome {
-  margin: 3.5rem 0 0;
+  font-size: 3.9rem;
+  color: #75B1A9;
+  text-align: center;
+  margin-top: 7%;
 }
 
 .subtitleWelcome {
   margin: 0.625rem;
+}
+
+@media only screen and (max-width: 540px) {
+  .headerContainer {
+    margin-top: 17%;
+  }
+  .titleWelcome {
+    margin-top: 17%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .headerContainer {
+    margin-top: 12%;
+  }
+  .titleWelcome {
+    font-size: 3.9rem;
+    color: #75B1A9;
+    text-align: center;
+    margin-top: 12%;
+  }
 }
 /*# sourceMappingURL=UserHomeComponent.css.map */

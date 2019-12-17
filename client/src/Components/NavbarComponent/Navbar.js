@@ -4,9 +4,6 @@ import { Link } from 'react-router-dom';
 
 
 class Navbar extends Component {
-
-
-
     render() {
         return (
 
@@ -18,6 +15,11 @@ class Navbar extends Component {
                     <li><Link to="/acasa">Home</Link></li>
                     <li><Link to="/cursuri">Courses</Link></li>
                     <li><Link to="/profil">Profile</Link></li>
+                    {this.props.admin ?
+                    <li><Link to='/utilizatorii'>All Users</Link></li>
+                        :
+                    false
+                    }
                 </ul>
             </header>
 

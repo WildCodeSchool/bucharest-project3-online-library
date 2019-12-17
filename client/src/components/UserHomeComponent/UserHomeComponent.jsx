@@ -30,6 +30,7 @@ class UserHomeComponent extends React.Component {
             textCard={this.state.textCard}
             keywordsCard={this.state.keywordsCard}
             date={this.state.date}
+            admin={this.props.admin}
           />
           <CardComponent
             headerColor={this.state.headerColor}
@@ -37,6 +38,7 @@ class UserHomeComponent extends React.Component {
             textCard={this.state.textCard}
             keywordsCard={this.state.keywordsCard}
             date={this.state.date}
+            admin={this.props.admin}
           />
           <CardComponent
             headerColor={this.state.headerColor}
@@ -44,6 +46,7 @@ class UserHomeComponent extends React.Component {
             textCard={this.state.textCard}
             keywordsCard={this.state.keywordsCard}
             date={this.state.date}
+            admin={this.props.admin}
           />
           <CardComponent
             headerColor={this.state.headerColor}
@@ -51,6 +54,7 @@ class UserHomeComponent extends React.Component {
             textCard={this.state.textCard}
             keywordsCard={this.state.keywordsCard}
             date={this.state.date}
+            admin={this.props.admin}
           />
           <CardComponent
             headerColor={this.state.headerColor}
@@ -58,6 +62,7 @@ class UserHomeComponent extends React.Component {
             textCard={this.state.textCard}
             keywordsCard={this.state.keywordsCard}
             date={this.state.date}
+            admin={this.props.admin}
           />
           <CardComponent
             headerColor={this.state.headerColor}
@@ -65,6 +70,7 @@ class UserHomeComponent extends React.Component {
             textCard={this.state.textCard}
             keywordsCard={this.state.keywordsCard}
             date={this.state.date}
+            admin={this.props.admin}
           />
         </main>
       </div>

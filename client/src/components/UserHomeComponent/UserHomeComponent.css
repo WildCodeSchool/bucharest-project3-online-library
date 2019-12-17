@@ -1,5 +1,6 @@
 .headerContainer {
   margin: 0 auto;
+  margin-top: 7%;
   width: 100%;
   text-align: center;
 }
@@ -19,10 +20,11 @@
   padding: 1em;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  margin-bottom: 5% !important;
 }
 
 .titleWelcome {
-  margin: 4.25rem 0 0;
+  margin: 3.5rem 0 0;
 }
 
 .subtitleWelcome {

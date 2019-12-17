@@ -51,6 +51,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  border: 0.1em solid #FA5457;
 }
 
 .chapterTitle {

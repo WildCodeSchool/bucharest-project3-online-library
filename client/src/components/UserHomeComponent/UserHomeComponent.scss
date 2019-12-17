@@ -1,12 +1,10 @@
 $widthMobile: 768px;
 $widthTablet: 1280px;
 
-// html {
-//     font-size: 10px;
-// }
 
 .headerContainer {
     margin: 0 auto;
+    margin-top: 7%;
     width: 100%;
     text-align: center;
 }
@@ -19,6 +17,7 @@ $widthTablet: 1280px;
     margin: 0 auto;
     padding: 1em;
     box-sizing: border-box;
+    margin-bottom: 5%!important;
 }
 
 .titleWelcome {

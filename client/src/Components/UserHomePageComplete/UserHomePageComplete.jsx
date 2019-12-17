@@ -9,7 +9,7 @@ class UserHomePageComplete extends React.Component {
         super(props);
         this.state = {
           userName: 'Ana',
-          admin: false
+          admin: true
         };
       }
 
@@ -17,9 +17,9 @@ class UserHomePageComplete extends React.Component {
         return(
             <React.Fragment>
                 <Navbar/>
-                if(this.state.admin) {
-
-                } else {
+                {this.state.admin ?
+                    <UserHomeComponent userName = {this.state.userName} admin={this.state.admin}/>
+                :
                     <UserHomeComponent userName = {this.state.userName}/>
                 }
               

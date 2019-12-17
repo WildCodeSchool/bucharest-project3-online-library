@@ -41,7 +41,7 @@ class CardComponent extends React.Component {
           >
   <span className="chapterTitle">{this.props.chapterCard}</span>
             <IconButton aria-label="delete" className='deleteButton'>
-              <DeleteIcon className='deleteIcon' style={this.state.admin ? {} : { display: 'none' }}/>
+              <DeleteIcon className='deleteIcon' style={this.props.admin ? {} : { display: 'none' }}/>
             </IconButton>
           </div>
           <div className="cardInfoWrapper">

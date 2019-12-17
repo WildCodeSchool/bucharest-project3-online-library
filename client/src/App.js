@@ -7,8 +7,10 @@ import LoginPageComplete from '../src/Components/LoginPageComplete/LoginPageComp
 import UserHomePageComplete from '../src/Components/UserHomePageComplete/UserHomePageComplete';
 import SignUpPageComplete from '../src/Components/SignUpPageComplete/SignUpPageComplete';
 import PersonalProfilePageComplete from './Components/PersonalProfilePageComplete/PersonalProfilePageComplete';
+import AdminAllCourses from './Components/AdminAllCourses/AdminAllCourses'
 
 import { Switch, Route } from 'react-router-dom';
+import AllUsersTable from './Components/AllUsersTable/AllUsersTable';
 
 class App extends React.Component {
 
@@ -19,7 +21,9 @@ class App extends React.Component {
           <Route exact path="/" component={LoginPageComplete} />
           <Route path="/creareCont" component={SignUpPageComplete} />
           <Route path="/acasa" component={UserHomePageComplete} />
+          <Route path='/cursuri' component={AdminAllCourses} />
           <Route path="/profil" component={PersonalProfilePageComplete} />
+          <Route path="/utilizatorii" component={AllUsersTable} />
         </Switch>
       </React.Fragment>
     );

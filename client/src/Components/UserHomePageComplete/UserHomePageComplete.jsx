@@ -16,7 +16,7 @@ class UserHomePageComplete extends React.Component {
     render(){
         return(
             <React.Fragment>
-                <Navbar/>
+                <Navbar admin={this.state.admin}/>
                 {this.state.admin ?
                     <UserHomeComponent userName = {this.state.userName} admin={this.state.admin}/>
                 :

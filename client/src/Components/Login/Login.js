@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField';
 import {Link} from 'react-router-dom';
+import logo from '../../am-logo-retina.png'
 import './Login.css';
 
 class Login extends Component {
@@ -12,7 +13,7 @@ class Login extends Component {
                         <nav className="headerNav">
                         </nav>
                         <div className="logoPlaceholder">
-                            <img src="https://via.placeholder.com/157x45" alt="logo"/>
+                            <img src={logo} alt="logo" className="logo"/>
                         </div>
                     </div>
                 </header>

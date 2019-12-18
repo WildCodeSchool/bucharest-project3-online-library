@@ -117,7 +117,7 @@ class AdminAllCourses extends React.Component{
             <div className='AdminAllCoursesMain'>
                 <Navbar admin={this.props.admin} />
                 <div className='AdminAllCoursesTitle'>
-                    <h1>All Courses</h1>
+                    <h1>Toate cursurile</h1>
                     <CourseModal />
                 </div>
                 {/* <div className='AdminAllCoursesAddBtn'>

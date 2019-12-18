@@ -20,8 +20,8 @@ class UserHomeComponent extends React.Component {
     return (
       <div className='container'>
         <header className='headerContainer'>
-    <h1 className='titleWelcome'>Hello {this.props.userName}</h1>
-            <h2 className="subtitleWelcome">Here you have the recently added courses</h2>
+    <h1 className='titleWelcome'>Salut {this.props.userName}</h1>
+            <h2 className="subtitleWelcome">Cele mai recente cursuri</h2>
         </header>
         <main className="mainContainer">
           <CardComponent

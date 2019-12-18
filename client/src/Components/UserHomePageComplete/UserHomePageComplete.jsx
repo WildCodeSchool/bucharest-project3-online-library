@@ -8,7 +8,7 @@ class UserHomePageComplete extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-          userName: 'Ana',
+          userName: 'Emilia',
         };
       }
 

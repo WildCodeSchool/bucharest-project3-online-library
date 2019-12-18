@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Navbar.scss';
 import { Link } from 'react-router-dom';
+import logo from '../../am-logo-retina.png'
 
 
 class Navbar extends Component {
@@ -8,15 +9,15 @@ class Navbar extends Component {
         return (
 
             <header class="header">
-                <a href="https://dummyimage.com/71x31/b5acb5/4f344f.png&text=LOGO" class="logo">LOGO</a>
+                <img src={logo} alt="logo" className="logo"/>
                 <input class="menu-btn" type="checkbox" id="menu-btn" />
                 <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
                 <ul class="menu">
-                    <li><Link to="/acasa">Home</Link></li>
-                    <li><Link to="/cursuri">Courses</Link></li>
-                    <li><Link to="/profil">Profile</Link></li>
+                    <li><Link to="/acasa">Acasa</Link></li>
+                    <li><Link to="/cursuri">Cursuri</Link></li>
+                    <li><Link to="/profil">Profil</Link></li>
                     {this.props.admin ?
-                    <li><Link to='/utilizatorii'>All Users</Link></li>
+                    <li><Link to='/utilizatorii'>Toti utilizatorii</Link></li>
                         :
                     false
                     }

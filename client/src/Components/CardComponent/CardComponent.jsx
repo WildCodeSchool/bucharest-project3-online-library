@@ -45,7 +45,7 @@ class CardComponent extends React.Component {
             </IconButton>
           </div>
           <div className="cardInfoWrapper">
-            <p className="titleCcard">Title Card</p>
+            <p className="titleCcard">Titlu</p>
     <p className="textCard">{this.props.textCard}</p>
     <p className="keywordsCard">{this.props.keywordsCard}</p>
     <p className="dateAdded">Adaugat: {this.props.date}</p>

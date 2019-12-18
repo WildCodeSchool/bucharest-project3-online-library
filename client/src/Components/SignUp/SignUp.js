@@ -1,5 +1,6 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
+import logo from '../../am-logo-retina.png'
 import './SignUp.css';
 
 class SignUp extends React.Component{
@@ -54,7 +55,7 @@ class SignUp extends React.Component{
                             <a href="">Profiles</a>
                         </nav> */}
                         <div className="logoPlaceholder">
-                            <img src="https://via.placeholder.com/157x45" alt="logo"/>
+                            <img src={logo} alt="logo" className="logo"/>
                         </div>
                     </div>
                 </header>

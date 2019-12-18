@@ -129,7 +129,7 @@ class AllUsersTable extends React.Component{
     return (
     <div className="allUsersMain">
         <Navbar admin={this.props.admin} />
-        <h1>All Users</h1>
+        <h1>Utilizatori</h1>
       <div className="tableSelectContainer">
             <Select data={this.state.columns}
                     filteredFromSelect={this.updatedTableFromSelect}

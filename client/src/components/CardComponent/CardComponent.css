@@ -1,0 +1,158 @@
+html {
+  font-size: 10px;
+}
+
+.cardContainer {
+  border: 0.1em solid #D3D3D3;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 1em;
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  width: 35rem;
+  min-height: 25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.headerCard {
+  padding: 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.chapterTitle {
+  color: #FFFFFF;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.cardInfoWrapper {
+  padding: 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.titleCcard {
+  font-size: 1.8rem;
+  text-align: center;
+  margin: 0;
+  padding-bottom: .277em;
+}
+
+.textCard {
+  margin: 0;
+  text-align: justify;
+  font-size: 1.2rem;
+}
+
+.keywordsCard {
+  font-size: 1 rem;
+  font-weight: bold;
+}
+
+.buttonContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.dateAdded {
+  font-size: 1.2rem;
+  margin: 0;
+  margin: 1em 0;
+}
+
+.uncompletedButton.MuiButton-colorInherit {
+  background-color: #8F958C;
+}
+
+.uncompletedButton.MuiButton-text {
+  color: #FFFFFF;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.uncompletedButton .MuiButton-label {
+  padding: .143em;
+}
+
+.completedButton.MuiButton-colorInherit {
+  background-color: #C8C8C8;
+}
+
+.completedButton.MuiButton-text {
+  color: #FFFFFF;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.completedButton .MuiButton-label {
+  padding: .143em;
+}
+
+.completedButtonGreen.MuiButton-colorInherit {
+  background-color: #A1BE95;
+}
+
+.completedButtonGreen.MuiButton-text {
+  background-color: #A1BE95 !important;
+  color: #FFFFFF;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.completedButtonGreen .MuiButton-label {
+  padding: .143em;
+}
+
+.courseLinkButton.MuiButton-colorInherit {
+  background-color: #75B1A9;
+}
+
+.courseLinkButton.MuiButton-text {
+  color: #FFFFFF;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.courseLinkButton .MuiButton-label {
+  padding: .143em;
+}
+
+.deleteIcon.MuiSvgIcon-root {
+  font-size: 2em;
+  color: #FFFFFF;
+}
+
+.deleteButton {
+  display: block;
+}
+
+.deleteButton.MuiIconButton-root {
+  padding: 0;
+}
+
+.notShow {
+  display: none;
+}
+/*# sourceMappingURL=CardComponent.css.map */

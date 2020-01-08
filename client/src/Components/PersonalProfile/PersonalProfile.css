@@ -123,3 +123,8 @@
 ::placeholder {
     color: rgb(255, 255, 255);
 }
+
+.courses-done {
+    height: 710px;
+    overflow: auto;
+}

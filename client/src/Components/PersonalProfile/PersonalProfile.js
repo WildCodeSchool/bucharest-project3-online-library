@@ -6,22 +6,42 @@ import ProfileCourseCard from '../ProfileCourseCard/ProfileCourseCard';
 
 
 const courses=[
-    {chapterTitle:'Love',
-      courseTitle:'How to..',
-    courseLink:'http//.dasdadasdfa' },
-    {chapterTitle:'Love',
-    courseTitle:'How to..',
-  courseLink:'http//.dasdadasdfdsadasrewtre241324a' },
-  {chapterTitle:'Love',
-    courseTitle:'How to..',
-  courseLink:'http//.dasdadasdfdsadasrewtre241324a' },
-  {chapterTitle:'Love',
-    courseTitle:'How to..',
-  courseLink:'http//.dasdadasdfdsadasrewtre241324a' },
-  {chapterTitle:'Love',
-    courseTitle:'How to..',
-  courseLink:'http//.dasdadasdfdsadasrewtre241324a' }
-      ]
+    {
+        chapterTitle:'Love',
+        courseTitle:'How to..',
+        courseLink:'http//.dasdadasdfdsadasrewtre241324a'
+    },
+    {
+        chapterTitle:'Love',
+        courseTitle:'How to..',
+        courseLink:'http//.dasdadasdfdsadasrewtre241324a' 
+    },
+    {
+        chapterTitle:'Love',
+        courseTitle:'How to..',
+        courseLink:'http//.dasdadasdfdsadasrewtre241324a' 
+    },
+    {
+        chapterTitle:'Love',
+        courseTitle:'How to..',
+        courseLink:'http//.dasdadasdfdsadasrewtre241324a' 
+    },
+    {
+        chapterTitle:'Love',
+        courseTitle:'How to..',
+        courseLink:'http//.dasdadasdfdsadasrewtre241324a' 
+    },
+    {
+        chapterTitle:'Love',
+        courseTitle:'How to..',
+        courseLink:'http//.dasdadasdfdsadasrewtre241324a' 
+    },
+    {
+        chapterTitle:'Love',
+        courseTitle:'How to..',
+        courseLink:'http//.dasdadasdfdsadasrewtre241324a' 
+    }
+]
 
 
 class PersonalProfile extends Component {
@@ -56,7 +76,6 @@ class PersonalProfile extends Component {
                                             margin="normal"
                                             variant="filled"
                                             value={this.state.nume}
-                                        // onChange={this.handleChange('nume')}
                                         />
 
                                         <TextField
@@ -67,7 +86,6 @@ class PersonalProfile extends Component {
                                             margin="normal"
                                             variant="filled"
                                             value={this.state.prenume}
-                                        // onChange={this.handleChange('prenume')}
                                         />
                                         <TextField
 
@@ -78,7 +96,6 @@ class PersonalProfile extends Component {
                                             margin="normal"
                                             variant="filled"
                                             value={this.state.email}
-                                        // onChange={this.handleChange('email')}
                                         />
                                         <TextField
 
@@ -88,7 +105,6 @@ class PersonalProfile extends Component {
                                             margin="normal"
                                             variant="filled"
                                             value={this.state.judetul}
-                                        // onChange={this.handleChange('judetul')}
                                         />
                                         <TextField
 
@@ -98,7 +114,6 @@ class PersonalProfile extends Component {
                                             margin="normal"
                                             variant="filled"
                                             value={this.state.centrul}
-                                        // onChange={this.handleChange('centrul')}
                                         />
                                         <TextField
 
@@ -108,7 +123,6 @@ class PersonalProfile extends Component {
                                             margin="normal"
                                             variant="filled"
                                             value={this.state.contractului}
-                                        // onChange={this.handleChange('contractului')}
                                         />
                                         <TextField
 
@@ -118,7 +132,6 @@ class PersonalProfile extends Component {
                                             margin="normal"
                                             variant="filled"
                                             value={this.state.dataSemnarii}
-                                        // onChange={this.handleChange('dataSemnarii')}
                                         />
                                         <TextField
 
@@ -128,7 +141,6 @@ class PersonalProfile extends Component {
                                             margin="normal"
                                             variant="filled"
                                             value={this.state.telefon}
-                                        // onChange={this.handleChange('numarTelefon')}
                                         />
                                     </div>
                                 </form>
@@ -143,10 +155,12 @@ class PersonalProfile extends Component {
                             <input className='searchField' type="text" placeholder="Search.." name="search" />
                             <button className='searchBtn' type="submit"><img src={icon} alt='search' /></button>
                         </form>
-
-                        {courses.map((item, i) => {
-                            return <ProfileCourseCard {...item} key={i} />
-                        })}
+                        <div className="courses-done">
+                            {courses.map((item, i) => {
+                                return <ProfileCourseCard {...item} key={i} />
+                            })}
+                        </div>
+                        
                     </div>
                 </div>
 

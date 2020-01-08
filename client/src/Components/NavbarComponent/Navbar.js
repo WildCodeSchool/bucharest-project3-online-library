@@ -12,6 +12,9 @@ class Navbar extends Component {
                 <img src={logo} alt="logo" className="logo"/>
                 <input class="menu-btn" type="checkbox" id="menu-btn" />
                 <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+                {this.props.home ? 
+                false 
+                :
                 <ul class="menu">
                     <li><Link to="/acasa">Acasa</Link></li>
                     <li><Link to="/cursuri">Cursuri</Link></li>
@@ -22,6 +25,8 @@ class Navbar extends Component {
                     false
                     }
                 </ul>
+                }
+                
             </header>
 
         );

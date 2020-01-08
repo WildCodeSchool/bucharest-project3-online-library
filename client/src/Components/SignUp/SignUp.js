@@ -21,16 +21,6 @@ class SignUp extends React.Component{
                 }
     }
 
-    // handleChange = (e) => {
-    //     const target = e.target
-    //     const value = target.value
-    //     const label = target.label
-    //     this.setState({
-    //         [label] : value
-    //     })
-    //     console.log(this.state)
-    // }
-
     handleChange = input => e => {
         this.setState({
             [input]: e.target.value
@@ -49,11 +39,6 @@ class SignUp extends React.Component{
             <div className="main">
                 <header>
                     <div className="container-fluid headerMain">
-                        {/* <nav className="headerNav">
-                            <a href="">Home</a>
-                            <a href="">Courses</a>
-                            <a href="">Profiles</a>
-                        </nav> */}
                         <div className="logoPlaceholder">
                             <img src={logo} alt="logo" className="logo"/>
                         </div>

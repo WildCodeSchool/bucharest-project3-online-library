@@ -21,7 +21,6 @@ class UserHomePageComplete extends React.Component {
                 :
                     <UserHomeComponent userName = {this.state.userName}/>
                 }
-              
                 <Footer />
             </React.Fragment>
         );

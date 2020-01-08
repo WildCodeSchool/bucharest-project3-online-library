@@ -53,8 +53,6 @@ class PersonalProfile extends Component {
       <div className="pp-container">
         <div className="leftSide">
           <div className="pp-base">
-            {/* <div className="pp-main" >
-                            <div className="container-fluid pp-headerMain"> */}
             <form className="pp-formMain" autoComplete="off">
               <div className="pp-column">
                 <TextField
@@ -63,7 +61,6 @@ class PersonalProfile extends Component {
                   margin="normal"
                   variant="filled"
                   value={this.state.nume}
-                  // onChange={this.handleChange('nume')}
                 />
                
                 <TextField
@@ -72,7 +69,6 @@ class PersonalProfile extends Component {
                   margin="normal"
                   variant="filled"
                   value={this.state.prenume}
-                  // onChange={this.handleChange('prenume')}
                 />
 
                 <TextField
@@ -82,7 +78,6 @@ class PersonalProfile extends Component {
                   margin="normal"
                   variant="filled"
                   value={this.state.email}
-                  // onChange={this.handleChange('email')}
                 />
 
                 <TextField
@@ -91,7 +86,6 @@ class PersonalProfile extends Component {
                   margin="normal"
                   variant="filled"
                   value={this.state.judetul}
-                  // onChange={this.handleChange('judetul')}
                 />
     
 
@@ -101,7 +95,6 @@ class PersonalProfile extends Component {
                   margin="normal"
                   variant="filled"
                   value={this.state.centrul}
-                  // onChange={this.handleChange('centrul')}
                 />
       
                 <TextField
@@ -110,7 +103,6 @@ class PersonalProfile extends Component {
                   margin="normal"
                   variant="filled"
                   value={this.state.contractului}
-                  // onChange={this.handleChange('contractului')}
                 />
               
                 <TextField
@@ -119,7 +111,6 @@ class PersonalProfile extends Component {
                   margin="normal"
                   variant="filled"
                   value={this.state.dataSemnarii}
-                  // onChange={this.handleChange('dataSemnarii')}
                 />
                 
                 <TextField
@@ -128,7 +119,6 @@ class PersonalProfile extends Component {
                   margin="normal"
                   variant="filled"
                   value={this.state.telefon}
-                  // onChange={this.handleChange('numarTelefon')}
                 />
                 </div>
             </form>
@@ -146,7 +136,6 @@ class PersonalProfile extends Component {
                   type="text"
                   placeholder="Search.."
                   name="search"
-                  // style={{width: '100%'}}
                 />
                 <button className="searchBtn" type="submit">
                   <img src={icon} alt="search" />

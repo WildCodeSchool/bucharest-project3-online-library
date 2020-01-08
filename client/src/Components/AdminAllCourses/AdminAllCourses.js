@@ -96,7 +96,7 @@ class AdminAllCourses extends React.Component{
                         textCard={item.textCard}
                         keywordsCard={item.keywordsCard}
                         date={item.date}
-                        admin={true}
+                        admin={this.props.admin}
                         i={index}
                         toDelete={this.cardToDeleteFromBtn}
                         />
@@ -118,7 +118,7 @@ class AdminAllCourses extends React.Component{
                 <Navbar admin={this.props.admin} />
                 <div className='AdminAllCoursesTitle'>
                     <h1>Toate cursurile</h1>
-                    <CourseModal />
+                    {this.props.admin ? <CourseModal/> : false}
                 </div>
                 {/* <div className='AdminAllCoursesAddBtn'>
                     {this.AddCards()}

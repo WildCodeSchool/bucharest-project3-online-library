@@ -4,6 +4,7 @@
     flex-grow: 1;
     overflow: auto;
     min-height: 2em;
+    margin-bottom: 60px;
 }
 
 .pp-base {
@@ -130,6 +131,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 8px;
 }
 
 .rightSide .profileCourseCardMain {
@@ -138,6 +140,6 @@
 }
 
 .cardsWrapper {
-    display: flex;
-    flex-direction: column;
+    height: 650px;
+    overflow: auto;
 }

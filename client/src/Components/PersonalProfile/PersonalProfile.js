@@ -30,6 +30,16 @@ const courses = [
     chapterTitle: "Love",
     courseTitle: "How to..",
     courseLink: "http//.dasdadasdfdsadasrewtre241324a"
+  },
+  {
+    chapterTitle: "Love",
+    courseTitle: "How to..",
+    courseLink: "http//.dasdadasdfdsadasrewtre241324a"
+  },
+  {
+    chapterTitle: "Love",
+    courseTitle: "How to..",
+    courseLink: "http//.dasdadasdfdsadasrewtre241324a"
   }
 ];
 

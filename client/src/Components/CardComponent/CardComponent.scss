@@ -79,13 +79,17 @@ $withTablet: 1280px;
     margin: 1em 0;
 }
 
+.MuiButton-root {
+    min-width: 130px!important;
+}
+
 .completedButton {
     &.MuiButton-colorInherit {
         background-color: $colorSilver; 
     }
     &.MuiButton-text {
         color: $colorWhite;
-        font-size: 1rem;
+        font-size: 0.8rem;
     }  
     .MuiButton-label {
         padding: .143em;

@@ -22,7 +22,7 @@ class Filter extends React.Component{
             completed : false,
             nonCompleted : false,
 
-            filterDisplay :'none'
+            filterDisplay :'block'
         }
     }
 

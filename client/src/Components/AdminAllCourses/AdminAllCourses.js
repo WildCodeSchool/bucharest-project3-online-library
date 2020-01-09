@@ -85,7 +85,7 @@ class AdminAllCourses extends React.Component{
 
     AddCards = () => {
         return this.props.admin ?
-            <h2>&#9998;</h2> : null
+            <h2 className="penLogo">&#9998;</h2> : null
     }
     NewCards = () => {
         return this.state.latestCourses.map((item, index) => {
@@ -120,9 +120,6 @@ class AdminAllCourses extends React.Component{
                     <h1>Toate cursurile</h1>
                     {this.props.admin ? <CourseModal/> : false}
                 </div>
-                {/* <div className='AdminAllCoursesAddBtn'>
-                    {this.AddCards()}
-                </div> */}
                 <div className='AdminAllCoursesFilter'>
                     <Filter />
                 </div>

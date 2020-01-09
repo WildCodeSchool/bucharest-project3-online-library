@@ -4,6 +4,7 @@ import "./CardComponent.scss";
 import Button from "@material-ui/core/Button";
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
+import CompletedComp from '../../Components/CompletedCourseModal/CompletedCourseModal';
 
 class CardComponent extends React.Component {
   constructor(props) {
@@ -13,7 +14,8 @@ class CardComponent extends React.Component {
       disabled: true,
       isCompleted: false,
       buttonValue: 'NOT COMPLETED', 
-      admin: false
+      admin: false,
+      openModal: false
     };
   }
 
@@ -27,7 +29,8 @@ class CardComponent extends React.Component {
   handleCompletedButton = () => {
     if(this.state.buttonValue === 'NOT COMPLETED') {
       this.setState({
-        buttonValue: 'COMPLETED'
+        buttonValue: 'COMPLETED',
+        openModal: true
       })
     }
   }
@@ -67,6 +70,7 @@ class CardComponent extends React.Component {
               </Button>
             </div>
           </div>
+          <CompletedComp OpenModal={this.state.openModal}/>
         </div>
     );
   }

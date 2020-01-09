@@ -15,7 +15,8 @@ class CardComponent extends React.Component {
       isCompleted: false,
       buttonValue: 'NOT COMPLETED', 
       admin: false,
-      openModal: false
+      openModal: false,
+      toDelete: false
     };
   }
 
@@ -35,16 +36,22 @@ class CardComponent extends React.Component {
     }
   }
 
+  deleteCourse = () => {
+    this.setState({
+      toDelete : true
+    })
+  }
+
   render() {
     return (
-        <div className='cardContainer'>
+        <div className='cardContainer' style={{display : this.state.toDelete ? 'none' : 'block'}}>
           <div
             className="headerCard"
             style={{ backgroundColor: this.props.headerColor }}
           >
   <span className="chapterTitle">{this.props.chapterCard}</span>
             <IconButton aria-label="delete" className='deleteButton'>
-              <DeleteIcon className='deleteIcon' style={this.props.admin ? {} : { display: 'none' }}/>
+              <DeleteIcon className='deleteIcon' style={this.props.admin ? {} : { display: 'none' }} onClick={this.deleteCourse}/>
             </IconButton>
           </div>
           <div className="cardInfoWrapper">

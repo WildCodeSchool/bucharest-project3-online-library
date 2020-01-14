@@ -13,21 +13,25 @@ class CardComponent extends React.Component {
       disabled: true,
       isCompleted: false,
       buttonValue: 'NOT COMPLETED', 
-      admin: false
+      admin: false,
+      buttonColor: 'inherit',
+      classButton: 'uncompletedButton'
     };
   }
 
   handleButtonCourseLink = () => {
     this.setState({ 
       isCompleted: true,
-      disabled: false
+      disabled: false,
+      classButton: 'completedButton'
     })
   }
 
   handleCompletedButton = () => {
     if(this.state.buttonValue === 'NOT COMPLETED') {
       this.setState({
-        buttonValue: 'COMPLETED'
+        buttonValue: 'COMPLETED',
+        classButton: "completedButtonGreen"
       })
     }
   }
@@ -59,8 +63,8 @@ class CardComponent extends React.Component {
                 Course Link
               </Button>
               <Button
-                color="inherit"
-                className="completedButton"
+                color='inherit'
+                className={this.state.classButton} 
                 onClick={this.handleCompletedButton}
                 disabled={this.state.disabled}
               >

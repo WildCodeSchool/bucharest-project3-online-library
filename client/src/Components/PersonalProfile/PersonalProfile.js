@@ -30,6 +30,16 @@ const courses = [
     chapterTitle: "Love",
     courseTitle: "How to..",
     courseLink: "http//.dasdadasdfdsadasrewtre241324a"
+  },
+  {
+    chapterTitle: "Love",
+    courseTitle: "How to..",
+    courseLink: "http//.dasdadasdfdsadasrewtre241324a"
+  },
+  {
+    chapterTitle: "Love",
+    courseTitle: "How to..",
+    courseLink: "http//.dasdadasdfdsadasrewtre241324a"
   }
 ];
 
@@ -52,6 +62,7 @@ class PersonalProfile extends Component {
     return (
       <div className="pp-container">
         <div className="leftSide">
+          <h1>Detalii profil</h1>
           <div className="pp-base">
             <form className="pp-formMain" autoComplete="off">
               <div className="pp-column">
@@ -107,7 +118,7 @@ class PersonalProfile extends Component {
               
                 <TextField
                   id="filled-required"
-                  label="Data semnarii contractului de voluntar"
+                  label="Data semnarii contractului"
                   margin="normal"
                   variant="filled"
                   value={this.state.dataSemnarii}
@@ -122,8 +133,6 @@ class PersonalProfile extends Component {
                 />
                 </div>
             </form>
-            {/* </div>
-                        </div> */}
           </div>
         </div>
 
@@ -134,7 +143,7 @@ class PersonalProfile extends Component {
                 <input
                   className="searchField"
                   type="text"
-                  placeholder="Search.."
+                  placeholder="Cauta in toate cursurile.."
                   name="search"
                 />
                 <button className="searchBtn" type="submit">

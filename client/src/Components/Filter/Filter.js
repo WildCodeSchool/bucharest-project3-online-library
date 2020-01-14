@@ -68,16 +68,16 @@ class Filter extends React.Component{
         return(
             <div className="filterMain">
                 <button onClick={this.showFilter} className="filterBtn">
-                    <this.FilterArrow /> Filter
+                    <this.FilterArrow /> Filtru
                 </button>
 
                 <form action="">
                     <div className="row filterRow" style={{display: this.state.filterDisplay}}>
                         <div className="filterTop">
-                        <TextField id="outlined-basic" label="Keywords" value={this.state.keyword} className="filterInput" variant="outlined" onChange={this.handleChangeKeyword}/>
-                        <TextField id="outlined-basic" label="Title" value={this.state.title} className="filterInput filterInputCenter" variant="outlined" onChange={this.handleChangeTitle}/>
+                        <TextField id="outlined-basic" label="Cuvinte cheie" value={this.state.keyword} className="filterInput" variant="outlined" onChange={this.handleChangeKeyword}/>
+                        <TextField id="outlined-basic" label="Titlu" value={this.state.title} className="filterInput filterInputCenter" variant="outlined" onChange={this.handleChangeTitle}/>
                         <FormControl className="filterInput">
-                            <InputLabel id="categoryLabel">Category</InputLabel>
+                            <InputLabel id="categoryLabel">Categorie</InputLabel>
                             <Select
                                     labelId="demo-simple-select-autowidth-label"
                                     id="demo-simple-select-autowidth"
@@ -118,7 +118,7 @@ class Filter extends React.Component{
                                             onChange={this.handleChangeCompleted} 
                                             value="Completed" 
                                             color="primary" />} 
-                                            label="Completed" 
+                                            label="Completat" 
                                         />
                                 <FormControlLabel className="checkboxInput"
                                     control={
@@ -127,7 +127,7 @@ class Filter extends React.Component{
                                             onChange={this.handleChangeNonCompleted} 
                                             value="Non-Completed" 
                                             color="primary" />} 
-                                            label="Non-Completed" 
+                                            label="Necompletat" 
                                     />
                             </div>
                         </div>

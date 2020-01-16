@@ -1,20 +1,20 @@
 .main header {
-    width:100%;
+    width: 100%;
     height: 70px;
     background: #75B1A9;
     margin: 0;
     box-shadow: 0px 2px 4px grey;
-  }
-  
-  .headerMain{
-    width:100%;
+}
+
+.headerMain {
+    width: 100%;
     height: 70px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-  }
-  
-  .headerNav{
+}
+
+.headerNav {
     width: 20%;
     height: 70px;
     display: flex;
@@ -22,18 +22,18 @@
     justify-content: space-around;
     align-items: center;
     font-size: 20px;
-  }
-  
-  .headerNav a {
+}
+
+.headerNav a {
     color: #FFFFFF;
     text-decoration: none;
-  }
-  
-  .headerNav a:hover {
-    text-decoration: underline;
-  }
+}
 
-  .logo {
+.headerNav a:hover {
+    text-decoration: underline;
+}
+
+.logo {
     display: block;
     float: right;
     font-size: 3em;
@@ -41,60 +41,58 @@
     text-decoration: none;
     height: 1.3em!important;
 }
-  
-  .logoPlaceholder{
+
+.logoPlaceholder {
     width: 20%;
     height: 70px;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  .signUpTitle h1{
+}
+
+.signUpTitle h1 {
     font-size: 45px;
     text-align: center;
-  }
-  
-  .signUpInput{
+}
+
+.signUpInput {
     width: 544px;
     margin-top: 29px!important;
     font-size: 28px!important;
-  }
-  
-  .signUpInputLeft{
+}
+
+.signUpInputLeft {
     margin-right: 15px!important;
-  }
-  
-  .signUpInputRight{
+}
+
+.signUpInputRight {
     margin-left: 15px!important;
-  }
-  
-  .signUpBtnContainer{
+}
+
+.signUpBtnContainer {
     margin-top: 90px;
-  
-  }
-  
-  .signUpBtnContainer button{
+}
+
+.signUpBtnContainer button {
     background: #FA5457;
     width: 10%;
     height: 65px;
     border-radius: 20px;
-    color:#FFF;
+    color: #FFF;
     font-size: 2.3rem;
     font-weight: bold;
     box-shadow: 0px 5px 7px grey;
     cursor: pointer;
-  }
-  
-  .signUpBtnContainer button:hover{
+}
+
+.signUpBtnContainer button:hover {
     background: #FFF;
     width: 674px;
     height: 65px;
     border-radius: 20px;
-    color:#FA5457;
+    color: #FA5457;
     transition-duration: 250ms;
-  
-  }
+}
 
 //   MOBILE DISPLAY STYLING
 @media only screen and (max-width: 768px) {
@@ -102,84 +100,71 @@
         width: 100vw;
     }
     .main header {
-        width:100%;
+        width: 100%;
         height: 55px;
         background: #75B1A9;
         margin: 0;
         box-shadow: 0px 2px 4px grey;
-      }
-      
-      .headerMain{
-        width:100%;
+    }
+    .headerMain {
+        width: 100%;
         height: 55px;
-      }
-      
-      .headerNav{
+    }
+    .headerNav {
         display: none;
-      }
-      
-      .headerNav a {
+    }
+    .headerNav a {
         color: #FFFFFF;
         text-decoration: none;
-      }
-      
-      .headerNav a:hover {
+    }
+    .headerNav a:hover {
         text-decoration: underline;
-      }
-      
-      .logoPlaceholder{
+    }
+    .logoPlaceholder {
         width: 100%;
         height: 55px;
         display: flex;
         justify-content: center;
         align-items: center;
-      }
-      
-      .signUpTitle h1{
+    }
+    .signUpTitle h1 {
         font-size: 2rem;
-      }
-      
-      .signUpInput{
+    }
+    .signUpInput {
         width: 90%;
         height: 50px;
         margin-top: 15px!important;
         margin-bottom: 0px;
-      }
-      
-      .signUpInputLeft{
+    }
+    .signUpInputLeft {
         margin-right: 0px!important;
-      }
-      
-      .signUpInputRight{
+    }
+    .signUpInputRight {
         margin-left: 0px!important;
-      }
-      
-      .signUpBtnContainer{
+    }
+    .signUpBtnContainer {
         margin-top: 40px;
         margin-bottom: 40px;
-      }
-      
-      .signUpBtnContainer button{
+    }
+    .signUpBtnContainer button {
         background: #FA5457;
         width: 80%;
         height: 65px;
         border-radius: 20px;
-        color:#FFF;
+        color: #FFF;
         font-size: 1.7rem;
         font-weight: 600;
         box-shadow: 0px 5px 7px grey;
         cursor: pointer;
-      
-      }
-      
-      .signUpBtnContainer button:hover{
+    }
+    .signUpBtnContainer button:hover {
         background: #FFF;
         width: 80%;
         height: 65px;
         border-radius: 20px;
-        color:#FA5457;
+        color: #FA5457;
         transition-duration: 250ms;
-      }
+    }
 }
 
 @media only screen and (min-width: 768px) {
@@ -187,81 +172,69 @@
         width: 100vw;
     }
     .main header {
-        width:100%;
+        width: 100%;
         height: 55px;
         background: #75B1A9;
         margin: 0;
         box-shadow: 0px 2px 4px grey;
-      }
-      
-      .headerMain{
-        width:100%;
+    }
+    .headerMain {
+        width: 100%;
         height: 55px;
-      }
-      
-      .headerNav{
+    }
+    .headerNav {
         display: none;
-      }
-      
-      .headerNav a {
+    }
+    .headerNav a {
         color: #FFFFFF;
         text-decoration: none;
-      }
-      
-      .headerNav a:hover {
+    }
+    .headerNav a:hover {
         text-decoration: underline;
-      }
-      
-      .logoPlaceholder{
+    }
+    .logoPlaceholder {
         width: 100%;
         height: 55px;
         display: flex;
         justify-content: center;
         align-items: center;
-      }
-      
-      .signUpTitle h1{
+    }
+    .signUpTitle h1 {
         font-size: 2.8rem;
-      }
-      
-      .signUpInput{
+    }
+    .signUpInput {
         width: 36%;
         height: 50px;
         margin-top: 15px!important;
         margin-bottom: 0px;
-      }
-      
-      .signUpInputLeft{
+    }
+    .signUpInputLeft {
         margin-right: 2%!important;
-      }
-      
-      .signUpInputRight{
+    }
+    .signUpInputRight {
         margin-left: 2%!important;
-      }
-      
-      .signUpBtnContainer{
+    }
+    .signUpBtnContainer {
         margin-top: 90px;
         margin-bottom: 40px;
-      }
-      
-      .signUpBtnContainer button{
+    }
+    .signUpBtnContainer button {
         background: #FA5457;
         width: 35%;
         height: 65px;
         border-radius: 20px;
-        color:#FFF;
+        color: #FFF;
         font-size: 1.7rem;
         font-weight: 600;
         box-shadow: 0px 5px 7px grey;
         cursor: pointer;
-      }
-      
-      .signUpBtnContainer button:hover{
+    }
+    .signUpBtnContainer button:hover {
         background: #FFF;
         width: 46%;
         height: 65px;
         border-radius: 20px;
-        color:#FA5457;
+        color: #FA5457;
         transition-duration: 250ms;
-      }
+    }
 }

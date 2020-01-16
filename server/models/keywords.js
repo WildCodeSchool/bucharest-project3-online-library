@@ -2,11 +2,10 @@
 module.exports = (sequelize, DataTypes) => {
   const Keywords = sequelize.define('Keywords', {
     keywordId: 
-    { type: sequelize.INTEGER,
+    { type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true
     },
-
     keyword_text: DataTypes.STRING
   }, {});
   Keywords.associate = function(models) {

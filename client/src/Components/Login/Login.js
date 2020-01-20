@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField';
 import {Link} from 'react-router-dom';
-import logo from '../../am-logo-retina.png'
+import logo from '../../assets/images/logo.png'
 import './Login.css';
 
 class Login extends Component {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Navbar.scss';
 import { Link } from 'react-router-dom';
-import logo from '../../am-logo-retina.png'
+import logo from '../../assets/images/logo.png';
 
 
 class Navbar extends Component {
@@ -9,7 +9,7 @@ class Navbar extends Component {
         return (
 
             <header class="header">
-                <img src={logo} alt="logo" className="logo"/>
+                <img src={logo} alt="" className="logo"/>
                 <input class="menu-btn" type="checkbox" id="menu-btn" />
                 <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
                 {this.props.home ? 

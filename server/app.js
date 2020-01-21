@@ -10,8 +10,10 @@ const LocalStrategy = require('passport-local');
 const JWTStrategy = require('passport-jwt').Strategy,
         ExtractJwt = require('passport-jwt').ExtractJwt;
 const bcrypt = require('bcrypt')
+const cors = require('cors')
 
-const port = 3000
+const port = 5000
+app.use(cors())
 
 passport.use(new LocalStrategy(
     {
@@ -73,5 +75,5 @@ app.use((req, res, next) => {
 
 models
     .sequelize
-    .sync({force:true})
+    .sync()
     .then(() => app.listen(port, () => console.log(`Server listening on port ${port}. Message from sync()`)))

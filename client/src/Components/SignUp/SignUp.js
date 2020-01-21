@@ -1,6 +1,9 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
-import logo from '../../am-logo-retina.png'
+import logo from '../../am-logo-retina.png';
+import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
+
 import './SignUp.css';
 
 class SignUp extends React.Component{
@@ -34,6 +37,30 @@ class SignUp extends React.Component{
         : this.setState({ parolaConfirmed :false})
     }
 
+    handleSubmit = (e) => {
+        e.preventDefault()
+        fetch('http://localhost:5000/auth/signup', 
+        {
+            method : 'POST',
+            headers: new Headers({
+                'Content-Type' : 'application/json'
+            }),
+            body: JSON.stringify(this.state)
+        })
+        .then(res => res.json())
+        .then(res => {
+        //     this.setState({
+        //     flash: res.message
+        // });
+        console.log(res.message)
+        console.log(this.props.history)
+            this.props.history.replace('/')
+        })
+        .catch(err => this.setState({
+            flash:err.message
+        }))
+    }
+ 
     render(){
         return(
             <div className="main">
@@ -171,9 +198,9 @@ class SignUp extends React.Component{
                         </div>
                     </div>
                     <div className="signUpBtnContainer">
-                        <button label="Submit" type="submit">
-                            Inscriere
-                        </button>
+                            <button label="Submit" type="submit" onClick={this.handleSubmit}>
+                                Inscriere
+                            </button>
                     </div>
                 </form>
             </div>
@@ -181,4 +208,4 @@ class SignUp extends React.Component{
     }
 }
 
-export default SignUp;
+export default withRouter(SignUp);

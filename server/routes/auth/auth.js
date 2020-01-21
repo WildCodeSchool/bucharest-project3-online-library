@@ -16,26 +16,26 @@ router.post('/signin', function(req, res, next) {
 
 router.post('/signup', function(req, res, next) {
     let post = {
-        firstname: req.body.firstname,
-        lastname: req.body.lastname,
-        phonenumber: req.body.phonenumber,
-        password: bcrypt.hashSync(req.body.password, 5),
+        firstname: req.body.nume,
+        lastname: req.body.nume,
+        phonenumber: req.body.numarTelefon,
+        password: bcrypt.hashSync(req.body.parola, 10),
         email: req.body.email,
-        volunteering_county: req.body.volunteering_county,
-        volunteering_center: req.body.volunteering_center,
-        contract_number: req.body.contract_number,
-        signing_date: req.body.signing_date,
-        date_joined: req.body.date_joined,
-        access_level: req.body.access_level,
-        status: req.body.status
+        volunteering_county: req.body.judetul,
+        volunteering_center: req.body.centrul,
+        contract_number: req.body.contractului,
+        signing_date: req.body.dataSemnarii,
+        date_joined: Date(),
+        access_level: true,
+        status: true
     };
     models
         .Users
         .create(post)
         .then(user =>
-            res.status(200).json({ flash: "User signed up"})
+            res.status(200).json({ message: "User signed up"})
         )
-        .catch(err => res.status(500).json({ flash: err.message }))
+        .catch(err => res.status(500).json({ message: err.message }))
 })
 
 module.exports = router

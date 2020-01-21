@@ -1,6 +1,6 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
-import logo from '../../am-logo-retina.png'
+import logo from '../../assets/images/logo.png';
 import './SignUp.css';
 
 class SignUp extends React.Component{

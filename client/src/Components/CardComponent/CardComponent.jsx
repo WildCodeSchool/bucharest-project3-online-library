@@ -32,6 +32,7 @@ class CardComponent extends React.Component {
 
   handleCompletedButton = () => {
     if(this.state.buttonValue === 'NOT COMPLETED') {
+      fetch('/', )
       this.setState({
         buttonValue: 'COMPLETED',
         openModal: true,

@@ -91,6 +91,10 @@ button:focus {
   overflow-y: auto;
 }
 
+.MuiFilledInput-root input {
+  font-size: 1.5rem;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }
@@ -137,10 +141,10 @@ button:focus {
   height: 55px;
   border: none;
   margin-top: 10px !important;
-  border-bottom: rgba(0, 0, 0, 0.562) solid 1px;
-  border-radius: 4px 4px 0 0;
+  border-radius: 4px;
   background-color: rgba(216, 211, 211, 0.527);
   font-size: 1rem;
+  font-weight: 800;
   padding: 12px 12px 10px;
   color: rgba(0, 0, 0, 0.54) !important;
 }
@@ -151,5 +155,24 @@ button:focus {
 
 .dropdown:focus {
   outline: none;
+}
+
+.row label {
+  font-size: 1.2rem;
+}
+
+.newCategoryByAdminDiv {
+  border: none;
+  margin-top: 10px !important;
+  border-radius: 4px;
+  background-color: rgba(216, 211, 211, 0.527);
+  font-size: 1rem;
+  font-weight: 800;
+  padding: 12px 12px 10px;
+  color: rgba(0, 0, 0, 0.54) !important;
+}
+
+#NewCategoryByAdmin {
+  font-size: 1.5rem;
 }
 /*# sourceMappingURL=CourseModal.css.map */

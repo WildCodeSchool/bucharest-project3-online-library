@@ -16,13 +16,13 @@ class Navbar extends Component {
                 <input class="menu-btn" type="checkbox" id="menu-btn" />
                 <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
                 <ul class="menu">
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/courses">Courses</Link></li>
+                    <li><Link to="/">Acasa</Link></li>
+                    <li><Link to="/courses">Cursuri</Link></li>
                     <li class="dropdown">
-                         <a href="javascript:void(0)" class="dropbtn">Profile</a>
+                         <a href="javascript:void(0)" class="dropbtn">Profil</a>
                     <div class="dropdown-content">
-                        <Link to="/profile">My Profile</Link>
-                        <Link to="/profile">Sign Out</Link>
+                        <Link to="/profile">Profilul Meu</Link>
+                        <Link to="/profile">Delogare</Link>
                     </div>
                     </li>
                 </ul>

@@ -18,13 +18,17 @@ class Login extends Component {
                         </div>
                     </div>
                 </header>
-                <div>
+                
+                <div className="loginPage">
+                    
                     <div className="childrenImage"> 
                         <img src={children} alt="" className="childrenImage"/>
                     
-                    
                     </div>
-             <div>  <form className='page' action="action_page.php" method="post" className="formMain" autoComplete="off">
+            
+                <div className="form">
+                 
+                <form className='page' action="action_page.php" method="post" className="formMain" autoComplete="off">
 
                     <div className="logInTitle">
                         <h1>Autentificare</h1>
@@ -79,9 +83,14 @@ class Login extends Component {
                     </div>
                     
                     </form>
-                    </div>
+                </div>
+
+
                </div>
-            </div>
+
+        </div>
+            
+           
         )
     }
 }

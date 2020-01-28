@@ -17,13 +17,13 @@ router.post('/signin', function(req, res, next) {
 router.post('/signup', function(req, res, next) {
     let post = {
         firstname: req.body.nume,
-        lastname: req.body.nume,
+        lastname: req.body.prenume,
         phonenumber: req.body.numarTelefon,
         password: bcrypt.hashSync(req.body.parola, 10),
         email: req.body.email,
         volunteering_county: req.body.judetul,
         volunteering_center: req.body.centrul,
-        contract_number: req.body.contractului,
+        contract_number: req.body.nrcontractului,
         signing_date: req.body.dataSemnarii,
         date_joined: Date(),
         access_level: true,

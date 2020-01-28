@@ -6,11 +6,16 @@ const app = express();
 const authRoutes = require('./routes/auth/auth');
 const models = require('./models');
 const passport = require('passport');
+
 const LocalStrategy = require('passport-local');
-const JWTStrategy = require('passport-jwt').Strategy,
-        ExtractJwt = require('passport-jwt').ExtractJwt;
+const JWTStrategy = require('passport-jwt').Strategy;
+const ExtractJwt = require('passport-jwt').ExtractJwt;
+
+
 const bcrypt = require('bcrypt')
 const cors = require('cors')
+
+
 
 const port = 5000
 app.use(cors())

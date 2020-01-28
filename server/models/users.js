@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
     volunteering_county: DataTypes.STRING,
     volunteering_center: DataTypes.STRING,
     contract_number: DataTypes.INTEGER,
-    signing_date: DataTypes.INTEGER,
+    signing_date: DataTypes.DATE,
     date_joined: DataTypes.DATE,
     access_level: DataTypes.BOOLEAN,
     status: DataTypes.BOOLEAN

@@ -20,7 +20,8 @@ class SignUp extends React.Component{
                     dataSemnarii: '',
                     parola: '',
                     parolaConfirmed: false,
-                    id: 0
+                    id: 0,
+                    flash:''
                 }
     }
 
@@ -39,7 +40,7 @@ class SignUp extends React.Component{
 
     handleSubmit = (e) => {
         e.preventDefault()
-        fetch('http://localhost:5000/auth/signup', 
+        fetch('auth/signup',
         {
             method : 'POST',
             headers: new Headers({

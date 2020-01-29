@@ -4,6 +4,7 @@ import logo from '../../am-logo-retina.png';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 
+import logo from '../../assets/images/logo.png';
 import './SignUp.css';
 
 class SignUp extends React.Component{

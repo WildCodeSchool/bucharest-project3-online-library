@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField';
 import {Link} from 'react-router-dom';
-import logo from '../../assets/images/logo.png'
+import logo from '../../assets/images/logo.png';
+import children from '../../assets/images/children.png';
 import './Login.css';
 
 class Login extends Component {
@@ -17,8 +18,13 @@ class Login extends Component {
                         </div>
                     </div>
                 </header>
-
-                <form className='page' action="action_page.php" method="post" className="formMain" autoComplete="off">
+                <div>
+                    <div className="childrenImage"> 
+                        <img src={children} alt="" className="childrenImage"/>
+                    
+                    
+                    </div>
+             <div>  <form className='page' action="action_page.php" method="post" className="formMain" autoComplete="off">
 
                     <div className="logInTitle">
                         <h1>Autentificare</h1>
@@ -73,7 +79,8 @@ class Login extends Component {
                     </div>
                     
                     </form>
-               
+                    </div>
+               </div>
             </div>
         )
     }

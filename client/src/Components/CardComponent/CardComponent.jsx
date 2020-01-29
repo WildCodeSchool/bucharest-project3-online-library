@@ -13,7 +13,7 @@ class CardComponent extends React.Component {
       headerColor: "#FA5457",
       disabled: true,
       isCompleted: false,
-      buttonValue: 'NOT COMPLETED', 
+      buttonValue: 'Mark as completed', 
       admin: false,
       openModal: false,
       toDelete: false,
@@ -31,7 +31,7 @@ class CardComponent extends React.Component {
   }
 
   handleCompletedButton = () => {
-    if(this.state.buttonValue === 'NOT COMPLETED') {
+    if(this.state.buttonValue === 'Mark as completed') {
       fetch('/', )
       this.setState({
         buttonValue: 'COMPLETED',

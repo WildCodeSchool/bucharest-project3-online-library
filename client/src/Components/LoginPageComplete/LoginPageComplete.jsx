@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Login from '../Login/Login';
+import Login from '../../Containers/Login/Login';
 import Footer from '../Footer/Footer';
 
 class LoginPageComplete extends React.Component {

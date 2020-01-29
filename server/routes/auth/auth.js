@@ -16,7 +16,7 @@ router.post('/signin', function(req, res, next) {
 
 router.post('/signup', function(req, res, next) {
     let post = {
-        firstname: req.body.nume,
+        firstname: req.body.prenume,
         lastname: req.body.nume,
         phonenumber: req.body.numarTelefon,
         password: bcrypt.hashSync(req.body.parola, 10),
@@ -25,7 +25,7 @@ router.post('/signup', function(req, res, next) {
         volunteering_center: req.body.centrul,
         contract_number: req.body.contractului,
         signing_date: req.body.dataSemnarii,
-        date_joined: Date(),
+        // date_joined: Date(),
         access_level: true,
         status: true
     };

@@ -1,18 +1,21 @@
 import React from 'react';
 
-import Navbar from '../NavbarComponent/Navbar';
-import UserHomeComponent from '../UserHomeComponent/UserHomeComponent';
-import Footer from '../Footer/Footer';
+import Navbar from '../../Components/NavbarComponent/Navbar';
+import UserHomeComponent from '../../Components/UserHomeComponent/UserHomeComponent';
+import Footer from '../../Components/Footer/Footer';
+
+import { connect } from 'react-redux'
 
 class UserHomePageComplete extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-          userName: 'Emilia',
+          userName: this.props.auth.firstname,
         };
       }
 
     render(){
+        console.log(this.props.auth.firstname)
         return(
             <React.Fragment>
                 <Navbar admin={this.props.admin}/>
@@ -27,4 +30,10 @@ class UserHomePageComplete extends React.Component {
     }
 }
 
-export default UserHomePageComplete;
+function mapStateToProps(state) {
+    return {
+        auth: state.auth
+    }
+}
+
+export default connect(mapStateToProps) (UserHomePageComplete);

@@ -92,10 +92,29 @@ class AllUsersTable extends React.Component{
 ]
 
   componentDidMount(){
-    axios.get('http://localhost:3000/results')
+    axios.get('auth/users')
       .then(res => {
+        let userArray = [];
+        res.data.forEach(user => {
+          let userObject = {
+            id: user.id,
+            prenume: user.lastname,
+            nume: user.firstname,
+            judetul:user.volunteering_county,
+            centrul:user.volunteering_center
+          }
+          userArray.push(userObject)
+
+        })
+        // let userObject = {
+        //   id: res.data.id,
+        //   prenume: res.data.lastname,
+        //   nume: res.data.firstname,
+        //   judetul:res.data.volunteering_county,
+        //   centrul:res.data.volunteering_center
+        // }
         this.setState({
-          products: res.data,
+          products: userArray
         });
       });
   }

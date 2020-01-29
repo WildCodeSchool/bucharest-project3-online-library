@@ -38,4 +38,11 @@ router.post('/signup', function(req, res, next) {
         .catch(err => res.status(500).json({ message: err.message }))
 })
 
+router.get('/users', (req,res) => 
+   models
+   .Users
+   .findAll()
+   .then(users => res.json(users))
+)
+
 module.exports = router

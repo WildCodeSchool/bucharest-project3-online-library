@@ -51,9 +51,6 @@ class SignUp extends React.Component{
         })
         .then(res => res.json())
         .then(res => {
-        //     this.setState({
-        //     flash: res.message
-        // });
         console.log(res.message)
         console.log(this.props.history)
             this.props.history.replace('/')
@@ -62,7 +59,6 @@ class SignUp extends React.Component{
             flash:err.message
         }))
     }
- 
     render(){
         return(
             <div className="main">

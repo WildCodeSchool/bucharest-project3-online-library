@@ -5,9 +5,9 @@ import '../src/Components/UserHomeComponent/UserHomeComponent';
 
 import Navbar from './Components/NavbarComponent/Navbar'
 import LoginPageComplete from '../src/Components/LoginPageComplete/LoginPageComplete';
-import UserHomePageComplete from '../src/Components/UserHomePageComplete/UserHomePageComplete';
+import UserHomePageComplete from '../src/Containers/UserHomePageComplete/UserHomePageComplete';
 import SignUpPageComplete from '../src/Components/SignUpPageComplete/SignUpPageComplete';
-import PersonalProfilePageComplete from './Components/PersonalProfilePageComplete/PersonalProfilePageComplete';
+import PersonalProfilePageComplete from './Containers/PersonalProfilePageComplete/PersonalProfilePageComplete';
 import AdminAllCourses from './Components/AdminAllCourses/AdminAllCourses'
 
 import { Switch, Route } from 'react-router-dom';

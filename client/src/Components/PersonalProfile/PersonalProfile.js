@@ -47,14 +47,14 @@ class PersonalProfile extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      nume: "Popescu",
-      prenume: "Adina",
-      email: "adina.popescu@gmail.com",
-      judetul: "Bucuresti",
-      centrul: "12589",
-      contractului: "12589",
-      dataSemnarii: "01-05-2015",
-      telefon: "0752 522 514"
+      nume: this.props.profile.lastname,
+      prenume: this.props.profile.firstname,
+      email: this.props.profile.email,
+      judetul: this.props.profile.volunteering_county,
+      centrul:this.props.profile.volunteering_center,
+      contractului: this.props.profile.contract_number,
+      dataSemnarii: new Date(this.props.profile.date_joined).toLocaleDateString('en-GB'),
+      telefon: this.props.profile.phonenumber
     };
   }
 

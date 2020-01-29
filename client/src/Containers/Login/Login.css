@@ -1,3 +1,22 @@
+.psw {
+    padding: 9px;
+}
+
+.loginPage {
+    position: relative;
+    flex-direction: column;
+}
+
+.childrenImage {
+    /* position: absolute; */
+    align-self: center;
+    height: 500px;
+}
+
+.form {
+    position: relative;
+}
+
 .container2 {
     padding-top: 16px;
     padding-bottom: 50px;
@@ -6,10 +25,6 @@
     position: relative;
     margin-top: 2%;
     width: 100%;
-}
-
-.psw {
-    padding: 9px;
 }
 
 
@@ -23,6 +38,15 @@
 
 .createAccountAnchor {
     color: blue;
+}
+
+.logo {
+    display: block;
+    float: right;
+    font-size: 5em;
+    padding: 10px 20px;
+    text-decoration: none;
+    height: 1.3em !important;
 }
 
 
@@ -83,6 +107,15 @@
     -ms-flex-align: center;
     align-items: center;
     font-size: 20px;
+}
+
+.logo {
+    display: block;
+    float: right;
+    font-size: 5em;
+    padding: 10px 20px;
+    text-decoration: none;
+    height: 1.3em !important;
 }
 
 .logoPlaceholder {

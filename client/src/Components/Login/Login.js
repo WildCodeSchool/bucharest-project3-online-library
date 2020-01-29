@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField';
 import {Link} from 'react-router-dom';
 import logo from '../../assets/images/logo.png';
-import children from '../../assets/images/children.png';
+import children from '../../assets/children.png';
 import './Login.css';
 
 class Login extends Component {

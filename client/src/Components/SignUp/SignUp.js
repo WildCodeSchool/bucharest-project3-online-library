@@ -1,6 +1,6 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
-import logo from '../../am-logo-retina.png';
+// import logo from '../../am-logo-retina.png';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 

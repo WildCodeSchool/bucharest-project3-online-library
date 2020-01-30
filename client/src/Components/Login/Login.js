@@ -22,7 +22,7 @@ class Login extends Component {
                 <div className="loginPage">
                     
                     <div className="childrenImage"> 
-                        <img src={children} alt="" className="childrenImage"/>
+                        <img src={children} alt="" className="ChildrenImage"/>
                     
                     </div>
             

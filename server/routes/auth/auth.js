@@ -38,22 +38,6 @@ router.post('/signup', function(req, res, next) {
         .catch(err => res.status(500).json({ message: err.message }))
 })
 
-
-// router.put('/access/:id', (req,res) => {
-//     const userId = req.params.id;
-//     models  
-//        .Users
-//        .findByPk(userId)
-//        .then(user => res.json(user))
-//        .update(
-//          user.access_level === 0 ? {access_level: 1} :
-//         {access_level: 0}
-//        )
-//        .then(() => console.log("LAsagna"));
-
-// })
-
-
 router.put('/access/:level/:id', async function (req, res) {
     let updatedUser = await models.Users.update(
             { access_level: req.params.level }
@@ -95,14 +79,32 @@ router.get('/users/:id', (req,res) =>
  router.get('/completedCourses/:id', (req,res) =>
     models
     .completedCourses
-    .findByPk(req.params.id)
+    .findAll({
+            where: {
+              user_id: req.params.id
+            }
+          })
     .then(completedCoursesid => res.json(completedCoursesid))
  )
 
-router.post('/completedCourses/:id', (req,res) => {
+// router.post('/completedCourses/:id', (req,res) => {
+//     let completedCourse = {
+//         course_id: req.body.id_curs,
+//         user_id: req.body.id_utilizator
+//     };
+//     models
+//         .completedCourses
+//         .create(completedCourse)
+//         .then(cc =>
+//             res.status(200).json({ flash: `Course of id ${req.body.id_curs} was completed by userId ${req.body.id_utilizator}`})
+//         )
+//         .catch(err => res.status(500).json({ flash: err.message }))
+// } )
+
+router.post('/completedCourses', (req,res) => {
     let completedCourse = {
-        course_id: req.body.id_curs,
-        user_id: req.body.id_utilizator
+        course_id: req.body.course_id,
+        user_id: req.body.user_id
     };
     models
         .completedCourses
@@ -112,10 +114,6 @@ router.post('/completedCourses/:id', (req,res) => {
         )
         .catch(err => res.status(500).json({ flash: err.message }))
 } )
-
-    
-
-
 
 router.post('/categories', function(req, res, next) {
     let post = {
@@ -141,6 +139,13 @@ router.post('/courses', function(req, res, next) {
         .create(post)
         .then(newCourse => res.status(200).json({ message : "new courses added"}))
         .catch(err => res.status(500).json({ message: err.message }))
+})
+
+router.get('/courses', function(req, res, next) {
+    models
+        .Courses
+        .findAll()
+        .then(courses => res.status(200).json(courses))
 })
 
 router.get('/categories', function(req, res, next) {

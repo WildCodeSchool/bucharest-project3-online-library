@@ -3,6 +3,7 @@ export default function(state = {}, action) {
         case "CREATE_SESSION":
             return { ...state,
                 token: action.token,
+                id: action.id,
                 email: action.email,
                 password: action.password,
                 firstname: action.firstname,

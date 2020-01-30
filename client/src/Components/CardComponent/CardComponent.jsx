@@ -13,6 +13,7 @@ class CardComponent extends React.Component {
       headerColor: "#FA5457",
       disabled: true,
       isCompleted: false,
+      done: false,
       buttonValue: 'Mark as completed', 
       admin: false,
       openModal: false,
@@ -20,6 +21,25 @@ class CardComponent extends React.Component {
       buttonColor: 'inherit',
       classButton: 'uncompletedButton'
     };
+  }
+
+  componentDidUpdate = () => {
+    console.log(this.props.completedCourses)
+    console.log(this.props.courseId)
+    if(this.props.completedCourses !== undefined) {
+    if(this.props.completedCourses.includes(this.props.courseId) && this.state.done == false) {
+      console.log("this.props.completedCourses == this.props.courseId" + this.props.courseId)
+      this.setState({ 
+        isCompleted: true,
+        disabled: false,
+        classButton: 'completedButton',
+        headerColor: "yellow",
+        done: true,
+          buttonValue: 'COMPLETED',
+          classButton: "completedButtonGreen"
+      })  
+    }
+  }
   }
 
   handleButtonCourseLink = () => {
@@ -31,12 +51,28 @@ class CardComponent extends React.Component {
   }
 
   handleCompletedButton = () => {
+    let courseData = {
+      course_id: this.props.courseId,
+      user_id: this.props.userId
+    }
+    console.log(courseData)
     if(this.state.buttonValue === 'Mark as completed') {
-      fetch('/', )
-      this.setState({
-        buttonValue: 'COMPLETED',
-        openModal: true,
-        classButton: "completedButtonGreen"
+      fetch('/auth/completedCourses', {
+        method: 'POST',
+        headers: new Headers({
+          'Content-type': 'application/json'
+        }),
+        body: JSON.stringify(courseData)
+      })
+      .then(res => {
+        if(res.ok) {
+          return res.json()
+        }
+        else
+          alert("Course couldn't be marked as complete, please try later")
+          this.setState({
+            buttonValue: "Mark as completed"
+          })
       })
     }
   }
@@ -48,42 +84,44 @@ class CardComponent extends React.Component {
   }
 
   render() {
+    console.log("completedCourses : " + this.props.completedCourses)
+    console.log("course id : " + this.props.courseId)
     return (
-        <div className='cardContainer' style={{display : this.state.toDelete ? 'none' : 'block'}}>
-          <div
-            className="headerCard"
-            style={{ backgroundColor: this.props.headerColor }}
-          >
-  <span className="chapterTitle">{this.props.chapterCard}</span>
-            <IconButton aria-label="delete" className='deleteButton'>
-              <DeleteIcon className='deleteIcon' style={this.props.admin ? {} : { display: 'none' }} onClick={this.deleteCourse}/>
-            </IconButton>
-          </div>
-          <div className="cardInfoWrapper">
-            <p className="titleCcard">Titlu</p>
-    <p className="textCard">{this.props.textCard}</p>
-    <p className="keywordsCard">{this.props.keywordsCard}</p>
-    <p className="dateAdded">Adaugat: {this.props.date}</p>
-            <div className="buttonContainer">
-              <Button
-                color="inherit"
-                className='courseLinkButton'
-                onClick={this.handleButtonCourseLink}
-              >
-                Course Link
-              </Button>
-              <Button
-                color="inherit"
-                className={this.state.classButton} 
-                onClick={this.handleCompletedButton}
-                disabled={this.state.disabled}
-              >
-                {this.state.buttonValue}
-              </Button>
-            </div>
-          </div>
-          <CompletedComp OpenModal={this.state.openModal}/>
+      <div className='cardContainer' style={{ display: this.state.toDelete ? 'none' : 'block' }}>
+        <div
+          className="headerCard"
+          style={{ backgroundColor: this.props.headerColor }}
+        >
+          <span className="chapterTitle">{this.props.chapterCard} + "course id is :" +{this.props.courseId}</span>
+          <IconButton aria-label="delete" className='deleteButton'>
+            <DeleteIcon className='deleteIcon' style={this.props.admin ? {} : { display: 'none' }} onClick={this.deleteCourse} />
+          </IconButton>
         </div>
+        <div className="cardInfoWrapper">
+          <p className="titleCcard">{this.props.titleCard}</p>
+          <p className="textCard">{this.props.textCard}</p>
+          <p className="keywordsCard">{this.props.keywordsCard}</p>
+          <p className="dateAdded">Adaugat: {this.props.date}</p>
+          <div className="buttonContainer">
+            <Button
+              color="inherit"
+              className='courseLinkButton'
+              onClick={this.handleButtonCourseLink}
+            >
+              Course Link
+              </Button>
+            <Button
+              color="inherit"
+              className={this.state.classButton}
+              onClick={this.handleCompletedButton}
+              disabled={this.state.disabled}
+            >
+              {this.state.buttonValue}
+            </Button>
+          </div>
+        </div>
+        <CompletedComp OpenModal={this.state.openModal} />
+      </div>
     );
   }
 }

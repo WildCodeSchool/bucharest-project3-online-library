@@ -47,6 +47,7 @@ class Login extends Component {
             })
             this.props.dispatch({
                 type: "CREATE_SESSION",
+                id: res.user.id,
                 email: res.user.email,
                 password: res.user.password,
                 firstname: res.user.firstname,
@@ -67,8 +68,8 @@ class Login extends Component {
     }
 
     render() {
-        console.log(this.props.auth)
-        console.log(new Date("2020-01-28T14:39:49.000Z").toLocaleDateString('en-GB'));
+        // console.log(this.props.auth)
+        // console.log(new Date("2020-01-28T14:39:49.000Z").toLocaleDateString('en-GB'));
         return (
             <div className='main'>
                 <header>

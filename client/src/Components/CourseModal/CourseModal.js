@@ -15,7 +15,7 @@ class CourseModal extends Component {
       description:'',
       keywords:[],
       link:'',
-      checked: true,
+      checked: false,
       selectValue: 'yolo',
       newCategorySetter: 'none',
       newCategory: '',
@@ -41,15 +41,15 @@ componentDidMount() {
               return myObj
                       })
           })
-          console.log('res from line 39, not 40: ' + res)
+          // console.log('res from line 39, not 40: ' + res)
         },
           )
-        .then(console.log(this.state.category))
+        // .then(console.log(this.state.category))
         .catch(new Error('bad fetch boi'))
 };
 
 handleCheckbox = (event) =>{
-  console.log(event.target.checked)
+  // console.log(event.target.checked)
   this.setState({checked: event.target.checked})
 };
 
@@ -72,14 +72,14 @@ handleNewCategory = (e) => {
     selectValue: e.target.value
   })
   if(e.target.value == 'addNewCategory') {
-    console.log(`you are within the handleNewCategory function now : target name is ${e.target.value}`)
+    // console.log(`you are within the handleNewCategory function now : target name is ${e.target.value}`)
     this.setState({
       newCategorySetter : 'inline-block',
       newCategory : e.target.value
     })
   }
   else {
-    console.log(`you are within the handleNewCategory function now : target name is ${e.target.value}`)
+    // console.log(`you are within the handleNewCategory function now : target name is ${e.target.value}`)
     this.setState({
         newCategorySetter : 'none',
         newCategory : e.target.value
@@ -94,10 +94,6 @@ handleInput = (e) => {
 }
 
 saveAll=()=>{
-//  let keyword=[]
-//  this.state.keywords.map((item,index)=>{
-//     if (item !== '') keyword.push(item)
-//   })
   let data = {
     title: this.state.title,
     description: this.state.description,
@@ -120,67 +116,17 @@ saveAll=()=>{
       if (res.ok)
         return res.json()
       else
-        throw new Error(res.statusText);
+        alert('Something went wrong, please try again!');
+        this.handleClose()
     }
-    )
-    console.log("FETCH COMPLETED, KINDA")
-
-    {
-  // CHECK IF NEW CATEGORY ALREADY EXISTS
-  // let flag = false
-  // (this.state.category.forEach(cat=> cat.category_name == this.state.newCategory && flag !== true) ?
-  //   flag = true
-  // :
-  //   flag = false)
-
-  // flag == true ?
-  // console.log("VALUE IN STATE.CATEGORY")
-
-    // delete data.category
-    // .then(
-    //   fetch('/auth/categories',
-    //   {
-    //     method: 'POST',
-    //     headers: new Headers({
-    //       'Content-type' : 'application/json'
-    //     }),
-    //     body: JSON.stringify(data)
-    //   })
-    //   .then(res => {
-    //     console.log(JSON.stringify(data))
-    //     if (res.ok)
-    //       return res.json()
-    //     else
-    //       throw new Error(res.statusText);
-    //   }
-    //   )
-    // )
-    // console.log('categories : ' + this.state.category.category_name)
-    // console.log('category added : ' + this.state.newCategory)
-  // :
-    // fetch('/auth/categories',
-    // {
-    //   method: 'POST',
-    //   headers: new Headers({
-    //     'Content-type' : 'application/json'
-    //   }),
-    //   body: JSON.stringify(data)
-    // })
-    // .then(res => {
-    //   console.log(JSON.stringify(data))
-    //   if (res.ok)
-    //     return res.json()
-    //   else
-    //     throw new Error(res.statusText);
-    // }
-    // )
-    // console.log("VALUE NOT IN STATE.CATEGORY")
-    }
+  )
+    // console.log("FETCH COMPLETED, KINDA")
+    this.handleClose()
 }
 
 render(){
-  console.log(this.state)
-  console.log(`${this.state.newCategorySetter} after the setState`)
+  // console.log(this.state)
+  // console.log(`${this.state.newCategorySetter} after the setState`)
   return (
     <div>
       <button onClick={this.handleOpen} type="button" className="btnAdd">+

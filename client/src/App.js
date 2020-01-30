@@ -8,7 +8,7 @@ import LoginPageComplete from '../src/Components/LoginPageComplete/LoginPageComp
 import UserHomePageComplete from '../src/Containers/UserHomePageComplete/UserHomePageComplete';
 import SignUpPageComplete from '../src/Components/SignUpPageComplete/SignUpPageComplete';
 import PersonalProfilePageComplete from './Containers/PersonalProfilePageComplete/PersonalProfilePageComplete';
-import AdminAllCourses from './Components/AdminAllCourses/AdminAllCourses'
+import AdminAllCourses from './Containers/AdminAllCourses/AdminAllCourses'
 
 import { Switch, Route } from 'react-router-dom';
 import AllUsersTable from './Components/AllUsersTable/AllUsersTable';

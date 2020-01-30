@@ -13,7 +13,7 @@ class CompletedComp extends Component {
      }
       
 render() {
-    console.log(this.state.ModalIsOpen);
+    // console.log(this.state.ModalIsOpen);
    return (this.props.OpenModal && this.state.ModalIsOpen ? 
      
         <div id="myModal" class="completedCourseModal">

@@ -23,6 +23,7 @@ app.use(cors())
 passport.use(new LocalStrategy(
     {
         usernameField: 'email',
+        // IF TESTING THE SIGNIN PATH, REMEMBER TO USE 'password' AS KEY AND NOT 'parola'
         passwordField: 'password',
         session: false
     },

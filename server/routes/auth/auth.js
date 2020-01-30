@@ -3,7 +3,7 @@ const router = express.Router();
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const models = require('../../models');
-const bcrypt = require('bcryptjs')
+const bcrypt = require('bcrypt')
 
 router.post('/signin', function(req, res, next) {
     passport.authenticate('local', (err, user, info) => {
@@ -16,8 +16,8 @@ router.post('/signin', function(req, res, next) {
 
 router.post('/signup', function(req, res, next) {
     let post = {
-        firstname: req.body.nume,
-        lastname: req.body.prenume,
+        firstname: req.body.prenume,
+        lastname: req.body.nume,
         phonenumber: req.body.numarTelefon,
         password: bcrypt.hashSync(req.body.parola, 10),
         email: req.body.email,
@@ -25,7 +25,7 @@ router.post('/signup', function(req, res, next) {
         volunteering_center: req.body.centrul,
         contract_number: req.body.nrcontractului,
         signing_date: req.body.dataSemnarii,
-        date_joined: Date(),
+        // date_joined: Date(),
         access_level: true,
         status: true
     };
@@ -117,5 +117,37 @@ router.post('/completedCourses/:id', (req,res) => {
 
 
 
+router.post('/categories', function(req, res, next) {
+    let post = {
+        category_name: req.body.category
+    };
+    models
+        .Categories
+        .create(post)
+        .then(cat => res.status(200).json({ message : "new category added"}))
+        .catch(err => res.status(500).json({ message: err.message}))
+})
+
+router.post('/courses', function(req, res, next) {
+    let post = {
+        title: req.body.title,
+        description: req.body.description,
+        category_id: req.body.category_id,
+        is_important: req.body.important,
+        link: req.body.link
+    };
+    models
+        .Courses
+        .create(post)
+        .then(newCourse => res.status(200).json({ message : "new courses added"}))
+        .catch(err => res.status(500).json({ message: err.message }))
+})
+
+router.get('/categories', function(req, res, next) {
+    models
+    .Categories
+    .findAll()
+    .then(allCategories => res.status(200).json(allCategories))
+})
 
 module.exports = router

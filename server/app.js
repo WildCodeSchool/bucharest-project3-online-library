@@ -9,7 +9,8 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const JWTStrategy = require('passport-jwt').Strategy,
         ExtractJwt = require('passport-jwt').ExtractJwt;
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcrypt');
+const json= require('./childrenquotes.json');
 
 const port = 3000
 
@@ -64,6 +65,16 @@ app.use('/auth', authRoutes)
 app.get('/', (req, res) => {
     res.send('This is the root path')
 })
+ \.get(
+        "/quotes",
+        (req, res) => {
+          const quotes = fs.readFileSync("./childrenquotes.json");
+          let name=JSON.parse(quotes).shitat;
+          let finalquote=name.length-1;
+          let quote= Math.floor(Math.random() * (finalquote - 0 + 1) + 0);
+          if(quotes !== undefined || quotes !== null) res.status(200).json(name(quote));
+          else res.status(401).json('fs.read() quotes error')
+        });
 
 app.use((req, res, next) => {
     var err = new Error('Not found');
@@ -75,3 +86,8 @@ models
     .sequelize
     .sync({force:true})
     .then(() => app.listen(port, () => console.log(`Server listening on port ${port}. Message from sync()`)))
+
+   
+
+
+

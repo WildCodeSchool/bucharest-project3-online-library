@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import './CompletedCourseModal.css';
 import Trophy from '../../assets/images/trophy.png';
+const json= require('../../assets/childrenquotes.json');
 
 
 class CompletedComp extends Component {
@@ -11,8 +12,12 @@ class CompletedComp extends Component {
      closeModal = () => {
         this.setState({ ModalIsOpen : false})
      }
+
+componentDidMount= {
+    
+}
       
-render() {
+render() { console.log(JSON.parse(json));
     console.log(this.state.ModalIsOpen);
    return (this.props.OpenModal && this.state.ModalIsOpen ? 
      

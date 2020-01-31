@@ -1,8 +1,17 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .headerContainer {
   margin: 0 auto;
   margin-top: 7%;
   width: 100%;
   text-align: center;
+}
+
+.container {
+  cursor: auto !important;
 }
 
 .mainContainer {
@@ -27,7 +36,7 @@
   font-size: 3.9rem;
   color: #75B1A9;
   text-align: center;
-  margin-top: 7%;
+  margin-top: 12%;
 }
 
 .subtitleWelcome {

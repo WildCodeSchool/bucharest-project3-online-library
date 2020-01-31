@@ -27,7 +27,9 @@
   padding: 0;
   border: 1px solid #888;
   width: 30%;
-  height: 40%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   -webkit-animation-name: animatetop;
@@ -39,13 +41,6 @@
 @media only screen and (max-width: 768px) {
   .completedCourseModal-content {
     width: 60%;
-  }
-}
-
-@media only screen and (min-width: 1450px) {
-  .completedCourseModal-content {
-    width: 60%;
-    height: 30%;
   }
 }
 
@@ -105,5 +100,6 @@
 
 .completedCourseModal-body {
   padding: 30px 16px;
+  background-color: white;
 }
 /*# sourceMappingURL=CompletedCourseModal.css.map */

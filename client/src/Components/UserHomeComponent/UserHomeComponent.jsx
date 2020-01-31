@@ -10,47 +10,66 @@ class UserHomeComponent extends React.Component {
     super(props);
     this.state = {
       courses: [],
-
-      headerColor: "#FA5457",
-      chapterCard: "Chapter Title",
-      textCard:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis congue eros egestas aliquet viverra. Mauris feugiat ultrices odi variualiqua. Curabitur vestibulum, quam et dignissim porttitor,diam erat varius est Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis congue eros egestas aliquet viverra. Mauris feugiat ultrices odio variualiqua. Curabitur vestibulum, quam et dignissim porttitor, diam erat varius est, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis congue.",
-      keywordsCard:
-        "Fusce nec tempus dolor, eu egestas magna. eu egestas magna. Fuscenec tempus dolor, eu egestas magna. eu egestas magna.",
-      date: "10.12.2019",
+      // userId: this.props.auth.id,
+      noCoursesAvailable: false,
+      completedCourses: '',
+      headerColorStandard: "#75B1A9",
+      headerColorImportant: "#FA5457",
+      headerColorCompleted: "#A1BE95",
     };
   }
 
-  componentDidMount(){
+  componentDidMount() {
     axios.get('auth/courses')
       .then(res => {
         let courseArray = [];
-        for(let i=res.data.length-1; i > res.data.length-7; i--) {
+        for (let i = res.data.length - 1; i > res.data.length - 7; i--) {
           let course = res.data[i];
           let courseObject = {
+            is_important: course.is_important,
             id: course.id,
-            titleCard: course.title,
-            textCard: course.description,
-            link:course.link,
-            date:course.createdAt,
-            chapterCard: course.category_id
+            title: course.title,
+            description: course.description,
+            link: course.link,
+            date: course.createdAt,
+            category_id: course.category_id
           }
           courseArray.push(courseObject)
 
         }
         this.setState({
-            courses: courseArray
-          });
+          courses: courseArray
         });
-    }
+      });
+
+    fetch('auth/completedCourses/' + this.state.userId, {
+      method: 'GET'
+    })
+      .then(res => {
+        if (res.ok)
+          return res.json()
+            .then(res => {
+              let completedCoursesId = res.map(item => item.course_id)
+              this.setState({
+                completedCourses: completedCoursesId
+              })
+            })
+        else
+          alert('No courses completed')
+      })
+  }
 
   showCard =() =>{
     return this.state.courses.map((item, index) => {
       return (
         <CardComponent 
-        headerColor={item.headerColor}
-        chapterCard={item.chapterCard} 
-        titleCard={item.titleCard}
+        headerColor={item.is_important ?
+          this.state.headerColorImportant
+          :
+          this.state.headerColorStandard}
+        completedCourses={this.state.completedCourses}
+        chapterCard={item.category_id} 
+        titleCard={item.title}
         textCard={item.textCard}
         keywordsCard={item.keywordsCard}
         date={item.date}
@@ -59,13 +78,13 @@ class UserHomeComponent extends React.Component {
         toDelete={this.cardToDeleteFromBtn}
         link={item.link}
         />
-
       )
   })
   }
 
 
   render() {
+    console.log(this.state.courses)
     return (
       <div className='container'>
         <header className='headerContainer'>
@@ -73,57 +92,7 @@ class UserHomeComponent extends React.Component {
             <h2 className="subtitleWelcome">Cele mai recente cursuri</h2>
         </header>
         <main className="mainContainer">
-       
         {this.showCard()}
-
-          {/* <CardComponent
-            headerColor={this.state.headerColor}
-            chapterCard={this.state.chapterCard}
-            textCard={this.state.textCard}
-            keywordsCard={this.state.keywordsCard}
-            date={this.state.date}
-            admin={this.props.admin}
-          />
-          <CardComponent
-            headerColor={this.state.headerColor}
-            chapterCard={this.state.chapterCard}
-            textCard={this.state.textCard}
-            keywordsCard={this.state.keywordsCard}
-            date={this.state.date}
-            admin={this.props.admin}
-          />
-          <CardComponent
-            headerColor={this.state.headerColor}
-            chapterCard={this.state.chapterCard}
-            textCard={this.state.textCard}
-            keywordsCard={this.state.keywordsCard}
-            date={this.state.date}
-            admin={this.props.admin}
-          />
-          <CardComponent
-            headerColor={this.state.headerColor}
-            chapterCard={this.state.chapterCard}
-            textCard={this.state.textCard}
-            keywordsCard={this.state.keywordsCard}
-            date={this.state.date}
-            admin={this.props.admin}
-          />
-          <CardComponent
-            headerColor={this.state.headerColor}
-            chapterCard={this.state.chapterCard}
-            textCard={this.state.textCard}
-            keywordsCard={this.state.keywordsCard}
-            date={this.state.date}
-            admin={this.props.admin}
-          />
-          <CardComponent
-            headerColor={this.state.headerColor}
-            chapterCard={this.state.chapterCard}
-            textCard={this.state.textCard}
-            keywordsCard={this.state.keywordsCard}
-            date={this.state.date}
-            admin={this.props.admin}
-          /> */}
         </main>
       </div>
     );

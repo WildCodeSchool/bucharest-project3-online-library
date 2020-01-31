@@ -1,101 +1,94 @@
 /* Main Button  */
-
 .btnAdd {
-    width: 60px;
-    height: 60px;
-    border-radius: 35px;
-    font-size: 24px;
-    background-color: #75B1A9;
-    -webkit-box-shadow: 0px 0px 24px -4px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 0px 24px -4px rgba(0, 0, 0, 0.75);
-    box-shadow: 0px 0px 24px -4px rgba(0, 0, 0, 0.75);
-    font-size: 35px;
-    color: white;
-    position: fixed;
-    bottom: 7%;
-    right: 2%;
-    z-index: 4;
-    border: none;
+  width: 70px;
+  height: 70px;
+  border-radius: 35px;
+  font-size: 24px;
+  background-color: #75B1A9;
+  -webkit-box-shadow: -1px 11px 15px -6px rgba(0, 0, 0, 0.75);
+          box-shadow: -1px 11px 15px -6px rgba(0, 0, 0, 0.75);
+  font-size: 35px;
+  color: white;
+  position: fixed;
+  top: 10%;
+  right: 5%;
+  z-index: 1000;
 }
 
 .btnAdd:hover {
-    background-color: #60928b;
-    cursor: pointer;
+  background-color: #60928b;
+  cursor: pointer;
 }
 
 .btnAdd:active {
-    background-color: #60928b;
-    -webkit-transform: translateY(4px);
-    transform: translateY(4px);
+  background-color: #60928b;
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
 }
 
-
 /* Modal Button */
-
 button:focus {
-    outline: none;
+  outline: none;
 }
 
 .btnPost {
-    width: 40%;
-    background-color: #FA5457;
-    font-size: 18px;
-    border: none;
-    color: white;
-    padding: 10px;
-    border-radius: 12px;
-    -webkit-box-shadow: -1px 8px 12px -6px rgba(0, 0, 0, 0.75);
-    box-shadow: -1px 8px 12px -6px rgba(0, 0, 0, 0.75);
-    position: relative;
-    bottom: 0;
+  width: 40%;
+  background-color: #FA5457;
+  font-size: 18px;
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 12px;
+  -webkit-box-shadow: -1px 8px 12px -6px rgba(0, 0, 0, 0.75);
+          box-shadow: -1px 8px 12px -6px rgba(0, 0, 0, 0.75);
+  position: relative;
+  bottom: 0;
 }
 
 .btnPost:hover {
-    background: #FFF;
-    cursor: pointer;
-    color: #FA5457;
-    -webkit-transition-duration: 250ms;
-    transition-duration: 250ms;
+  background: #FFF;
+  cursor: pointer;
+  color: #FA5457;
+  -webkit-transition-duration: 250ms;
+  transition-duration: 250ms;
 }
 
 .btnPost:active {
-    background: #FFF;
-    color: #FA5457;
-    -webkit-transform: translateY(4px);
-    transform: translateY(4px);
+  background: #FFF;
+  color: #FA5457;
+  -webkit-transform: translateY(4px);
+          transform: translateY(4px);
 }
 
-
 /* Modal */
-
 .headerAdd {
-    text-align: center;
+  text-align: center;
 }
 
 .modalAdd {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .paperAdd {
-    background-color: white;
-    border: none;
-    border-radius: 10px;
-    outline: none;
-    -webkit-box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.75);
-    box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.75);
-    padding: 10px;
-    width: 50%;
-    text-align: center;
-    max-height: calc(156vh - 312px);
-    overflow-y: auto;
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  -webkit-box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.75);
+  padding: 10px;
+  width: 50%;
+  text-align: center;
+  max-height: calc(156vh - 312px);
+  overflow-y: auto;
 }
 
 .MuiFilledInput-root input {
@@ -103,72 +96,68 @@ button:focus {
 }
 
 ::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 @media only screen and (max-width: 900px) {
-    .paperAdd {
-        width: 65%;
-    }
+  .paperAdd {
+    width: 65%;
+  }
 }
 
 @media only screen and (max-width: 768px) {
-    .paperAdd {
-        width: 80%;
-    }
+  .paperAdd {
+    width: 80%;
+  }
 }
 
 @media only screen and (max-width: 648px) {
-    .btnAdd {
-        width: 50px;
-        height: 50px;
-    }
-}
-
-.title {
-    width: 90%;
-    margin-top: 10px !important;
-    font-size: 12px !important;
-}
-
-.checkImp {
-    padding-top: 20px;
-    padding-bottom: 30px;
-    color: #FA5457;
-    font-size: 18px;
+  .btnAdd {
+    width: 50px;
+    height: 50px;
+    top: 9%;
+  }
 }
 
 #transition-modal-title {
-    margin-top: none;
-    color: #75B1A9;
-    font-size: 28px;
+  margin-top: none;
 }
 
+.title {
+  width: 90%;
+  margin-top: 10px !important;
+  font-size: 12px !important;
+}
+
+.checkImp {
+  padding-top: 20px;
+  padding-bottom: 30px;
+  color: #FA5457;
+}
 
 /* Dropdown */
-
 .dropdown {
-    width: 90%;
-    height: 55px;
-    border: none;
-    margin-top: 10px !important;
-    border-bottom: rgba(0, 0, 0, 0.562) solid 1px;
-    border-radius: 4px 4px 0 0;
-    background-color: rgba(216, 211, 211, 0.527);
-    font-size: 1rem;
-    padding: 12px 12px 10px;
-    color: rgba(0, 0, 0, 0.54) !important;
+  width: 90%;
+  height: 55px;
+  border: none;
+  margin-top: 10px !important;
+  border-radius: 4px;
+  background-color: rgba(216, 211, 211, 0.527);
+  font-size: 1rem;
+  font-weight: 800;
+  padding: 12px 12px 10px;
+  color: rgba(0, 0, 0, 0.54) !important;
 }
 
 .dropdown:hover {
-    background-color: rgba(189, 184, 184, 0.527);
+  background-color: rgba(189, 184, 184, 0.527);
 }
 
 .dropdown:focus {
-    outline: none;
+  outline: none;
 }
 
-/* .row label {
+.row label {
   font-size: 1.2rem;
 }
 
@@ -185,5 +174,5 @@ button:focus {
 
 #NewCategoryByAdmin {
   font-size: 1.5rem;
-} */
+}
 /*# sourceMappingURL=CourseModal.css.map */

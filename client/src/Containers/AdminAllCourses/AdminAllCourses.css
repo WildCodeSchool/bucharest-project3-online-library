@@ -1,73 +1,71 @@
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .AdminCourseCardContainer {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 1em;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    margin-bottom: 5% !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-bottom: 5% !important;
 }
 
 .AdminAllCoursesMain h1 {
-    font-size: 3.9rem;
-    color: #75B1A9;
-    text-align: center;
-    margin-top: 20%;
+  font-size: 3.9rem;
+  color: #75B1A9;
+  text-align: center;
+  margin-top: 12%;
 }
 
 .AdminAllCoursesMain .penLogo {
-    font-size: 5.9rem;
+  font-size: 5.9rem;
+  color: #75B1A9;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  position: absolute;
+  top: 11%;
+  right: 7%;
+}
+
+.AdminAllCoursesFilter {
+  margin-top: 4%;
+}
+
+@media only screen and (min-width: 768px) {
+  .AdminAllCoursesMain h1 {
+    font-size: 3.9rem;
+    color: #75B1A9;
+    text-align: center;
+    margin-top: 12%;
+  }
+  .AdminAllCoursesMain .penLogo {
+    font-size: 6.9rem;
     color: #75B1A9;
     margin-top: 5px;
     margin-bottom: 5px;
     position: absolute;
-    top: 11%;
-    right: 7%;
-}
-
-.AdminAllCoursesFilter {
-    margin-top: 4%;
-}
-
-@media only screen and (min-width: 768px) {
-    .AdminAllCoursesMain h1 {
-        font-size: 3.9rem;
-        color: #75B1A9;
-        text-align: center;
-        margin-top: 12%;
-    }
-    .AdminAllCoursesMain .penLogo {
-        font-size: 6.9rem;
-        color: #75B1A9;
-        margin-top: 5px;
-        margin-bottom: 5px;
-        position: absolute;
-        top: 9%;
-        right: 15%;
-    }
+    top: 9%;
+    right: 15%;
+  }
 }
 
 @media only screen and (min-width: 992px) {
-    .AdminAllCoursesMain h1 {
-        font-size: 3.9rem;
-        color: #75B1A9;
-        text-align: center;
-        margin-top: 7%;
-    }
+  .AdminAllCoursesMain h1 {
+    font-size: 3.9rem;
+    color: #75B1A9;
+    text-align: center;
+    margin-top: 7%;
+  }
 }
-
-
 /*# sourceMappingURL=AdminAllCourses.css.map */

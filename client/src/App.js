@@ -13,6 +13,13 @@ import AdminAllCourses from './Containers/AdminAllCourses/AdminAllCourses'
 import { Switch, Route } from 'react-router-dom';
 import AllUsersTable from './Components/AllUsersTable/AllUsersTable';
 
+// import { library } from '@fortawesome/fontawesome-svg-core';
+// import { fab } from '@fortawesome/free-brands-svg-icons';
+// import { fafacebook } from '@fortawesome/free-brands-svg-icons';
+
+// library.add(fab,fafacebook)
+
+
 class App extends React.Component {
   constructor(props){
     super(props);

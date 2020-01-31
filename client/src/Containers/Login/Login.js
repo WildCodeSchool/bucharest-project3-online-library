@@ -81,11 +81,17 @@ class Login extends Component {
                         </div>
                     </div>
                 </header>
-             <div className="form">
-                <form className='page formMain' 
-                    autoComplete="off" 
-                    onSubmit={this.handleSubmit}
-                    >
+                
+                <div className="loginPage">
+                    
+                    <div className="childrenImage"> 
+                        <img src={children} alt="" className="ChildrenImage"/>
+                    
+                    </div>
+            
+                <div className="form">
+                 
+                <form className='page' onSubmit={this.handleSubmit} method="post" className="formMain" autoComplete="off">
 
                     <div className="logInTitle">
                         <h1>Autentificare</h1>
@@ -141,12 +147,14 @@ class Login extends Component {
                     </div>
                     
                     </form>
-                    
-                    <div className="childrenImage"> 
-                        <img src={children} alt="" className="childrenImage"/>
-                    </div>
-                    </div>
+                </div>
+
+
                </div>
+
+        </div>
+            
+           
         )
     }
 }

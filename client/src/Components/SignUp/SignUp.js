@@ -3,6 +3,9 @@ import TextField from '@material-ui/core/TextField';
 // import logo from '../../am-logo-retina.png';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
+import Grid from '@material-ui/core/Grid';
+import { MuiPickersUtilsProvider, KeyboardDatePicker } from '@material-ui/pickers'
+import DateFnsUtils from '@date-io/date-fns';
 
 import logo from '../../assets/images/logo.png';
 import './SignUp.css';
@@ -17,7 +20,7 @@ class SignUp extends React.Component{
                     numarTelefon : '',
                     judetul: '',
                     centrul: '',
-                    contractului: '',
+                    nrcontractului: '',
                     dataSemnarii: '',
                     parola: '',
                     parolaConfirmed: false,
@@ -59,7 +62,15 @@ class SignUp extends React.Component{
             flash:err.message
         }))
     }
+
+    handleDateChange = date => {
+        this.setState({
+            dataSemnarii : date
+        })
+    };
+
     render(){
+        console.log(this.state.dataSemnarii)
         return(
             <div className="main">
                 <header>
@@ -152,18 +163,37 @@ class SignUp extends React.Component{
                                     className="signUpInput signUpInputLeft"
                                     margin="normal"
                                     variant="filled"
-                                    value={this.state.contractului}
+                                    value={this.state.nrcontractului}
                                     onChange={this.handleChange('contractului')}                                    />
-                                <TextField
+                                {/* <TextField
                                     required
                                     id="filled-required"
-                                    label="Data semnarii contractului de voluntar"
+                                    label="Data semnarii contractului de voluntar (ex: 2020-01-23)"
                                     className="signUpInput signUpInputRight"
                                     margin="normal"
                                     variant="filled"
                                     value={this.state.dataSemnarii}
                                     onChange={this.handleChange('dataSemnarii')}
-                                />
+                                /> */}
+
+                            <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                                <Grid container justify="space-around">
+                                    <KeyboardDatePicker
+                                        disableToolbar
+                                        // variant="block"
+                                        format="yyyy/MM/dd"
+                                        margin="normal"
+                                        id="date-picker-dialog"
+                                        label="Date picker dialog"
+                                        className="signUpInput"
+                                        value={this.state.dataSemnarii}
+                                        onChange={this.handleDateChange}
+                                        KeyboardButtonProps={{
+                                            'aria-label': 'change date',
+                                        }}
+                                        />
+                                </Grid>
+                            </MuiPickersUtilsProvider>
                         </div>
 
                     </div>

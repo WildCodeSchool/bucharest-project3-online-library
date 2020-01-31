@@ -14,7 +14,7 @@ class CardComponent extends React.Component {
       disabled: true,
       isCompleted: false,
       done: false,
-      buttonValue: 'Mark as completed', 
+      buttonValue: 'Mark as completed',
       admin: false,
       openModal: false,
       toDelete: false,
@@ -69,7 +69,8 @@ class CardComponent extends React.Component {
           this.setState({
             openModal: true,
             buttonValue: 'COMPLETED',
-            classButton: "completedButtonGreen"
+            classButton: "completedButtonGreen",
+            done:"#A1BE95"
           })
           return res.json()
         }
@@ -80,6 +81,11 @@ class CardComponent extends React.Component {
           })
       })
     }
+  }
+  handleClose = () => {
+    this.setState({
+      openModal: false
+    })
   }
 
   deleteCourse = () => {
@@ -92,6 +98,7 @@ class CardComponent extends React.Component {
   render() {
     console.log("completedCourses : " + this.props.completedCourses)
     console.log("course id : " + this.props.courseId)
+    console.log("openmodal : " + this.state.openModal)
     return (
         <div className='cardContainer' style={{display : this.state.toDelete ? 'none' : 'block'}}>
           <div
@@ -113,7 +120,7 @@ class CardComponent extends React.Component {
                 color="inherit"
                 className='courseLinkButton'
                 onClick={this.handleButtonCourseLink}
-                href={this.props.link}
+                // href={this.props.link}
               >
                 Course Link
               </Button>
@@ -126,8 +133,11 @@ class CardComponent extends React.Component {
                 {this.state.buttonValue}
               </Button>
           </div>
+          {this.state.openModal && 
+          <CompletedComp onClose={this.handleClose} /> 
+          }
         </div>
-        <CompletedComp OpenModal={this.state.openModal} />
+        {/* <CompletedComp OpenModal={this.state.openModal} /> */}
       </div>
     );
   }

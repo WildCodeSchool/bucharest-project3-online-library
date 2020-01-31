@@ -19,6 +19,7 @@ class Navbar extends Component {
                     <li><Link to="/acasa">Acasa</Link></li>
                     <li><Link to="/cursuri">Cursuri</Link></li>
                     <li><Link to="/profil">Profil</Link></li>
+                    <li><Link to="/">Delogare</Link></li>
                     {this.props.admin ?
                     <li><Link to='/utilizatorii'>Toti utilizatorii</Link></li>
                         :

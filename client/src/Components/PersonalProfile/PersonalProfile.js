@@ -5,6 +5,8 @@ import "./PersonalProfile.css";
 import FormControl from '@material-ui/core/FormControl';
 import ProfileCourseCard from "../ProfileCourseCard/ProfileCourseCard";
 
+import { connect } from 'react-redux';
+
 const courses = [
   {
     chapterTitle: "Love",
@@ -54,11 +56,55 @@ class PersonalProfile extends Component {
       centrul:this.props.profile.volunteering_center,
       contractului: this.props.profile.contract_number,
       dataSemnarii: new Date(this.props.profile.date_joined).toLocaleDateString('en-GB'),
-      telefon: this.props.profile.phonenumber
+      telefon: this.props.profile.phonenumber,
+      allCourses: [],
+      completedCoursesId: [],
+      completedCourses: []
     };
   }
 
+  componentDidMount = () => {
+    fetch('http://localhost:3000/auth/completedCourses/'+ this.props.auth.id,{
+        method: "GET"
+    })
+        .then(res => res.json())
+        .then(list => {
+          let listOfIds = list.map(item => item.course_id)
+            this.setState({
+                completedCoursesId: listOfIds
+            })
+        })
+
+    fetch('auth/courses', {
+      method: 'GET'
+    })
+    .then(res => res.json())
+    .then(allCourses => {
+      this.setState({
+        allCourses: allCourses
+      })
+    })
+  }
+
+  completedCoursesByUserCards = () => {
+    let coursesCompletedAmongAllCourses= []
+    this.state.allCourses.forEach(course => {
+      if (this.state.completedCoursesId.includes(course.id)) 
+        coursesCompletedAmongAllCourses.push(course)
+      else
+        return false
+    })
+    console.log('completedCoursesId' + this.state.completedCoursesId)
+    console.log('allCourses' + this.state.allCourses)
+    console.log('coursesCompletedAmongAllCourses : ' +coursesCompletedAmongAllCourses)
+    return coursesCompletedAmongAllCourses.map((item, i) => {
+      console.log('item : ' + item.title)
+      return <ProfileCourseCard {...item} key={i} />;
+    })
+  }
+
   render() {
+    console.log(this.state.completedCoursesId)
     return (
       <div className="pp-container">
         <div className="leftSide">
@@ -99,7 +145,6 @@ class PersonalProfile extends Component {
                   value={this.state.judetul}
                 />
     
-
                 <TextField
                   id="filled-required"
                   label="Centrul in care esti voluntar"
@@ -152,9 +197,7 @@ class PersonalProfile extends Component {
               </FormControl>
             </div>
             <div className="cardsWrapper">
-              {courses.map((item, i) => {
-                return <ProfileCourseCard {...item} key={i} />;
-              })}
+              {this.completedCoursesByUserCards()}
             </div>
           </div>
         </div>
@@ -163,4 +206,10 @@ class PersonalProfile extends Component {
   }
 }
 
-export default PersonalProfile;
+function mapStateToProps(state){
+  return{
+    auth: state.auth
+  }
+}
+
+export default connect(mapStateToProps) (PersonalProfile);

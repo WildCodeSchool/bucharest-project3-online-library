@@ -24,10 +24,10 @@ router.post('/signup', function(req, res, next) {
         volunteering_county: req.body.judetul,
         volunteering_center: req.body.centrul,
         contract_number: req.body.nrcontractului,
-        signing_date: req.body.dataSemnarii,
+        // signing_date: 3,
         // date_joined: Date(),
-        access_level: true,
-        status: true
+        access_level: false,
+        status: true,
     };
     models
         .Users

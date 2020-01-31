@@ -43,7 +43,7 @@ class AdminAllCourses extends React.Component{
             //     chapterCard: course.category_id
             //   }
             //   courseArray.push(courseObject)
-    
+
             // })
             // this.setState({
             //     latestCourses: courseArray

@@ -55,7 +55,7 @@
   font-size: 3em;
   padding: 10px 20px;
   text-decoration: none;
-  height: 1.3em !important;
+  height: 2.3em !important;
 }
 
 .logoPlaceholder {
@@ -93,6 +93,10 @@
 
 .signUpBtnContainer {
   margin-top: 90px;
+}
+
+#date-picker-inline label {
+  display: none !important;
 }
 
 .signUpBtnContainer button {

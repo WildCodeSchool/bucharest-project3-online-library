@@ -113,8 +113,46 @@ router.post('/completedCourses/:id', (req,res) => {
         .catch(err => res.status(500).json({ flash: err.message }))
 } )
 
-    
 
+router.post('/categories', function(req, res, next) {
+    let post = {
+        category_name: req.body.category
+    };
+    models
+        .Categories
+        .create(post)
+        .then(cat => res.status(200).json({ message : "new category added"}))
+        .catch(err => res.status(500).json({ message: err.message}))
+})
+
+router.post('/courses', function(req, res, next) {
+    let post = {
+        title: req.body.title,
+        description: req.body.description,
+        category_id: req.body.category_id,
+        is_important: req.body.important,
+        link: req.body.link
+    };
+    models
+        .Courses
+        .create(post)
+        .then(newCourse => res.status(200).json({ message : "new courses added"}))
+        .catch(err => res.status(500).json({ message: err.message }))
+})
+
+router.get('/categories', function(req, res, next) {
+    models
+    .Categories
+    .findAll()
+    .then(allCategories => res.status(200).json(allCategories))
+})
+
+router.get('/courses', function(req, res, next) {
+    models
+    .Courses
+    .findAll()
+    .then(allCourses => res.status(200).json(allCourses))
+})
 
 
 

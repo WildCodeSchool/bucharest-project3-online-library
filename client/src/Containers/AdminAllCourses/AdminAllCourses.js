@@ -1,11 +1,12 @@
 import React from 'react'
 
-import Filter from '../Filter/Filter'
-import CardComponent from '../CardComponent/CardComponent'
-import CourseModal from '../CourseModal/CourseModal'
-import Navbar from '../NavbarComponent/Navbar'
-import Footer from '../Footer/Footer'
+import Filter from '../../Components/Filter/Filter'
+import CardComponent from '../../Components/CardComponent/CardComponent'
+import CourseModal from '../../Components/CourseModal/CourseModal'
+import Navbar from '../../Components/NavbarComponent/Navbar'
+import Footer from '../../Components/Footer/Footer'
 import './AdminAllCourses.css'
+import axios from 'axios'
 
 // ADMIN PROPS SENT BY APP.JS DETERMINE IF PAGE DISPLAY IS FOR ADMIN OR USER
 
@@ -83,11 +84,34 @@ class AdminAllCourses extends React.Component{
         }
     }
 
+    componentDidMount(){
+        axios.get('auth/courses')
+          .then(res => {
+            let courseArray = [];
+            res.data.forEach(course => {
+              let courseObject = {
+                id: course.id,
+                titleCard: course.title,
+                textCard: course.description,
+                link:course.link,
+                date:course.createdAt,
+                chapterCard: course.category_id
+              }
+              courseArray.push(courseObject)
+    
+            })
+            this.setState({
+                latestCourses: courseArray
+              });
+            });
+        }
+
     AddCards = () => {
         return this.props.admin ?
             <h2 className="penLogo">&#9998;</h2> : null
     }
     NewCards = () => {
+        console.log(this.state.latestCourses)
         return this.state.latestCourses.map((item, index) => {
             return <CardComponent 
                         headerColor={item.headerColor}
@@ -99,6 +123,7 @@ class AdminAllCourses extends React.Component{
                         admin={this.props.admin}
                         i={index}
                         toDelete={this.cardToDeleteFromBtn}
+                        link={item.link}
                         />
         })
     }
@@ -113,6 +138,7 @@ class AdminAllCourses extends React.Component{
     }
 
     render(){
+        console.log(this.state.latestCourses)
         return(
             <div className='AdminAllCoursesMain'>
                 <Navbar admin={this.props.admin} />

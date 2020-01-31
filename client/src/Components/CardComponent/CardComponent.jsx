@@ -1,5 +1,4 @@
 import React from "react";
-
 import "./CardComponent.scss";
 import Button from "@material-ui/core/Button";
 import IconButton from '@material-ui/core/IconButton';
@@ -47,6 +46,7 @@ class CardComponent extends React.Component {
     })
   }
 
+  
   render() {
     return (
         <div className='cardContainer' style={{display : this.state.toDelete ? 'none' : 'block'}}>
@@ -60,15 +60,16 @@ class CardComponent extends React.Component {
             </IconButton>
           </div>
           <div className="cardInfoWrapper">
-            <p className="titleCcard">Titlu</p>
+            <p className="titleCcard">{this.props.titleCard}</p>
     <p className="textCard">{this.props.textCard}</p>
     <p className="keywordsCard">{this.props.keywordsCard}</p>
-    <p className="dateAdded">Adaugat: {this.props.date}</p>
+    <p className="dateAdded">Adaugat la: {this.props.date}</p>
             <div className="buttonContainer">
               <Button
                 color="inherit"
                 className='courseLinkButton'
                 onClick={this.handleButtonCourseLink}
+                href={this.props.link}
               >
                 Course Link
               </Button>

@@ -101,6 +101,7 @@ class AdminAllCourses extends React.Component{
                 keywordsCard={item.keywordsCard}
                 date={item.createdAt}
                 admin={this.props.admin}
+                link={item.link}
                 i={index}
                 toDelete={this.cardToDeleteFromBtn}
                         />

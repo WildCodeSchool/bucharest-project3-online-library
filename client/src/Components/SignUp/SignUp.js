@@ -164,8 +164,8 @@ class SignUp extends React.Component{
                                     margin="normal"
                                     variant="filled"
                                     value={this.state.nrcontractului}
-                                    onChange={this.handleChange('contractului')}                                    />
-                                {/* <TextField
+                                    onChange={this.handleChange('nrcontractului')}                                    />
+                                <TextField
                                     required
                                     id="filled-required"
                                     label="Data semnarii contractului de voluntar (ex: 2020-01-23)"
@@ -174,10 +174,9 @@ class SignUp extends React.Component{
                                     variant="filled"
                                     value={this.state.dataSemnarii}
                                     onChange={this.handleChange('dataSemnarii')}
-                                /> */}
+                                />
 
-                            <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                                <Grid container justify="space-around">
+                            {/* <MuiPickersUtilsProvider utils={DateFnsUtils}>
                                     <KeyboardDatePicker
                                         disableToolbar
                                         // variant="block"
@@ -185,15 +184,14 @@ class SignUp extends React.Component{
                                         margin="normal"
                                         id="date-picker-dialog"
                                         label="Date picker dialog"
-                                        className="signUpInput"
+                                        className="signUpInput signUpInputRight dateSelector"
                                         value={this.state.dataSemnarii}
                                         onChange={this.handleDateChange}
                                         KeyboardButtonProps={{
                                             'aria-label': 'change date',
                                         }}
                                         />
-                                </Grid>
-                            </MuiPickersUtilsProvider>
+                            </MuiPickersUtilsProvider> */}
                         </div>
 
                     </div>

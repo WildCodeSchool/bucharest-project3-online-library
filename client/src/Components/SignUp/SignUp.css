@@ -95,10 +95,6 @@
   margin-top: 90px;
 }
 
-#date-picker-inline label {
-  display: none !important;
-}
-
 .signUpBtnContainer button {
   background: #FA5457;
   width: 10%;

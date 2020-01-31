@@ -24,7 +24,6 @@ class Login extends Component {
         })
     }
 
-
     handleSubmit = (e) => {
         e.preventDefault()
         fetch('/auth/signin',

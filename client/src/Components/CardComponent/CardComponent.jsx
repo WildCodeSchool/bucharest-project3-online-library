@@ -120,7 +120,7 @@ class CardComponent extends React.Component {
                 color="inherit"
                 className='courseLinkButton'
                 onClick={this.handleButtonCourseLink}
-                // href={this.props.link}
+                href={this.props.link}
               >
                 Course Link
               </Button>

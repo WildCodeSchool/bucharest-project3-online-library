@@ -87,20 +87,6 @@ router.get('/users/:id', (req,res) =>
     .then(completedCoursesid => res.json(completedCoursesid))
  )
 
-// router.post('/completedCourses/:id', (req,res) => {
-//     let completedCourse = {
-//         course_id: req.body.id_curs,
-//         user_id: req.body.id_utilizator
-//     };
-//     models
-//         .completedCourses
-//         .create(completedCourse)
-//         .then(cc =>
-//             res.status(200).json({ flash: `Course of id ${req.body.id_curs} was completed by userId ${req.body.id_utilizator}`})
-//         )
-//         .catch(err => res.status(500).json({ flash: err.message }))
-// } )
-
 router.post('/completedCourses', (req,res) => {
     let completedCourse = {
         course_id: req.body.course_id,
@@ -114,6 +100,7 @@ router.post('/completedCourses', (req,res) => {
         )
         .catch(err => res.status(500).json({ flash: err.message }))
 } )
+
 
 router.post('/categories', function(req, res, next) {
     let post = {

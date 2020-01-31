@@ -1,5 +1,4 @@
 import React from "react";
-
 import "./CardComponent.scss";
 import Button from "@material-ui/core/Button";
 import IconButton from '@material-ui/core/IconButton';
@@ -11,6 +10,7 @@ class CardComponent extends React.Component {
     super(props);
     this.state = {
       headerColor: "#FA5457",
+      headerColorCompleted: "#A1BE95",
       disabled: true,
       isCompleted: false,
       done: false,
@@ -33,10 +33,10 @@ class CardComponent extends React.Component {
         isCompleted: true,
         disabled: false,
         classButton: 'completedButton',
-        headerColor: "yellow",
+        headerColor: "#A1BE95",
         done: true,
-          buttonValue: 'COMPLETED',
-          classButton: "completedButtonGreen"
+        buttonValue: 'COMPLETED',
+        classButton: "completedButtonGreen"
       })  
     }
   }
@@ -66,6 +66,11 @@ class CardComponent extends React.Component {
       })
       .then(res => {
         if(res.ok) {
+          this.setState({
+            openModal: true,
+            buttonValue: 'COMPLETED',
+            classButton: "completedButtonGreen"
+          })
           return res.json()
         }
         else
@@ -83,41 +88,43 @@ class CardComponent extends React.Component {
     })
   }
 
+  
   render() {
     console.log("completedCourses : " + this.props.completedCourses)
     console.log("course id : " + this.props.courseId)
     return (
-      <div className='cardContainer' style={{ display: this.state.toDelete ? 'none' : 'block' }}>
-        <div
-          className="headerCard"
-          style={{ backgroundColor: this.props.headerColor }}
-        >
-          <span className="chapterTitle">{this.props.chapterCard} + "course id is :" +{this.props.courseId}</span>
-          <IconButton aria-label="delete" className='deleteButton'>
-            <DeleteIcon className='deleteIcon' style={this.props.admin ? {} : { display: 'none' }} onClick={this.deleteCourse} />
-          </IconButton>
-        </div>
-        <div className="cardInfoWrapper">
-          <p className="titleCcard">{this.props.titleCard}</p>
-          <p className="textCard">{this.props.textCard}</p>
-          <p className="keywordsCard">{this.props.keywordsCard}</p>
-          <p className="dateAdded">Adaugat: {this.props.date}</p>
-          <div className="buttonContainer">
-            <Button
-              color="inherit"
-              className='courseLinkButton'
-              onClick={this.handleButtonCourseLink}
-            >
-              Course Link
+        <div className='cardContainer' style={{display : this.state.toDelete ? 'none' : 'block'}}>
+          <div
+            className="headerCard"
+            style={this.state.done ? { backgroundColor: "#A1BE95"} : { backgroundColor: this.props.headerColor }}
+          >
+  <span className="chapterTitle">{this.props.chapterCard}</span>
+            <IconButton aria-label="delete" className='deleteButton'>
+              <DeleteIcon className='deleteIcon' style={this.props.admin ? {} : { display: 'none' }} onClick={this.deleteCourse}/>
+            </IconButton>
+          </div>
+          <div className="cardInfoWrapper">
+            <p className="titleCcard">{this.props.titleCard}</p>
+    <p className="textCard">{this.props.textCard}</p>
+    <p className="keywordsCard">{this.props.keywordsCard}</p>
+    <p className="dateAdded">Adaugat la: {this.props.date}</p>
+            <div className="buttonContainer">
+              <Button
+                color="inherit"
+                className='courseLinkButton'
+                onClick={this.handleButtonCourseLink}
+                href={this.props.link}
+              >
+                Course Link
               </Button>
-            <Button
-              color="inherit"
-              className={this.state.classButton}
-              onClick={this.handleCompletedButton}
-              disabled={this.state.disabled}
-            >
-              {this.state.buttonValue}
-            </Button>
+              <Button
+                color="inherit"
+                className={this.state.classButton} 
+                onClick={this.handleCompletedButton}
+                disabled={this.state.disabled}
+              >
+                {this.state.buttonValue}
+              </Button>
           </div>
         </div>
         <CompletedComp OpenModal={this.state.openModal} />

@@ -1,7 +1,3 @@
-html {
-  font-size: 10px;
-}
-
 .cardContainer {
   text-align: center;
   border: 0.1em solid #D3D3D3;
@@ -112,25 +108,10 @@ html {
 
 .completedButton.MuiButton-text {
   color: #FFFFFF;
-  font-size: 1.4rem;
-  font-weight: bold;
-}
-
-.completedButton .MuiButton-label {
-  padding: .143em;
-}
-
-.completedButtonGreen.MuiButton-colorInherit {
-  background-color: #A1BE95;
-}
-
-.completedButtonGreen.MuiButton-text {
-  background-color: #A1BE95 !important;
-  color: #FFFFFF;
   font-size: 0.8rem;
 }
 
-.completedButtonGreen .MuiButton-label {
+.completedButton .MuiButton-label {
   padding: .143em;
 }
 

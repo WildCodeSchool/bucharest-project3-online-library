@@ -39,6 +39,11 @@ class CardComponent extends React.Component {
       })
     }
   }
+  handleClose = () => {
+    this.setState({
+      openModal: false
+    })
+  }
 
   deleteCourse = () => {
     this.setState({
@@ -81,7 +86,7 @@ class CardComponent extends React.Component {
               </Button>
             </div>
           </div>
-          <CompletedComp OpenModal={this.state.openModal}/>
+          {this.state.openModal && <CompletedComp onClose={this.handleClose} /> }
         </div>
     );
   }

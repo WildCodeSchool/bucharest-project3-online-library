@@ -10,7 +10,7 @@ class UserHomeComponent extends React.Component {
     super(props);
     this.state = {
       courses: [],
-      // userId: this.props.auth.id,
+      isLoading: true,
       noCoursesAvailable: false,
       completedCourses: '',
       headerColorStandard: "#75B1A9",
@@ -20,29 +20,41 @@ class UserHomeComponent extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('auth/courses')
-      .then(res => {
-        let courseArray = [];
-        for (let i = res.data.length - 1; i > res.data.length - 7; i--) {
-          let course = res.data[i];
-          let courseObject = {
-            is_important: course.is_important,
-            id: course.id,
-            title: course.title,
-            description: course.description,
-            link: course.link,
-            date: course.createdAt,
-            category_id: course.category_id
-          }
-          courseArray.push(courseObject)
+    // axios.get('auth/courses')
+    //   .then(res => {
+    //     let courseArray = [];
+    //     for (let i = res.data.length - 1; i > res.data.length - 7; i--) {
+    //       let course = res.data[i];
+    //       let courseObject = {
+    //         is_important: course.is_important,
+    //         id: course.id,
+    //         title: course.title,
+    //         description: course.description,
+    //         link: course.link,
+    //         date: course.createdAt,
+    //         category_name: course.Category.category_name
+    //       }
+    //       courseArray.push(courseObject)
 
-        }
-        this.setState({
-          courses: courseArray
-        });
-      });
+    //     }
+    //     this.setState({
+    //       courses: courseArray
+    //     });
+    //   });
 
-    fetch('auth/completedCourses/' + this.state.userId, {
+    fetch('/auth/courses', {
+      method: 'GET'
+  })
+    .then(res => {
+      if(res.ok)
+          return res.json()
+          .then(res => {
+              this.setState({
+                courses: res
+              })
+          })
+        })
+    fetch('auth/completedCourses/' + this.props.profile.id, {
       method: 'GET'
     })
       .then(res => {
@@ -51,40 +63,57 @@ class UserHomeComponent extends React.Component {
             .then(res => {
               let completedCoursesId = res.map(item => item.course_id)
               this.setState({
-                completedCourses: completedCoursesId
+                completedCourses: completedCoursesId,
+                isLoading: false
               })
             })
         else
           alert('No courses completed')
       })
-  }
+}
+
 
   showCard =() =>{
-    return this.state.courses.map((item, index) => {
+    return (this.state.isLoading == false) ?
+     this.state.courses.map((item, index) => {
+        for (const property in this.state.categoryNames) {
+          if(property === item.category_id)
+          return this.state.categoryNames[property]
+        }
       return (
-        <CardComponent 
+        <CardComponent
         headerColor={item.is_important ?
           this.state.headerColorImportant
           :
           this.state.headerColorStandard}
-        completedCourses={this.state.completedCourses}
-        chapterCard={item.category_id} 
-        titleCard={item.title}
-        textCard={item.textCard}
-        keywordsCard={item.keywordsCard}
-        date={item.date}
-        admin={this.props.admin}
-        i={index}
-        toDelete={this.cardToDeleteFromBtn}
-        link={item.link}
+      completedCourses={this.state.completedCourses}
+      userId={this.props.profile.id}
+      courseId={item.id}
+      chapterCard={item.Category.category_name}
+      titleCard={item.title}
+      textCard={item.description}
+      keywordsCard={item.keywordsCard}
+      date={item.createdAt}
+      admin={this.props.admin}
+      link={item.link}
+      i={index}
+      toDelete={this.cardToDeleteFromBtn}
         />
       )
-  })
+    })
+    : 
+    <div>
+      <h2>
+        Cursuri de încărcare...
+      </h2>
+    </div>
   }
 
 
   render() {
-    console.log(this.state.courses)
+    console.log(this.state.completedCourses)
+    console.log('user id from props: ' + this.props.profile.id)
+    // console.log('names : ' + this.state.categoryNames)
     return (
       <div className='container'>
         <header className='headerContainer'>

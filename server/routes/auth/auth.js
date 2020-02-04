@@ -131,7 +131,7 @@ router.post('/courses', function(req, res, next) {
 router.get('/courses', function(req, res, next) {
     models
         .Courses
-        .findAll()
+        .findAll( {include: [models.Categories]})
         .then(courses => res.status(200).json(courses))
 })
 

@@ -23,7 +23,16 @@ class CardComponent extends React.Component {
     };
   }
 
-  componentDidUpdate = () => {
+//   static getDerivedStateFromProps(nextProps, prevState){
+//     if(nextProps.completedCourses!==prevState.someValue){
+//       return { someState: nextProps.someValue};
+//    }
+//    else return null;
+//  }
+
+  componentDidMount = (prevProps, prevState) => {
+    console.log("you're in the componentDidUpdate of the card component")
+    // if(prevProps.completedCourses!==this.props.completedCourses){
     console.log(this.props.completedCourses)
     console.log(this.props.courseId)
     if(this.props.completedCourses !== undefined) {
@@ -39,7 +48,9 @@ class CardComponent extends React.Component {
         classButton: "completedButtonGreen"
       })  
     }
-  }
+  // }
+}
+  
   }
 
   handleButtonCourseLink = () => {
@@ -94,11 +105,13 @@ class CardComponent extends React.Component {
     })
   }
 
-  
   render() {
-    console.log("completedCourses : " + this.props.completedCourses)
-    console.log("course id : " + this.props.courseId)
-    console.log("openmodal : " + this.state.openModal)
+    // console.log("completedCourses : " + this.props.completedCourses)
+    // console.log("course id : " + this.props.courseId)
+    // console.log("openmodal : " + this.state.openModal)
+    // console.log("chapterCard : " + this.state.chapterCard)
+    // console.log("chapterId : " + this.state.chapterId)
+    console.log('userid : ' + this.props.userId)
     return (
         <div className='cardContainer' style={{display : this.state.toDelete ? 'none' : 'block'}}>
           <div
@@ -120,7 +133,8 @@ class CardComponent extends React.Component {
                 color="inherit"
                 className='courseLinkButton'
                 onClick={this.handleButtonCourseLink}
-                href={this.props.link}
+                href={this.props.link} 
+                target="_blank"
               >
                 Course Link
               </Button>

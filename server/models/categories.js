@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
     category_name: DataTypes.STRING
   }, {});
   Categories.associate = function(models) {
-    // associations can be defined here
+    Categories.hasOne(models.Courses)
   };
   return Categories;
 };

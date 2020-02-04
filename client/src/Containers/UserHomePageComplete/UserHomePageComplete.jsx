@@ -20,9 +20,9 @@ class UserHomePageComplete extends React.Component {
             <React.Fragment>
                 <Navbar admin={this.props.admin}/>
                 {this.props.admin ?
-                    <UserHomeComponent userName = {this.state.userName} admin={this.props.admin}/>
+                    <UserHomeComponent userName={this.state.userName} admin={this.props.admin} profile={this.props.auth}/>
                 :
-                    <UserHomeComponent userName = {this.state.userName}/>
+                    <UserHomeComponent userName = {this.state.userName} profile={this.props.auth}/>
                 }
                 <Footer />
             </React.Fragment>

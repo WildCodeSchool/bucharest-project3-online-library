@@ -27,27 +27,10 @@ class AdminAllCourses extends React.Component{
     }
 
     componentDidMount(){
-        // axios.get('auth/courses')
         fetch('/auth/courses', {
             method: 'GET'
         })
           .then(res => {
-            // let courseArray = [];
-            // res.data.forEach(course => {
-            //   let courseObject = {
-            //     id: course.id,
-            //     titleCard: course.title,
-            //     textCard: course.description,
-            //     link:course.link,
-            //     date:course.createdAt,
-            //     chapterCard: course.category_id
-            //   }
-            //   courseArray.push(courseObject)
-
-            // })
-            // this.setState({
-            //     latestCourses: courseArray
-            //   });
             if(res.ok)
                 return res.json()
                 .then(res => {
@@ -60,8 +43,7 @@ class AdminAllCourses extends React.Component{
                 noCoursesAvailable: true
             })
             });
-        
-        
+
         fetch('auth/completedCourses/'+ this.state.userId, {
             method: 'GET'
         })
@@ -85,7 +67,7 @@ class AdminAllCourses extends React.Component{
             <h2 className="penLogo">&#9998;</h2> : null
     }
     NewCards = () => {
-        // console.log(this.state.latestCourses)
+        console.log(this.state.latestCourses)
         return this.state.latestCourses.map((item, index) => {
             return <CardComponent 
                 headerColor={item.is_important ?
@@ -95,7 +77,7 @@ class AdminAllCourses extends React.Component{
                 completedCourses={this.state.completedCourses}
                 userId={this.state.userId}
                 courseId={item.id}
-                chapterCard={item.category_id}
+                chapterCard={item.Category.category_name}
                 titleCard={item.title}
                 textCard={item.description}
                 keywordsCard={item.keywordsCard}

@@ -7,43 +7,7 @@ import ProfileCourseCard from "../ProfileCourseCard/ProfileCourseCard";
 
 import { connect } from 'react-redux';
 
-const courses = [
-  {
-    chapterTitle: "Love",
-    courseTitle: "How to..",
-    courseLink: "http//.dasdadasdfa"
-  },
-  {
-    chapterTitle: "Love",
-    courseTitle: "How to..",
-    courseLink: "http//.dasdadasdfdsadasrewtre241324a"
-  },
-  {
-    chapterTitle: "Love",
-    courseTitle: "How to..",
-    courseLink: "http//.dasdadasdfdsadasrewtre241324a"
-  },
-  {
-    chapterTitle: "Love",
-    courseTitle: "How to..",
-    courseLink: "http//.dasdadasdfdsadasrewtre241324a"
-  },
-  {
-    chapterTitle: "Love",
-    courseTitle: "How to..",
-    courseLink: "http//.dasdadasdfdsadasrewtre241324a"
-  },
-  {
-    chapterTitle: "Love",
-    courseTitle: "How to..",
-    courseLink: "http//.dasdadasdfdsadasrewtre241324a"
-  },
-  {
-    chapterTitle: "Love",
-    courseTitle: "How to..",
-    courseLink: "http//.dasdadasdfdsadasrewtre241324a"
-  }
-];
+const courses = [];
 
 class PersonalProfile extends Component {
   constructor(props) {
@@ -184,7 +148,7 @@ class PersonalProfile extends Component {
         <div className="rightSide">
           <div class="search-container">
             <div className="searchBarWrapper">
-              <FormControl className="searchStyle" action="/action_page.php">
+              <FormControl className="searchStyle">
                 <input
                   className="searchField"
                   type="text"

@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
     link: DataTypes.STRING
   }, {});
   Courses.associate = function(models) {
-    // associations can be defined here
+    Courses.belongsTo(models.Categories)
   };
   return Courses;
 };

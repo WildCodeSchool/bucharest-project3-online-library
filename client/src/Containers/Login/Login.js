@@ -38,7 +38,12 @@ class Login extends Component {
             if(res.ok)
                 return res.json()
             else
-                throw new Error(res.statusText)
+            console.log('Snackbar should appear')
+            alert('Ceva nu a mers bine, vă rugăm să vă verificați datele de acreditare!')
+            this.setState({
+                email: '',
+                password: ''
+            })
         })
         .then(res => {
             this.setState({
@@ -61,9 +66,11 @@ class Login extends Component {
             this.props.history.push('acasa')
         })
             // return <Redirect to='/acasa'/>
-        .catch(err => { this.setState({
+        .catch(err => { 
+            this.setState({
             message: err.message.info
-        })})
+        })
+    })
     }
 
     render() {
@@ -108,6 +115,7 @@ class Login extends Component {
                                     className="logInInput"
                                     margin="normal"
                                     variant="filled"
+                                    value={this.state.email}
                                     onChange={this.updateField}
                                 />
                             </div>
@@ -122,6 +130,7 @@ class Login extends Component {
                                     className="logInInput"
                                     margin="normal"
                                     variant="filled"
+                                    value={this.state.password}
                                     onChange={this.updateField}
                                 />
                             </div>
@@ -147,8 +156,6 @@ class Login extends Component {
                     
                     </form>
                 </div>
-
-
                </div>
 
         </div>

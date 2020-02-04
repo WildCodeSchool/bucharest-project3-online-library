@@ -12,6 +12,7 @@ import AdminAllCourses from './Containers/AdminAllCourses/AdminAllCourses'
 
 import { Switch, Route } from 'react-router-dom';
 import AllUsersTable from './Components/AllUsersTable/AllUsersTable';
+import { connect} from 'react-redux'
 
 // import { library } from '@fortawesome/fontawesome-svg-core';
 // import { fab } from '@fortawesome/free-brands-svg-icons';
@@ -24,20 +25,20 @@ class App extends React.Component {
   constructor(props){
     super(props);
     this.state={
-      admin: true
     }
   }
   render() {
+    console.log(this.props.auth.access_level)
     return (
       <React.Fragment>
 
         <Switch>
           <Route exact path="/" component={LoginPageComplete} home={true}/>
           <Route path="/creareCont" component={SignUpPageComplete} home={true}/>
-          <Route path="/acasa" render={ () => <UserHomePageComplete admin={this.state.admin} /> } />
-          <Route path='/cursuri' render={ () => <AdminAllCourses admin={this.state.admin} /> } />
-          <Route path="/profil" render={ () => <PersonalProfilePageComplete admin={this.state.admin} /> } /> 
-          <Route path="/utilizatorii" render={ () => < AllUsersTable admin={this.state.admin} /> } /> 
+          <Route path="/acasa" render={ () => <UserHomePageComplete admin={this.props.auth.access_level} /> } />
+          <Route path='/cursuri' render={ () => <AdminAllCourses admin={this.props.auth.access_level} /> } />
+          <Route path="/profil" render={ () => <PersonalProfilePageComplete admin={this.props.auth.access_level} /> } /> 
+          <Route path="/utilizatorii" render={ () => < AllUsersTable admin={this.props.auth.access_level} /> } /> 
         </Switch>
       </React.Fragment>
     )
@@ -78,4 +79,10 @@ class App extends React.Component {
 //   }
 // }
 
-export default App;
+function mapStateToProps(state) {
+  return {
+    auth: state.auth
+  }
+}
+
+export default connect(mapStateToProps) (App);

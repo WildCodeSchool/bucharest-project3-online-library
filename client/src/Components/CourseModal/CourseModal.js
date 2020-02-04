@@ -36,7 +36,7 @@ componentDidMount() {
             this.setState({
             category: res.map(item  => {
               let myObj = {}
-              myObj.category_id = item.categoryId
+              myObj.categoryId = item.categoryId
               myObj.category_name = item.category_name
               return myObj
                       })
@@ -63,7 +63,7 @@ handleClose = () => {
 
 showDropdown = () => {
   return this.state.category.map((item, i) => {
-  return (<option key={i} value={item.category_id} name="category">{item.category_name}</option>)
+  return (<option key={i} value={item.categoryId} name="category">{item.category_name}</option>)
   })
 }
 
@@ -100,7 +100,7 @@ saveAll=()=>{
     // keywords: keyword,
     link: this.state.link,
     important: this.state.checked ? 1 : 0,
-    category_id: this.state.newCategory
+    CategoryCategoryId: this.state.newCategory
   }
 
   fetch('/auth/courses',

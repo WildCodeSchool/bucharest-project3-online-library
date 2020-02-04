@@ -61,6 +61,7 @@ class Login extends Component {
                 contract_number: res.user.contract_number,
                 date_joined: res.user.createdAt,
                 phonenumber: res.user.phonenumber,
+                access_level: res.user.access_level,
                 token: res.token
             })
             this.props.history.push('/acasa')

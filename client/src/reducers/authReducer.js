@@ -13,6 +13,7 @@ export default function(state = {}, action) {
                 contract_number: action.contract_number,
                 date_joined: action.date_joined,
                 phonenumber: action.phonenumber,
+                access_level: action.access_level
             }
         default: 
             return state;

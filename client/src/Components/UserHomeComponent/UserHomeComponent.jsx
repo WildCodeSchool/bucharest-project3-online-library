@@ -50,7 +50,7 @@ class UserHomeComponent extends React.Component {
           return res.json()
           .then(res => {
               this.setState({
-                courses: res
+                courses: res.slice(res.length-6)
               })
           })
         })

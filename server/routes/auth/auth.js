@@ -117,7 +117,7 @@ router.post('/courses', function(req, res, next) {
     let post = {
         title: req.body.title,
         description: req.body.description,
-        category_id: req.body.category_id,
+        CategoryCategoryId: req.body.category_id,
         is_important: req.body.important,
         link: req.body.link
     };

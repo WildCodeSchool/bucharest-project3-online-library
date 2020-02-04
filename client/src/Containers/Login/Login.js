@@ -26,7 +26,7 @@ class Login extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        fetch('/auth/signin',
+        fetch('https://rocky-refuge-51400.herokuapp.com/auth/signin',
         {
             method : 'POST',
             headers : new Headers({

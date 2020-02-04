@@ -6,6 +6,8 @@ import axios from 'axios'
 import Navbar from '../NavbarComponent/Navbar'
 import Footer from '../Footer/Footer'
 // import 'bootstrap/dist/css/bootstrap.min.css';
+import { withRouter, Redirect } from "react-router";
+import { connect } from 'react-redux';
 
 import './AllUsersTable.css';
 
@@ -145,6 +147,7 @@ class AllUsersTable extends React.Component{
   }
 
   render(){
+    if(!this.props.auth.token) this.props.history.push('/')
     return (
     <div className="allUsersMain">
         <Navbar admin={this.props.admin} />
@@ -170,4 +173,11 @@ class AllUsersTable extends React.Component{
   }
 }
 
-export default AllUsersTable;
+
+function mapStateToProps(state) {
+  return {
+      auth: state.auth
+  }
+}
+
+export default withRouter(connect(mapStateToProps) (AllUsersTable));

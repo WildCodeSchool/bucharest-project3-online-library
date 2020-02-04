@@ -9,6 +9,7 @@ import './AdminAllCourses.css'
 import axios from 'axios'
 
 import { connect } from 'react-redux'
+import { withRouter, Redirect } from "react-router";
 
 // ADMIN PROPS SENT BY APP.JS DETERMINE IF PAGE DISPLAY IS FOR ADMIN OR USER
 
@@ -118,6 +119,7 @@ class AdminAllCourses extends React.Component{
     }
 
     render(){
+        if(!this.props.auth.token) this.props.history.push('/')
         console.log(this.state.latestCourses)
 
         {return this.state.noCoursesAvailable ?
@@ -165,4 +167,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps) (AdminAllCourses);
+export default withRouter(connect(mapStateToProps) (AdminAllCourses));

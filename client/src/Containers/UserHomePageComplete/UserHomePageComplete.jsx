@@ -5,6 +5,7 @@ import UserHomeComponent from '../../Components/UserHomeComponent/UserHomeCompon
 import Footer from '../../Components/Footer/Footer';
 
 import { connect } from 'react-redux'
+import { withRouter, Redirect } from "react-router";
 
 class UserHomePageComplete extends React.Component {
     constructor(props) {
@@ -15,6 +16,7 @@ class UserHomePageComplete extends React.Component {
       }
 
     render(){
+        if(!this.props.auth.token) this.props.history.push('/')
         console.log(this.props.auth.firstname)
         return(
             <React.Fragment>
@@ -36,4 +38,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps) (UserHomePageComplete);
+export default withRouter(connect(mapStateToProps) (UserHomePageComplete));

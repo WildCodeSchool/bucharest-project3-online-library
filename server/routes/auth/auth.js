@@ -135,6 +135,15 @@ router.get('/courses', function(req, res, next) {
         .then(courses => res.status(200).json(courses))
 })
 
+router.delete('/courses/:id', function(req, res, next) {
+    models
+        .Courses
+        .destroy({ where : {
+            id: req.params.id
+        }})
+        .then(courses => res.status(200).json(courses))
+})
+
 router.get('/categories', function(req, res, next) {
     models
     .Categories

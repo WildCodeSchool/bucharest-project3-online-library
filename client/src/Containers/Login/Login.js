@@ -63,7 +63,7 @@ class Login extends Component {
                 phonenumber: res.user.phonenumber,
                 token: res.token
             })
-            this.props.history.push('acasa')
+            this.props.history.push('/acasa')
         })
             // return <Redirect to='/acasa'/>
         .catch(err => { 

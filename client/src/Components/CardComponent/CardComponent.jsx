@@ -4,6 +4,7 @@ import Button from "@material-ui/core/Button";
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 import CompletedComp from '../../Components/CompletedCourseModal/CompletedCourseModal';
+import ConfirmationModal from '../../Components/ConfirmationModal/ConfirmationModal'
 
 class CardComponent extends React.Component {
   constructor(props) {
@@ -17,18 +18,12 @@ class CardComponent extends React.Component {
       buttonValue: 'Mark as completed',
       admin: false,
       openModal: false,
+      openConfirmationModal: false,
       toDelete: false,
       buttonColor: 'inherit',
       classButton: 'uncompletedButton'
     };
   }
-
-//   static getDerivedStateFromProps(nextProps, prevState){
-//     if(nextProps.completedCourses!==prevState.someValue){
-//       return { someState: nextProps.someValue};
-//    }
-//    else return null;
-//  }
 
   componentDidMount = (prevProps, prevState) => {
     console.log("you're in the componentDidUpdate of the card component")
@@ -46,11 +41,11 @@ class CardComponent extends React.Component {
         done: true,
         buttonValue: 'COMPLETED',
         classButton: "completedButtonGreen"
-      })  
+      })
     }
   // }
 }
-  
+
   }
 
   handleButtonCourseLink = () => {
@@ -66,7 +61,6 @@ class CardComponent extends React.Component {
       course_id: this.props.courseId,
       user_id: this.props.userId
     }
-    console.log(courseData)
     if(this.state.buttonValue === 'Mark as completed') {
       fetch('/auth/completedCourses', {
         method: 'POST',
@@ -93,25 +87,27 @@ class CardComponent extends React.Component {
       })
     }
   }
+
   handleClose = () => {
     this.setState({
       openModal: false
     })
   }
 
+  handleCloseConfirmation = (flag) => {
+    this.setState({
+        openConfirmationModal: false,
+        toDelete: flag
+    })
+  }
+
   deleteCourse = () => {
     this.setState({
-      toDelete : true
+      openConfirmationModal: true,
     })
   }
 
   render() {
-    // console.log("completedCourses : " + this.props.completedCourses)
-    // console.log("course id : " + this.props.courseId)
-    // console.log("openmodal : " + this.state.openModal)
-    // console.log("chapterCard : " + this.state.chapterCard)
-    // console.log("chapterId : " + this.state.chapterId)
-    console.log('userid : ' + this.props.userId)
     return (
         <div className='cardContainer' style={{display : this.state.toDelete ? 'none' : 'block'}}>
           <div
@@ -147,11 +143,14 @@ class CardComponent extends React.Component {
                 {this.state.buttonValue}
               </Button>
           </div>
-          {this.state.openModal && 
-          <CompletedComp onClose={this.handleClose} /> 
+          {this.state.openModal &&
+            <CompletedComp onClose={this.handleClose} />
           }
+
         </div>
-        {/* <CompletedComp OpenModal={this.state.openModal} /> */}
+          {this.state.openConfirmationModal &&
+            <ConfirmationModal courseId={this.props.courseId} onClose={this.handleCloseConfirmation} />
+          }
       </div>
     );
   }

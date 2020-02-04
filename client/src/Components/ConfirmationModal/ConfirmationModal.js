@@ -8,7 +8,7 @@ class ConfirmationModal extends Component {
         }
     }
     handleCloseClickAndDelete = () => {
-        fetch('/auth/courses/'+ this.props.courseId, {
+        fetch('https://rocky-refuge-51400.herokuapp.com/auth/courses/'+ this.props.courseId, {
             method: 'DELETE'
         })
         .then(res => res.json())

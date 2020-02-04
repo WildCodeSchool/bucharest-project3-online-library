@@ -28,7 +28,7 @@ class AdminAllCourses extends React.Component{
     }
 
     componentDidMount(){
-        fetch('/auth/courses', {
+        fetch('https://rocky-refuge-51400.herokuapp.com/auth/courses', {
             method: 'GET'
         })
           .then(res => {
@@ -45,7 +45,7 @@ class AdminAllCourses extends React.Component{
             })
             });
 
-        fetch('auth/completedCourses/'+ this.state.userId, {
+        fetch('https://rocky-refuge-51400.herokuapp.com/auth/completedCourses/'+ this.state.userId, {
             method: 'GET'
         })
         .then(res => {

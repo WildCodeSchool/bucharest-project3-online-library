@@ -23,7 +23,7 @@ class CourseModal extends Component {
   };
 
 componentDidMount() {
-  fetch('/auth/categories/',
+  fetch('https://rocky-refuge-51400.herokuapp.com/auth/categories/',
     {
       method : 'GET'
     })
@@ -103,7 +103,7 @@ saveAll=()=>{
     CategoryCategoryId: this.state.newCategory
   }
 
-  fetch('/auth/courses',
+  fetch('https://rocky-refuge-51400.herokuapp.com/auth/courses',
     {
       method: 'POST',
       headers: new Headers({

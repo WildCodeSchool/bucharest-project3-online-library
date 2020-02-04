@@ -28,7 +28,7 @@ class PersonalProfile extends Component {
   }
 
   componentDidMount = () => {
-    fetch('http://localhost:3000/auth/completedCourses/'+ this.props.auth.id,{
+    fetch('https://rocky-refuge-51400.herokuapp.com/auth/completedCourses/'+ this.props.auth.id,{
         method: "GET"
     })
         .then(res => res.json())
@@ -39,7 +39,7 @@ class PersonalProfile extends Component {
             })
         })
 
-    fetch('auth/courses', {
+    fetch('https://rocky-refuge-51400.herokuapp.com/auth/courses', {
       method: 'GET'
     })
     .then(res => res.json())

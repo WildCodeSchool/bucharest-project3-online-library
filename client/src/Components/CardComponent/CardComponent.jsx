@@ -62,7 +62,7 @@ class CardComponent extends React.Component {
       user_id: this.props.userId
     }
     if(this.state.buttonValue === 'Mark as completed') {
-      fetch('/auth/completedCourses', {
+      fetch('https://rocky-refuge-51400.herokuapp.com/auth/completedCourses', {
         method: 'POST',
         headers: new Headers({
           'Content-type': 'application/json'

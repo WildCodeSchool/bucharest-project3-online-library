@@ -42,7 +42,7 @@ class UserHomeComponent extends React.Component {
     //     });
     //   });
 
-    fetch('/auth/courses', {
+    fetch('https://rocky-refuge-51400.herokuapp.com/auth/courses', {
       method: 'GET'
   })
     .then(res => {
@@ -54,7 +54,7 @@ class UserHomeComponent extends React.Component {
               })
           })
         })
-    fetch('auth/completedCourses/' + this.props.profile.id, {
+    fetch('https://rocky-refuge-51400.herokuapp.com/auth/completedCourses/' + this.props.profile.id, {
       method: 'GET'
     })
       .then(res => {

@@ -4,6 +4,7 @@ import Navbar from '../../Components/NavbarComponent/Navbar';
 import PersonalProfile from '../../Components/PersonalProfile/PersonalProfile';
 import Footer from '../../Components/Footer/Footer';
 import { connect } from 'react-redux';
+import { withRouter, Redirect } from "react-router";
 
 import './PersonalProfilePageComplete.scss';
 
@@ -16,6 +17,7 @@ class PersonalProfilePageComplete extends React.Component {
       }
 
     render(){
+        if(!this.props.auth.token) this.props.history.push('/')
         console.log(this.props.auth)
         return(
             <div className="personalProfilePageContainer">
@@ -33,4 +35,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps) (PersonalProfilePageComplete);
+export default withRouter(connect(mapStateToProps) (PersonalProfilePageComplete));

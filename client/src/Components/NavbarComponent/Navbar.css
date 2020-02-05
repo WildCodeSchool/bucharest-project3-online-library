@@ -36,6 +36,7 @@ a {
   padding: 20px 20px;
   border-left: 1px solid #75B1A9;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .header li a:hover,
@@ -109,7 +110,7 @@ a {
 }
 
 .header .menu-btn:checked ~ .menu {
-  max-height: 240px;
+  max-height: 280px;
 }
 
 .header .menu-btn:checked ~ .menu-icon .navicon {

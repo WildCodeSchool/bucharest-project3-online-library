@@ -65,6 +65,18 @@ class Login extends Component {
                 token: res.token
             })
             this.props.history.push('/acasa')
+            localStorage.setItem('userEmail', res.user.email)
+            localStorage.setItem('userPassword', res.user.password)
+            localStorage.setItem('userName', res.user.firstname)
+            localStorage.setItem('userLastname', res.user.lastname)
+            localStorage.setItem('userCounty', res.user.volunteering_county)
+            localStorage.setItem('userCenter', res.user.volunteering_center)
+            localStorage.setItem('userContractNumber', res.user.contract_number)
+            localStorage.setItem('userDateJoined', res.user.createdAt)
+            localStorage.setItem('userPhoneNumber', res.user.phonenumber)
+            localStorage.setItem('userToken', res.token)
+            localStorage.setItem('userId', res.user.id)
+            localStorage.setItem('userAccessLevel', res.user.access_level)
         })
             // return <Redirect to='/acasa'/>
         .catch(err => { 

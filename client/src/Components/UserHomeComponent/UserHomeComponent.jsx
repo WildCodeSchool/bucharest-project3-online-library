@@ -104,7 +104,7 @@ class UserHomeComponent extends React.Component {
     : 
     <div>
       <h2>
-        Cursuri de încărcare...
+      Cursurile se încarcă...
       </h2>
     </div>
   }

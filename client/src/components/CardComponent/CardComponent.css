@@ -1,3 +1,7 @@
+html {
+  font-size: 10px;
+}
+
 .cardContainer {
   text-align: center;
   border: 0.1em solid #D3D3D3;
@@ -51,7 +55,6 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  border: 0.1em solid #FA5457;
 }
 
 .chapterTitle {
@@ -67,7 +70,8 @@
 }
 
 .titleCcard {
-  font-size: 1.125rem;
+  font-size: 1.3rem;
+  font-weight: 600;
   text-align: center;
   margin: 0;
   padding-bottom: .277em;
@@ -76,7 +80,7 @@
 .textCard {
   margin: 0;
   text-align: justify;
-  font-size: 0.75rem;
+  font-size: 1rem;
 }
 
 .keywordsCard {
@@ -108,10 +112,25 @@
 
 .completedButton.MuiButton-text {
   color: #FFFFFF;
-  font-size: 0.8rem;
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 .completedButton .MuiButton-label {
+  padding: .143em;
+}
+
+.completedButtonGreen.MuiButton-colorInherit {
+  background-color: #A1BE95;
+}
+
+.completedButtonGreen.MuiButton-text {
+  background-color: #A1BE95 !important;
+  color: #FFFFFF;
+  font-size: 0.8rem;
+}
+
+.completedButtonGreen .MuiButton-label {
   padding: .143em;
 }
 

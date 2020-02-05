@@ -28,6 +28,10 @@ body {
   margin-top: 12%;
 }
 
+.AdminAllCoursesTitle {
+  padding-top: 10%;
+}
+
 .AdminAllCoursesMain .penLogo {
   font-size: 5.9rem;
   color: #75B1A9;

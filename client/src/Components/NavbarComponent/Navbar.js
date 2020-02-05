@@ -14,6 +14,17 @@ class Navbar extends Component {
         token: null
     })
     this.props.history.push('/')
+            localStorage.setItem('userEmail', null)
+            localStorage.setItem('userPassword', null)
+            localStorage.setItem('userName', null)
+            localStorage.setItem('userLastname', null)
+            localStorage.setItem('userCounty', null)
+            localStorage.setItem('userCenter', null)
+            localStorage.setItem('userContractNumber', null)
+            localStorage.setItem('userDateJoined', null)
+            localStorage.setItem('userPhoneNumber', null)
+            localStorage.setItem('userToken', null)
+
  }
 
     render() {

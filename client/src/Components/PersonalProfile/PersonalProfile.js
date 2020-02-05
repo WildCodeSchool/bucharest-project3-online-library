@@ -33,6 +33,8 @@ class PersonalProfile extends Component {
     })
         .then(res => res.json())
         .then(list => {
+          console.log(this.props.auth.id)
+          console.log(list)
           let listOfIds = list.map(item => item.course_id)
             this.setState({
                 completedCoursesId: listOfIds

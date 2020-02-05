@@ -16,15 +16,31 @@ class UserHomePageComplete extends React.Component {
       }
 
     render(){
+        console.log('local storage from all users table : ' + localStorage.getItem('userToken'))
+        if(!this.props.auth.token && localStorage.getItem('userToken') !== null) {
+            this.props.auth.token = localStorage.getItem('userToken')
+            this.props.auth.email = localStorage.getItem('userEmail')
+            this.props.auth.password = localStorage.getItem('userPassword')
+            this.props.auth.firstname = localStorage.getItem('userName')
+            this.props.auth.lastname = localStorage.getItem('userLastname')
+            this.props.auth.volunteering_county = localStorage.getItem('userCounty')
+            this.props.auth.volunteering_center = localStorage.getItem('userCenter')
+            this.props.auth.contract_number = localStorage.getItem('userContractNumber')
+            this.props.auth.date_joined = localStorage.getItem('userDateJoined')
+            this.props.auth.phonenumber = localStorage.getItem('userPhoneNumber')
+            this.props.auth.token = localStorage.getItem('userToken')
+            this.props.auth.id = localStorage.getItem('userId')
+            this.props.auth.access_level = localStorage.getItem('userAccessLevel')
+        }
         if(!this.props.auth.token) this.props.history.push('/')
-        console.log(this.props.auth.firstname)
+        console.log(this.props.auth)
         return(
             <React.Fragment>
-                <Navbar admin={this.props.admin}/>
-                {this.props.admin ?
-                    <UserHomeComponent userName={this.state.userName} admin={this.props.admin} profile={this.props.auth}/>
+                <Navbar admin={this.props.auth.access_level}/>
+                {this.props.auth.access_level ?
+                    <UserHomeComponent userName={this.props.auth.firstname} admin={this.props.auth.access_level} profile={this.props.auth}/>
                 :
-                    <UserHomeComponent userName = {this.state.userName} profile={this.props.auth}/>
+                    <UserHomeComponent userName = {this.props.auth.firstname} profile={this.props.auth}/>
                 }
                 <Footer />
             </React.Fragment>

@@ -147,10 +147,26 @@ class AllUsersTable extends React.Component{
   }
 
   render(){
+    console.log('local storage from all users table : ' + localStorage.getItem('userToken'))
+    if(!this.props.auth.token && localStorage.getItem('userToken') !== null) {
+      this.props.auth.token = localStorage.getItem('userToken')
+          this.props.auth.email = localStorage.getItem('userEmail')
+          this.props.auth.password = localStorage.getItem('userPassword')
+          this.props.auth.firstname = localStorage.getItem('userName')
+          this.props.auth.lastname = localStorage.getItem('userLastname')
+          this.props.auth.volunteering_county = localStorage.getItem('userCounty')
+          this.props.auth.volunteering_center = localStorage.getItem('userCenter')
+          this.props.auth.contract_number = localStorage.getItem('userContractNumber')
+          this.props.auth.date_joined = localStorage.getItem('userDateJoined')
+          this.props.auth.phonenumber = localStorage.getItem('userPhoneNumber')
+          this.props.auth.token = localStorage.getItem('userToken')
+          this.props.auth.id = localStorage.getItem('userId')
+          this.props.auth.access_level = localStorage.getItem('userAccessLevel')
+    }
     if(!this.props.auth.token) this.props.history.push('/')
     return (
     <div className="allUsersMain">
-        <Navbar admin={this.props.admin} />
+        <Navbar admin={this.props.auth.access_level} />
         <h1>Utilizatori</h1>
       <div className="tableSelectContainer">
             <Select data={this.state.columns}

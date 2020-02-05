@@ -45,7 +45,7 @@ class AdminAllCourses extends React.Component{
             })
             });
 
-        fetch('https://rocky-refuge-51400.herokuapp.com/auth/completedCourses/'+ this.state.userId, {
+        fetch('https://rocky-refuge-51400.herokuapp.com/auth/completedCourses/'+ this.props.auth.id, {
             method: 'GET'
         })
         .then(res => {
@@ -54,14 +54,15 @@ class AdminAllCourses extends React.Component{
                 .then(res => {
                     let completedCoursesId = res.map(item => item.course_id )
                     this.setState({
-                        completedCourses: completedCoursesId
+                        completedCourses: completedCoursesId,
+                        isLoading: false
+
                     })
                 })
             else
                 alert('No courses completed')
         })
     }
-        
 
     AddCards = () => {
         return this.props.admin ?
@@ -69,7 +70,8 @@ class AdminAllCourses extends React.Component{
     }
     NewCards = () => {
         console.log(this.state.latestCourses)
-        return this.state.latestCourses.map((item, index) => {
+        return (this.state.isLoading == false) ?
+        this.state.latestCourses.map((item, index) => {
             return <CardComponent 
                 headerColor={item.is_important ?
                     this.state.headerColorImportant
@@ -89,6 +91,12 @@ class AdminAllCourses extends React.Component{
                 toDelete={this.cardToDeleteFromBtn}
                         />
         })
+        : 
+        <div>
+          <h2>
+            Cursurile se încarcă...
+          </h2>
+        </div>
     }
 
     cardToDeleteFromBtn = (index) => {
@@ -101,16 +109,32 @@ class AdminAllCourses extends React.Component{
     }
 
     render(){
+        console.log('local storage from all users table : ' + localStorage.getItem('userToken'))
+        if(!this.props.auth.token && localStorage.getItem('userToken') !== null) {
+            this.props.auth.token = localStorage.getItem('userToken')
+            this.props.auth.email = localStorage.getItem('userEmail')
+            this.props.auth.password = localStorage.getItem('userPassword')
+            this.props.auth.firstname = localStorage.getItem('userName')
+            this.props.auth.lastname = localStorage.getItem('userLastname')
+            this.props.auth.volunteering_county = localStorage.getItem('userCounty')
+            this.props.auth.volunteering_center = localStorage.getItem('userCenter')
+            this.props.auth.contract_number = localStorage.getItem('userContractNumber')
+            this.props.auth.date_joined = localStorage.getItem('userDateJoined')
+            this.props.auth.phonenumber = localStorage.getItem('userPhoneNumber')
+            this.props.auth.token = localStorage.getItem('userToken')
+            this.props.auth.id = localStorage.getItem('userId')
+            this.props.auth.access_level = localStorage.getItem('userAccessLevel')
+        }
         if(!this.props.auth.token) this.props.history.push('/')
         console.log(this.state.latestCourses)
 
         {return this.state.noCoursesAvailable ?
             (
                 <div className='AdminAllCoursesMain'>
-                    <Navbar admin={this.props.admin} />
+                    <Navbar admin={this.props.auth.access_level} />
                     <div className='AdminAllCoursesTitle'>
                         <h1>Toate cursurile</h1>
-                        {this.props.admin ? <CourseModal/> : false}
+                        {this.props.auth.access_level ? <CourseModal/> : false}
                     </div>
                     <div className='AdminAllCoursesFilter'>
                         <Filter />
@@ -124,10 +148,10 @@ class AdminAllCourses extends React.Component{
             :
             (
                 <div className='AdminAllCoursesMain'>
-                    <Navbar admin={this.props.admin} />
+                    <Navbar admin={this.props.auth.access_level} />
                     <div className='AdminAllCoursesTitle'>
                         <h1>Toate cursurile</h1>
-                        {this.props.admin ? <CourseModal/> : false}
+                        {this.props.auth.access_level ? <CourseModal/> : false}
                     </div>
                     <div className='AdminAllCoursesFilter'>
                         <Filter />

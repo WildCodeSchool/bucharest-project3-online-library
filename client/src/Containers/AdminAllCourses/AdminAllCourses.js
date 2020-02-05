@@ -123,7 +123,7 @@ class AdminAllCourses extends React.Component{
             this.props.auth.phonenumber = localStorage.getItem('userPhoneNumber')
             this.props.auth.token = localStorage.getItem('userToken')
             this.props.auth.id = localStorage.getItem('userId')
-            this.props.auth.access_level = localStorage.getItem('userAccessLevel')
+            this.props.auth.access_level = (localStorage.getItem('userAccessLevel') === "true")
         }
         if(!this.props.auth.token) this.props.history.push('/')
         console.log(this.state.latestCourses)

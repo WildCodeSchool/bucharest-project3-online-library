@@ -24,7 +24,6 @@ class Navbar extends Component {
             localStorage.setItem('userDateJoined', null)
             localStorage.setItem('userPhoneNumber', null)
             localStorage.setItem('userToken', null)
-
  }
 
     render() {

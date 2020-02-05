@@ -26,18 +26,17 @@ body {
       flex-wrap: wrap;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 1em;
+  padding: 0.1em;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin-bottom: 5% !important;
 }
 
 .titleWelcome {
-  padding-top: 10%;
+  padding-top: 1%;
   font-size: 3.9rem;
   color: #75B1A9;
   text-align: center;
-  margin-top: 12%;
 }
 
 .subtitleWelcome {
@@ -46,22 +45,22 @@ body {
 
 @media only screen and (max-width: 540px) {
   .headerContainer {
-    margin-top: 17%;
+    margin-top: 12%;
   }
   .titleWelcome {
-    margin-top: 17%;
+    padding-top: 5%;
   }
 }
 
 @media only screen and (max-width: 700px) {
   .headerContainer {
-    margin-top: 12%;
+    padding-top: 0;
   }
   .titleWelcome {
+    padding-top: 5%;
     font-size: 3.9rem;
     color: #75B1A9;
     text-align: center;
-    margin-top: 12%;
   }
 }
 /*# sourceMappingURL=UserHomeComponent.css.map */

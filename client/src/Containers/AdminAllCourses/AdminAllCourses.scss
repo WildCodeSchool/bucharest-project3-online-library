@@ -21,8 +21,8 @@ body {
     margin-top: 12%;
 }
 
-.AdminAllCoursesTitle {
-    padding-top:10%;
+.AdminAllCoursesTitle h1 {
+    padding-top: 5%;
 }
 
 .AdminAllCoursesMain .penLogo {
@@ -41,6 +41,7 @@ body {
 
 @media only screen and (min-width: 768px) {
     .AdminAllCoursesMain h1 {
+        padding-top: 0;
         font-size: 3.9rem;
         color: #75B1A9;
         text-align: center;
@@ -60,6 +61,7 @@ body {
 
 @media only screen and (min-width: 992px) {
     .AdminAllCoursesMain h1 {
+        padding-top: 0;
         font-size: 3.9rem;
         color: #75B1A9;
         text-align: center;

@@ -16,7 +16,7 @@ class CompletedComp extends Component {
     }
 
     componentDidMount = () => {
-        fetch('http://localhost:3000/quotes',{
+        fetch('https://rocky-refuge-51400.herokuapp.com/auth/completedCourses/quotes',{
             method: "GET"
         })
             .then(res => res.json())

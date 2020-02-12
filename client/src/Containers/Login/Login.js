@@ -93,11 +93,10 @@ class Login extends Component {
             <div className='main'>
                 <header>
                     <div className="container-fluid headerMain">
-                        <nav className="headerNav">
-                        </nav>
-                        <div className="logoPlaceholder">
-                            <img src={logo} alt="logo" className="logo"/>
-                        </div>
+                        {/* <nav className="headerNav">
+                        </nav> */}
+                        <h1 className="biblioteca">Biblioteca Ajungem MARI</h1>
+                        <img src={logo} alt="logo" className="logo"/>
                     </div>
                 </header>
                 
@@ -150,21 +149,21 @@ class Login extends Component {
                         </div>
                         <div className="signUpBtnContainer">
                             {/* <Link to='/acasa'> */}
-                              <button type="submit">Autentificare</button>
+                              <button type="submit">Sa incepem</button>
                             {/* </Link> */}
                         </div>
                     </div>
                     <div className="container2">
 
-                    <Link to="/creareCont"><span className="creareCont">
-                        <a href="#" className="createAccountAnchor">Creare cont nou</a>
-                        </span> 
+                    <Link to="/creareCont"><div className="creareCont">
+                        <span href="#" className="createAccountAnchor">Vreau si eu cont</span>
+                        </div> 
                     </Link>
 
-                        <label>
+                        {/* <label className="label">
                             <input type="checkbox" name="remember" /> Aminteste-ti de mine
                     </label>
-                        <span className="psw">Ai uitat <a className='forgotPasswordAnchor' href="#">parola?</a></span>
+                        <span className="psw">Ai uitat <a className='forgotPasswordAnchor' href="#">parola?</a></span> */}
                     </div>
                     
                     </form>

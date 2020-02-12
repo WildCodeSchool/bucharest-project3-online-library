@@ -17,6 +17,7 @@ container-fluid headerMain {
     margin-top: 0.9em;
     position: relative;
     display: block;
+    color: white;
     flex-direction: row;
 }
 
@@ -78,8 +79,14 @@ container-fluid headerMain {
 }
 
 .logo {
-    font-size: 5em;
-    /* height: 2.3em !important; */
+    width: 12em;
+    height: 5.5em;
+    display: flex;
+    flex-direction: row;
+    text-align: end;
+    margin-right: 1.5em;
+    /* font-size: 3em; */
+    /* height: 2em !important; */
 }
 
 
@@ -144,10 +151,10 @@ container-fluid headerMain {
 } */
 
 .logo {
-    display: block;
+    /* display: block;
     font-size: 5em;
     text-decoration: none;
-    height: 2.3em !important;
+    height: 2.3em !important; */
 }
 
 
@@ -311,13 +318,13 @@ container-fluid headerMain {
         display: block;
         transform: translateY(0);
     }
-    .logo {
+    /* .logo {
         float: right;
         font-size: 3em;
-        /* padding: 0px 10px 20px; */
+        padding: 0px 10px 20px; 
         text-decoration: none;
         height: 2.3em !important;
-    }
+    } */
 }
 
 @media only screen and (min-width: 768px) {
@@ -405,13 +412,13 @@ container-fluid headerMain {
     .ChildrenImage {
         width: 80%;
     }
-    .logo {
-        float: right;
+    /* .logo {
+     float: right;
         font-size: 3em;
-        /* padding: 0px 10px 20px; */
+         padding: 0px 10px 20px; 
         text-decoration: none;
         height: 2.3em !important;
-    }
+    } */
 }
 
 .formMain {

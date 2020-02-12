@@ -16,7 +16,7 @@ class CompletedComp extends Component {
     }
 
     componentDidMount = () => {
-        fetch('https://rocky-refuge-51400.herokuapp.com/auth/completedCourses/quotes',{
+        fetch('https://rocky-refuge-51400.herokuapp.com/quotes',{
             method: "GET"
         })
             .then(res => res.json())
@@ -29,6 +29,7 @@ class CompletedComp extends Component {
 
     render() {
         const { quote } = this.state;
+        console.log(quote)
         if(!quote){
             return null;
         }
@@ -36,16 +37,13 @@ class CompletedComp extends Component {
             <div class="completedCourseModal-content">
                 <div class="completedCourseModal-header">
                     <span onClick={this.handleCloseClick} class="completedCourseModal-close"> &times;</span>
-                    <h2 class="completedCourseModal-text"> Bravo!</h2>
+                    <h2 class="completedCourseModal-text"> Felicitari ca ai parcurs acest material!</h2>
                 </div>
                 <div class="completedCourseModal-body">
                     <div class="completedCourseModal-image">
                         <img src={Trophy} alt='trophy' style={{ width: '30%', height: '30%', float: 'center' }} />
                     </div>
                     <p class="completedCourseModal-text1">{quote}</p>
-                </div>
-                <div class="modal-footer">
-
                 </div>
             </div>
         </div>

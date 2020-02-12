@@ -31,7 +31,7 @@ class Navbar extends Component {
 
 
             <header class="header">
-                <img src={logo} alt="" className="logo"/>
+                <img src={logo} alt="" className="Logo"/>
                 <input class="menu-btn" type="checkbox" id="menu-btn" />
                 <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
                 {this.props.home ? 

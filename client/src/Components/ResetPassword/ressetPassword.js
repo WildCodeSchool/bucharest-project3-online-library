@@ -21,7 +21,7 @@ class RessetPassword extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        fetch('/auth/password/' + this.state.email,
+        fetch('https://rocky-refuge-51400.herokuapp.com/auth/password/' + this.state.email,
             {
                 method: 'PUT',
                 // headers: new Headers({

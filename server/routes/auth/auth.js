@@ -18,7 +18,7 @@ router.post('/signin', function(req, res, next) {
 router.put('/password/:email', function (req, res) {
     var randomstring = Math.random().toString(36).slice(-8);
     var criptpass=bcrypt.hashSync(randomstring, 10)
-    let updatedStatus = await models.Users.update(
+    let updatedStatus =  models.Users.update(
         { password: criptpass} 
         ,{
             where: {
@@ -26,7 +26,14 @@ router.put('/password/:email', function (req, res) {
             }
         }
     )
-          res.send('Passoword changed. ' + randomstring)
+    sendNodeMailer(req.params.email, randomstring)
+    .then(rez => {
+        res.status(200).json('Passoword changed. ' + randomstring)
+    })
+    .catch(err => {
+        console.log(err)
+        res.status(400).json("Something went wrong, please try again.")
+    })
 })
 
 router.post('/signup', function(req, res, next) {
@@ -169,14 +176,7 @@ router.get('/categories', function(req, res, next) {
 router.post('/sendMail', (req, res) => {
     console.log(req.body)
     // sendNodeMailer('grandgerard.olivier@gmail.com', req.body)
-    sendNodeMailer(req.body.email, req.body.password)
-    .then(rez => {
-        res.status(200).json("Your application was submitted.")
-    })
-    .catch(err => {
-        console.log(err)
-        res.status(400).json("Something went wrong, please try again.")
-    })
+    
 })
 
 

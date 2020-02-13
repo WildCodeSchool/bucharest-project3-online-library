@@ -16,7 +16,6 @@ class UserHomePageComplete extends React.Component {
       }
 
     render(){
-        console.log('local storage from all users table : ' + localStorage.getItem('userToken'))
         if(!this.props.auth.token && localStorage.getItem('userToken') !== null) {
             this.props.auth.token = localStorage.getItem('userToken')
             this.props.auth.email = localStorage.getItem('userEmail')
@@ -33,7 +32,6 @@ class UserHomePageComplete extends React.Component {
             this.props.auth.access_level = (localStorage.getItem('userAccessLevel') === "true")
         }
         if(!this.props.auth.token) this.props.history.push('/')
-        console.log(this.props.auth)
         return(
             <React.Fragment>
                 <Navbar admin={this.props.auth.access_level}/>

@@ -115,11 +115,11 @@ label + .MuiInput-formControl {
         align-items: center!important;
     }
 
-    .filterCheckboxesContainer{
-        display:flex!important;
-        flex-direction: column!important;
-        align-items: flex-start!important;    
-    }
+    // .filterCheckboxesContainer{
+    //     display:flex!important;
+    //     flex-direction: column!important;
+    //     align-items: flex-start!important;    
+    // }
 
     .filterInput{
         width: 70%;
@@ -138,7 +138,7 @@ label + .MuiInput-formControl {
         margin-top:0%!important;
         margin-left: 0!important;
     }
-    
+
     .MuiOutlinedInput-input{
         padding: 10px 14px!important;
     }

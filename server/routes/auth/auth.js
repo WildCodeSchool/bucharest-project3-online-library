@@ -4,6 +4,7 @@ const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const models = require('../../models');
 const bcrypt = require('bcrypt')
+const sendNodeMailer = require('../nodemailer')
 
 router.post('/signin', function(req, res, next) {
     passport.authenticate('local', (err, user, info) => {
@@ -150,5 +151,19 @@ router.get('/categories', function(req, res, next) {
     .findAll()
     .then(allCategories => res.status(200).json(allCategories))
 })
+
+router.post('/sendMail', (req, res) => {
+    console.log(req.body)
+    // sendNodeMailer('grandgerard.olivier@gmail.com', req.body)
+    sendNodeMailer(req.body.email, req.body.password)
+    .then(rez => {
+        res.status(200).json("Your application was submitted.")
+    })
+    .catch(err => {
+        console.log(err)
+        res.status(400).json("Something went wrong, please try again.")
+    })
+})
+
 
 module.exports = router

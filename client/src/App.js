@@ -30,16 +30,12 @@ class App extends React.Component {
   }
   render() {
     console.log(this.props.auth.access_level)
-    // if(this.props.auth == undefined) {
       const user = localStorage.getItem('user')
       const userName = localStorage.getItem('userName')
       const userToken = localStorage.getItem('userToken')
       console.log('user firstname from localStorage : '+userName)
       console.log('user token from localStorage : '+userToken)
-      // this.setState({
-      //   user: userName
-      // })
-    // }
+
 
     return (
       <React.Fragment>

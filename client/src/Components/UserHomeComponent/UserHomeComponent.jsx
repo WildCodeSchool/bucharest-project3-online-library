@@ -111,9 +111,6 @@ class UserHomeComponent extends React.Component {
 
 
   render() {
-    console.log(this.state.completedCourses)
-    console.log('user id from props: ' + this.props.profile.id)
-    // console.log('names : ' + this.state.categoryNames)
     return (
       <div className='container'>
         <header className='headerContainer'>

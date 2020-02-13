@@ -121,18 +121,6 @@ label + .MuiInput-formControl {
         -ms-flex-align: center !important;
             align-items: center !important;
   }
-  .filterCheckboxesContainer {
-    display: -webkit-box !important;
-    display: -ms-flexbox !important;
-    display: flex !important;
-    -webkit-box-orient: vertical !important;
-    -webkit-box-direction: normal !important;
-        -ms-flex-direction: column !important;
-            flex-direction: column !important;
-    -webkit-box-align: start !important;
-        -ms-flex-align: start !important;
-            align-items: flex-start !important;
-  }
   .filterInput {
     width: 70%;
     height: 2%;

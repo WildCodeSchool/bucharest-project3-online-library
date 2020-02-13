@@ -139,10 +139,15 @@ class Login extends Component {
                         </span> 
                     </Link>
 
-                        <label>
+                    <Link to="/resetPassword"><span className="resetPassword">
+                        <a href="#" className="createAccountAnchor">Ai uitat parola?</a>
+                        </span> 
+                    </Link>
+
+                        {/* <label>
                             <input type="checkbox" name="remember" /> Aminteste-ti de mine
                     </label>
-                        <span className="psw">Ai uitat <a className='forgotPasswordAnchor' href="#">parola?</a></span>
+                        <span className="psw">Ai uitat <a className='forgotPasswordAnchor' href="#">parola?</a></span> */}
                     </div>
                     
                     </form>

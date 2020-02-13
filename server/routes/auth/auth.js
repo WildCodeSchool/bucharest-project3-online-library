@@ -14,6 +14,20 @@ router.post('/signin', function(req, res, next) {
     }) (req, res)
 })
 
+router.put('/password/:email', function (req, res) {
+    var randomstring = Math.random().toString(36).slice(-8);
+    var criptpass=bcrypt.hashSync(randomstring, 10)
+    let updatedStatus = await models.Users.update(
+        { password: criptpass} 
+        ,{
+            where: {
+                email: req.params.email
+            }
+        }
+    )
+          res.send('Passoword changed. ' + randomstring)
+})
+
 router.post('/signup', function(req, res, next) {
     let post = {
         firstname: req.body.prenume,

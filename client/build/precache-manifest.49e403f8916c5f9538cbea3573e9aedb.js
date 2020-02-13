@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4f713764389d5d4782803ae3ad002022",
+    "revision": "5204b92d6f2e7bc60d58146e06574299",
     "url": "/bucharest-project3-online-library/index.html"
   },
   {
-    "revision": "61cca9dc5d7194b74e5c",
+    "revision": "473e1e335129c30d4563",
     "url": "/bucharest-project3-online-library/static/css/main.c7bde898.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/bucharest-project3-online-library/static/js/2.83913f10.chunk.js.LICENSE"
   },
   {
-    "revision": "61cca9dc5d7194b74e5c",
-    "url": "/bucharest-project3-online-library/static/js/main.518ebab6.chunk.js"
+    "revision": "473e1e335129c30d4563",
+    "url": "/bucharest-project3-online-library/static/js/main.1ae04763.chunk.js"
   },
   {
     "revision": "622e2a111caa8f2e87ed",

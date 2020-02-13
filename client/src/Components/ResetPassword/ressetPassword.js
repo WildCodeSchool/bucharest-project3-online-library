@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField';
 import logo from '../../assets/images/logo.png';
+import { withRouter } from "react-router";
+
 import './ressetPassword.css';
 
 
@@ -9,7 +11,8 @@ class RessetPassword extends Component {
         super(props);
         this.state = {
             email: '',
-            display_message: ''
+            display_message: false,
+            failed: false
         }
     }
 
@@ -33,10 +36,21 @@ class RessetPassword extends Component {
                        return res.json()}
 
             ).then(res => {
+                if(res.indexOf('wrong')<0){
                 console.log(res)
                 this.setState({
-                    display_message: res
+                    display_message: true,
+                    failed:false
                 })
+                setTimeout(() => {
+                    this.props.history.replace('/')
+                }, 5000)
+            } else {
+                this.setState({
+                    display_message: false,
+                    failed:true
+                })
+            }
             })
 
             
@@ -58,7 +72,6 @@ class RessetPassword extends Component {
                 <div className="loginPage">
                     <div className="form">
 
-                        <h1>Message:{this.state.display_message}</h1>
 
                         <form className='page' onSubmit={this.handleSubmit} className="formMain" autoComplete="off">
 
@@ -88,6 +101,9 @@ class RessetPassword extends Component {
                                     <button type="submit">Resetare</button>
                                     {/* </Link> */}
                                 </div>
+                                <h1>{this.state.display_message?"Parola a fost resetata cu succes. Noua parola v-a fost trimisa pe email!":null}</h1>
+                                <h1>{this.state.display_message?"Veti fi redirectionat catre pagina de autentificare in cateva secunde...":null}</h1>
+                                <h1>{!this.state.display_message && this.state.failed?"Ceva nu a mers. Verifica daca ai scris adresa de mail corect":null}</h1>
                             </div>
 
                         </form>
@@ -99,4 +115,4 @@ class RessetPassword extends Component {
     }
 }
 
-export default RessetPassword;
+export default withRouter(RessetPassword);

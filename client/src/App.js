@@ -8,11 +8,13 @@ import LoginPageComplete from '../src/Components/LoginPageComplete/LoginPageComp
 import UserHomePageComplete from '../src/Containers/UserHomePageComplete/UserHomePageComplete';
 import SignUpPageComplete from '../src/Components/SignUpPageComplete/SignUpPageComplete';
 import PersonalProfilePageComplete from './Containers/PersonalProfilePageComplete/PersonalProfilePageComplete';
-import AdminAllCourses from './Containers/AdminAllCourses/AdminAllCourses'
+import AdminAllCourses from './Containers/AdminAllCourses/AdminAllCourses';
+import ResetPassord from './Components/ResetPassword/ressetPassword'
 
 import { Switch, Route } from 'react-router-dom';
 import AllUsersTable from './Components/AllUsersTable/AllUsersTable';
 import { connect} from 'react-redux'
+import RessetPassword from './Components/ResetPassword/ressetPassword';
 
 // import { library } from '@fortawesome/fontawesome-svg-core';
 // import { fab } from '@fortawesome/free-brands-svg-icons';
@@ -43,11 +45,13 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/" component={LoginPageComplete} home={true}/>
           <Route path="/creareCont" component={SignUpPageComplete} home={true}/>
-          <Route path="/acasa" render={ () => <UserHomePageComplete admin={this.props.auth.access_level} /> } />
-          <Route path='/cursuri' render={ () => <AdminAllCourses admin={this.props.auth.access_level} /> } />
-          <Route path="/profil" render={ () => <PersonalProfilePageComplete admin={this.props.auth.access_level} /> } /> 
-          <Route path="/utilizatorii" render={ () => < AllUsersTable admin={this.props.auth.access_level} /> } /> 
+          <Route path="/resetPassword" component={RessetPassword} home={true}/>
+          <Route path="/acasa" render={ () => <UserHomePageComplete admin={this.state.admin} /> } />
+          <Route path='/cursuri' render={ () => <AdminAllCourses admin={this.state.admin} /> } />
+          <Route path="/profil" render={ () => <PersonalProfilePageComplete admin={this.state.admin} /> } /> 
+          <Route path="/utilizatorii" render={ () => < AllUsersTable admin={this.state.admin} /> } /> 
         </Switch>
+
       </React.Fragment>
     )
   }

@@ -1,285 +1,229 @@
 .main header {
-    width: 100%;
-    height: 70px;
-    background: #75B1A9;
-    margin: 0;
-    -webkit-box-shadow: 0px 2px 4px grey;
-    box-shadow: 0px 2px 4px grey;
+  width: 100%;
+  height: 70px;
+  background: #75B1A9;
+  margin: 0;
+  -webkit-box-shadow: 0px 2px 4px grey;
+          box-shadow: 0px 2px 4px grey;
 }
 
-.headerMain {
-    width: 100%;
-    height: 70px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
+.container-fluid .HeaderMain {
+  width: 100%;
+  height: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end !important;
+      -ms-flex-pack: end !important;
+          justify-content: flex-end !important;
 }
 
-.headerNav {
-    width: 20%;
-    height: 70px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -ms-flex-pack: distribute;
-    justify-content: space-around;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    font-size: 20px;
-}
-
-.headerNav a {
-    color: #FFFFFF;
-    text-decoration: none;
-}
-
-.headerNav a:hover {
-    text-decoration: underline;
-}
-
-
-/* .logo {
-  display: block;
-  float: right;
-  font-size: 3em;
-  padding: 10px 20px;
-  text-decoration: none;
-  height: 2.3em !important;
-} */
-
-.logoPlaceholder {
-    width: 20%;
-    height: 70px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+.logo {
+  width: 12em;
+  height: 5.5em;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  margin-right: 1.5em;
 }
 
 .signUpTitle h1 {
-    font-size: 45px;
-    text-align: center;
+  font-size: 45px;
+  text-align: center;
+  padding: 1em !important;
+  color: #75B1A9;
 }
 
 .signUpInput {
-    width: 544px;
-    margin-top: 29px !important;
-    font-size: 28px !important;
+  width: 544px;
+  margin-top: 29px !important;
+  font-size: 28px !important;
 }
 
 .signUpInputLeft {
-    margin-right: 15px !important;
+  margin-right: 15px !important;
 }
 
 .signUpInputRight {
-    margin-left: 15px !important;
+  margin-left: 15px !important;
 }
 
 .signUpBtnContainer {
-    margin-top: 90px;
+  margin-top: 90px;
+  margin-bottom: 100px;
 }
 
 .signUpBtnContainer button {
-    background: #FA5457;
-    width: 10%;
-    height: 65px;
-    border-radius: 20px;
-    color: #FFF;
-    font-size: 2.3rem;
-    font-weight: bold;
-    -webkit-box-shadow: 0px 5px 7px grey;
-    box-shadow: 0px 5px 7px grey;
-    cursor: pointer;
+  background: #FA5457;
+  width: 10%;
+  height: 65px;
+  border-radius: 20px;
+  color: #FFF;
+  font-size: 2.3rem;
+  font-weight: bold;
+  -webkit-box-shadow: 0px 5px 7px grey;
+          box-shadow: 0px 5px 7px grey;
+  cursor: pointer;
 }
 
 .signUpBtnContainer button:hover {
+  background: #FFF;
+  width: 674px;
+  height: 65px;
+  border-radius: 20px;
+  color: #FA5457;
+  -webkit-transition-duration: 250ms;
+          transition-duration: 250ms;
+}
+
+@media only screen and (max-width: 768px) {
+  .main {
+    width: 100vw;
+  }
+  .main header {
+    width: 100%;
+    height: 55px;
+    background: #75B1A9;
+    margin: 0;
+    -webkit-box-shadow: 0px 2px 4px grey;
+            box-shadow: 0px 2px 4px grey;
+  }
+  .HeaderMain {
+    width: 100%;
+    height: 55px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .headerNav a {
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+  .headerNav a:hover {
+    text-decoration: underline;
+  }
+  .signUpTitle h1 {
+    font-size: 2rem;
+    text-align: center;
+    padding: 1em;
+  }
+  .signUpInput {
+    width: 90%;
+    height: 50px;
+    margin-top: 15px !important;
+    margin-bottom: 0px;
+  }
+  .signUpInputLeft {
+    margin-right: 0px !important;
+  }
+  .signUpInputRight {
+    margin-left: 0px !important;
+  }
+  .signUpBtnContainer {
+    margin-top: 40px;
+    margin-bottom: 100px;
+  }
+  .signUpBtnContainer button {
+    background: #FA5457;
+    width: 80%;
+    height: 65px;
+    border-radius: 20px;
+    color: #FFF;
+    font-size: 1.7rem;
+    font-weight: 600;
+    -webkit-box-shadow: 0px 5px 7px grey;
+            box-shadow: 0px 5px 7px grey;
+    cursor: pointer;
+  }
+  .signUpBtnContainer button:hover {
     background: #FFF;
-    width: 674px;
+    width: 80%;
     height: 65px;
     border-radius: 20px;
     color: #FA5457;
     -webkit-transition-duration: 250ms;
-    transition-duration: 250ms;
-}
-
-@media only screen and (max-width: 768px) {
-    .main {
-        width: 100vw;
-    }
-    .main header {
-        width: 100%;
-        height: 55px;
-        background: #75B1A9;
-        margin: 0;
-        -webkit-box-shadow: 0px 2px 4px grey;
-        box-shadow: 0px 2px 4px grey;
-    }
-    .headerMain {
-        width: 100%;
-        height: 55px;
-    }
-    .headerNav {
-        display: none;
-    }
-    .headerNav a {
-        color: #FFFFFF;
-        text-decoration: none;
-    }
-    .headerNav a:hover {
-        text-decoration: underline;
-    }
-    .logoPlaceholder {
-        width: 100%;
-        height: 55px;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-    }
-    .signUpTitle h1 {
-        font-size: 2rem;
-    }
-    .signUpInput {
-        width: 90%;
-        height: 50px;
-        margin-top: 15px !important;
-        margin-bottom: 0px;
-    }
-    .signUpInputLeft {
-        margin-right: 0px !important;
-    }
-    .signUpInputRight {
-        margin-left: 0px !important;
-    }
-    .signUpBtnContainer {
-        margin-top: 40px;
-        margin-bottom: 40px;
-    }
-    .signUpBtnContainer button {
-        background: #FA5457;
-        width: 80%;
-        height: 65px;
-        border-radius: 20px;
-        color: #FFF;
-        font-size: 1.7rem;
-        font-weight: 600;
-        -webkit-box-shadow: 0px 5px 7px grey;
-        box-shadow: 0px 5px 7px grey;
-        cursor: pointer;
-    }
-    .signUpBtnContainer button:hover {
-        background: #FFF;
-        width: 80%;
-        height: 65px;
-        border-radius: 20px;
-        color: #FA5457;
-        -webkit-transition-duration: 250ms;
-        transition-duration: 250ms;
-    }
+            transition-duration: 250ms;
+  }
 }
 
 @media only screen and (min-width: 768px) {
-    .main {
-        width: 100vw;
-    }
-    .main header {
-        width: 100%;
-        height: 55px;
-        background: #75B1A9;
-        margin: 0;
-        -webkit-box-shadow: 0px 2px 4px grey;
-        box-shadow: 0px 2px 4px grey;
-    }
-    .headerMain {
-        width: 100%;
-        height: 55px;
-    }
-    .headerNav {
-        display: none;
-    }
-    .headerNav a {
-        color: #FFFFFF;
-        text-decoration: none;
-    }
-    .headerNav a:hover {
-        text-decoration: underline;
-    }
-    .logoPlaceholder {
-        width: 100%;
-        height: 55px;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-    }
-    .signUpTitle h1 {
-        font-size: 2.8rem;
-    }
-    .signUpInput {
-        width: 36%;
-        height: 50px;
-        margin-top: 15px !important;
-        margin-bottom: 0px;
-    }
-    .signUpInputLeft {
-        margin-right: 2% !important;
-    }
-    .signUpInputRight {
-        margin-left: 2% !important;
-    }
-    .signUpBtnContainer {
-        margin-top: 90px;
-        margin-bottom: 40px;
-    }
-    .signUpBtnContainer button {
-        background: #FA5457;
-        width: 35%;
-        height: 65px;
-        border-radius: 20px;
-        color: #FFF;
-        font-size: 1.7rem;
-        font-weight: 600;
-        -webkit-box-shadow: 0px 5px 7px grey;
-        box-shadow: 0px 5px 7px grey;
-        cursor: pointer;
-    }
-    .signUpBtnContainer button:hover {
-        background: #FFF;
-        width: 46%;
-        height: 65px;
-        border-radius: 20px;
-        color: #FA5457;
-        -webkit-transition-duration: 250ms;
-        transition-duration: 250ms;
-    }
+  .main {
+    width: 100vw;
+  }
+  .main header {
+    width: 100%;
+    height: 55px;
+    background: #75B1A9;
+    margin: 0;
+    -webkit-box-shadow: 0px 2px 4px grey;
+            box-shadow: 0px 2px 4px grey;
+  }
+  .HeaderMain {
+    width: 100%;
+    height: 55px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .signUpTitle h1 {
+    font-size: 45px;
+    text-align: center;
+    padding: 1em;
+  }
+  .signUpInput {
+    width: 36%;
+    height: 50px;
+    margin-top: 15px !important;
+    margin-bottom: 0px;
+  }
+  .signUpInputLeft {
+    margin-right: 2% !important;
+  }
+  .signUpInputRight {
+    margin-left: 2% !important;
+  }
+  .signUpBtnContainer {
+    margin-top: 90px;
+    margin-bottom: 100px;
+  }
+  .signUpBtnContainer button {
+    background: #FA5457;
+    width: 35%;
+    height: 65px;
+    border-radius: 20px;
+    color: #FFF;
+    font-size: 1.7rem;
+    font-weight: 600;
+    -webkit-box-shadow: 0px 5px 7px grey;
+            box-shadow: 0px 5px 7px grey;
+    cursor: pointer;
+  }
+  .signUpBtnContainer button:hover {
+    background: #FFF;
+    width: 46%;
+    height: 65px;
+    border-radius: 20px;
+    color: #FA5457;
+    -webkit-transition-duration: 250ms;
+            transition-duration: 250ms;
+  }
 }
-
-
 /*# sourceMappingURL=SignUp.css.map */

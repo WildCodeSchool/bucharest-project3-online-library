@@ -162,8 +162,8 @@ class Login extends Component {
 
                         {/* <label className="label">
                             <input type="checkbox" name="remember" /> Aminteste-ti de mine
-                    </label>
-                        <span className="psw">Ai uitat <a className='forgotPasswordAnchor' href="#">parola?</a></span> */}
+                    </label> */}
+                        <span className="psw">Am uitat <a className='forgotPasswordAnchor' href="#">parola</a></span>
                     </div>
                     
                     </form>

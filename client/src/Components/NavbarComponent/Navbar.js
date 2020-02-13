@@ -30,7 +30,7 @@ class Navbar extends Component {
         return (
 
 
-            <header class="header">
+            <header class="Header">
                 <img src={logo} alt="" className="Logo"/>
                 <input class="menu-btn" type="checkbox" id="menu-btn" />
                 <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>

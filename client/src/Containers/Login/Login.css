@@ -2,13 +2,17 @@ body {
     width: 100vw;
 }
 
-container-fluid headerMain {
-    justify-content: flex-end;
+.container-fluid headerMain {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .psw {
     padding: 9px;
-    font-size: 1.3em;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #75B1A9;
 }
 
 .biblioteca {
@@ -58,7 +62,7 @@ container-fluid headerMain {
 } */
 
 .forgotPasswordAnchor {
-    color: blue;
+    color: #75B1A9;
 }
 
 .createAccountAnchor {
@@ -81,10 +85,8 @@ container-fluid headerMain {
 .logo {
     width: 12em;
     height: 5.5em;
-    display: flex;
-    flex-direction: row;
-    text-align: end;
     margin-right: 1.5em;
+    /* align-self: flex-end; */
     /* font-size: 3em; */
     /* height: 2em !important; */
 }
@@ -128,49 +130,8 @@ container-fluid headerMain {
     flex-direction: row;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
-    /* justify-content: space-between; */
+    justify-content: space-between;
 }
-
-
-/* .headerNav {
-    width: 20%;
-    height: 70px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -ms-flex-pack: distribute;
-    justify-content: space-around;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    font-size: 20px;
-} */
-
-.logo {
-    /* display: block;
-    font-size: 5em;
-    text-decoration: none;
-    height: 2.3em !important; */
-}
-
-
-/* .logoPlaceholder {
-    width: 20%;
-    height: 70px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-} */
 
 .logInTitle h1 {
     font-size: 5rem;
@@ -250,28 +211,16 @@ container-fluid headerMain {
         flex-direction: row;
         -webkit-box-pack: justify;
         -ms-flex-pack: justify;
+        justify-content: space-between;
     }
     /* .headerNav {
         display: none;
-    } */
-    /* .logoPlaceholder {
-        width: 100%;
-        height: 55px;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
     } */
     .logInTitle h1 {
         font-size: 5rem;
     }
     .logInTitle {
-        /* width: 90%; */
+        width: 90%;
         height: 50px;
         margin-top: 15px !important;
         margin-bottom: 0px;
@@ -318,13 +267,6 @@ container-fluid headerMain {
         display: block;
         transform: translateY(0);
     }
-    /* .logo {
-        float: right;
-        font-size: 3em;
-        padding: 0px 10px 20px; 
-        text-decoration: none;
-        height: 2.3em !important;
-    } */
 }
 
 @media only screen and (min-width: 768px) {
@@ -351,24 +293,11 @@ container-fluid headerMain {
         flex-direction: row;
         -webkit-box-pack: justify;
         -ms-flex-pack: justify;
+        justify-content: space-between;
     }
     /* .headerNav {
         display: none;
     } */
-    /* .logoPlaceholder {
-         width: 100%; 
-        margin-left: 75%;
-        height: 55px;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-    }  */
     .logInTitle h1 {
         font-size: 4rem;
     }
@@ -380,7 +309,7 @@ container-fluid headerMain {
     }
     .signUpBtnContainer {
         margin-top: 40px;
-        /* margin-bottom: 40px; */
+        margin-bottom: 100px;
     }
     .signUpBtnContainer button {
         background: #FA5457;
@@ -432,7 +361,7 @@ container-fluid headerMain {
 } */
 
 .psw>a:link {
-    color: blue;
+    color: #75B1A9;
     text-decoration: none;
 }
 

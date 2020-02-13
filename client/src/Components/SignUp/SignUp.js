@@ -74,10 +74,10 @@ class SignUp extends React.Component {
         return (
             <div className="main">
                 <header>
-                    <div className="container-fluid headerMain">
-                        <div className="logoPlaceholder">
-                            <img src={logo} alt="logo" className="logo" />
-                        </div>
+                    <div className="container-fluid HeaderMain">
+                        
+                    <img src={logo} alt="logo" className="logo" />
+                    
                     </div>
                 </header>
                 <div className="signUpTitle">

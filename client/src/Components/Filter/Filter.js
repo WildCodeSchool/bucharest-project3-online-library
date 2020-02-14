@@ -122,7 +122,7 @@ class Filter extends React.Component{
                                             onChange={this.handleChangeImportant} 
                                             value="Important" 
                                             color="primary" />} 
-                                            label="Important" 
+                                            label={(<span id="imp">Important</span>)}
                                         />
                                 <FormControlLabel className="checkboxInput"
                                     control={
@@ -131,7 +131,7 @@ class Filter extends React.Component{
                                             onChange={this.handleChangeCompleted} 
                                             value="Completed" 
                                             color="secondary" />} 
-                                            label="Completat" 
+                                            label={(<span id="comp">Completat</span>)}
                                         />
                                 <FormControlLabel className="checkboxInput"
                                     control={

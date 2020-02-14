@@ -44,7 +44,12 @@
 }
 
 .MuiTypography-body1 {
-  color: #828282;
+  color: #1c0080;
+  font-weight: bold !important;
+}
+
+#necomp {
+  color: #db1450 !important;
   font-weight: bold !important;
 }
 
@@ -69,8 +74,7 @@ label + .MuiInput-formControl {
   color: #75B1A9 !important;
 }
 
-.MuiOutlinedInput-root.Mui-focused
-.MuiOutlinedInput-notchedOutline {
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
   border-color: #75B1A9 !important;
 }
 
@@ -170,8 +174,7 @@ label + .MuiInput-formControl {
   .MuiFormLabel-root.Mui-focused {
     color: #75B1A9 !important;
   }
-  .MuiOutlinedInput-root.Mui-focused
-.MuiOutlinedInput-notchedOutline {
+  .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
     border-color: #75B1A9 !important;
   }
   .MuiInput-underline:after {

@@ -6,8 +6,20 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel'
 import Checkbox from '@material-ui/core/Checkbox';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
 import './Filter.css'
+
+const theme = createMuiTheme({
+    palette: {
+         primary: {
+             main:'#FA5457'
+         },
+         secondary: {
+             main:'#A1BE95'
+       }
+    }
+     });
 
 const categories = ['Materiale Traininguri', 'Info admistrative', 'Materiale coordonatori', 'Jocuri', 'Ateliere', 'Suporturi de curs', 'Psihologie']
 
@@ -66,6 +78,7 @@ class Filter extends React.Component{
 
     render(){
         return(
+            <MuiThemeProvider theme={theme}>
             <div className="filterMain">
                 <button onClick={this.showFilter} className="filterBtn">
                     <this.FilterArrow /> Filtru
@@ -117,17 +130,17 @@ class Filter extends React.Component{
                                             checked={this.state.completed} 
                                             onChange={this.handleChangeCompleted} 
                                             value="Completed" 
-                                            color="primary" />} 
+                                            color="secondary" />} 
                                             label="Completat" 
                                         />
                                 <FormControlLabel className="checkboxInput"
                                     control={
-                                        <Checkbox 
+                                        <Checkbox  
                                             checked={this.state.nonCompleted} 
                                             onChange={this.handleChangeNonCompleted} 
                                             value="Non-Completed" 
                                             color="primary" />} 
-                                            label="Necompletat" 
+                                            label={(<span id="necomp">Necompletat</span>)} 
                                     />
                             </div>
                         </div>
@@ -135,6 +148,7 @@ class Filter extends React.Component{
                 </form>
 
             </div>
+            </MuiThemeProvider>
         )
     }
 }

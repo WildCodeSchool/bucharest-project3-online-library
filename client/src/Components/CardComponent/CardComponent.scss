@@ -4,7 +4,6 @@ $colorAlto: #D3D3D3;
 $colorAcapulco: #75B1A9;
 $colorGreen: #A1BE95;
 $colorSilver: #C8C8C8;
-
 $widthMobile: 768px;
 $withTablet: 1280px;
 $colorDark: #8F958C;
@@ -19,7 +18,7 @@ html {
     border: .1em solid $colorAlto;
     box-sizing: border-box;
     border-radius: 1em;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     margin: 0 auto;
     margin-bottom: 2em;
     width: 21.88rem;
@@ -28,7 +27,6 @@ html {
     flex-basis: 90%;
     flex-direction: column;
     justify-content: space-between;
-
     @media (min-width: $widthMobile) {
         flex-basis: 40%;
     }
@@ -43,6 +41,8 @@ html {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
     // border: .1em solid $colorCarnation;
 }
 
@@ -114,7 +114,7 @@ html {
         background-color: $colorGreen !important;
         color: $colorWhite;
         font-size: 0.8rem;
-    }  
+    }
     .MuiButton-label {
         padding: .143em;
     }

@@ -1,8 +1,7 @@
 $widthMobile: 768px;
 $widthTablet: 1280px;
-
 body {
-    margin:0;
+    margin: 0;
     padding: 0;
 }
 
@@ -37,13 +36,13 @@ body {
 
 .subtitleWelcome {
     margin: 0.625rem;
+    padding: 1em;
 }
 
 @media only screen and (max-width: 540px) {
     .headerContainer {
         margin-top: 12%;
     }
-
     .titleWelcome {
         padding-top: 5%;
     }
@@ -53,8 +52,7 @@ body {
     .headerContainer {
         padding-top: 0;
     }
-
-    .titleWelcome{
+    .titleWelcome {
         padding-top: 5%;
         font-size: 3.9rem;
         color: #75B1A9;

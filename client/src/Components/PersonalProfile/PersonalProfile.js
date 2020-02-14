@@ -52,6 +52,12 @@ class PersonalProfile extends Component {
     })
   }
 
+change = (e) => {
+this.setState({
+  [e.target.name]: e.target.value
+})
+}
+
   completedCoursesByUserCards = () => {
     let coursesCompletedAmongAllCourses= []
     this.state.allCourses.forEach(course => {
@@ -83,6 +89,8 @@ class PersonalProfile extends Component {
                   label="Nume"
                   margin="normal"
                   variant="filled"
+                  name="nume"
+                  onChange={this.change}
                   value={this.state.nume}
                 />
                
@@ -91,6 +99,8 @@ class PersonalProfile extends Component {
                   label="Prenume"
                   margin="normal"
                   variant="filled"
+                  name="prenume"
+                  onChange={this.change}
                   value={this.state.prenume}
                 />
 
@@ -100,6 +110,8 @@ class PersonalProfile extends Component {
                   type="email"
                   margin="normal"
                   variant="filled"
+                  name="email"
+                  onChange={this.change}
                   value={this.state.email}
                 />
 
@@ -108,6 +120,8 @@ class PersonalProfile extends Component {
                   label="Judetul in care esti voluntar"
                   margin="normal"
                   variant="filled"
+                  name="judetul"
+                  onChange={this.change}
                   value={this.state.judetul}
                 />
     
@@ -116,6 +130,8 @@ class PersonalProfile extends Component {
                   label="Centrul in care esti voluntar"
                   margin="normal"
                   variant="filled"
+                  name="centrul"
+                  onChange={this.change}
                   value={this.state.centrul}
                 />
       
@@ -124,6 +140,8 @@ class PersonalProfile extends Component {
                   label="Numarul contractului de voluntar"
                   margin="normal"
                   variant="filled"
+                  name="contractului"
+                  onChange={this.change}
                   value={this.state.contractului}
                 />
               
@@ -132,6 +150,8 @@ class PersonalProfile extends Component {
                   label="Data semnarii contractului"
                   margin="normal"
                   variant="filled"
+                  name="dataSemnarii"
+                  onChange={this.change}
                   value={this.state.dataSemnarii}
                 />
                 
@@ -140,6 +160,8 @@ class PersonalProfile extends Component {
                   label="Numar Telefon"
                   margin="normal"
                   variant="filled"
+                  name="telefon"
+                  onChange={this.change}
                   value={this.state.telefon}
                 />
                 </div>

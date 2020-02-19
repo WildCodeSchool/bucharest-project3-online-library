@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./CardComponent.scss";
 import Button from "@material-ui/core/Button";
 import IconButton from '@material-ui/core/IconButton';
@@ -26,13 +26,8 @@ class CardComponent extends React.Component {
   }
 
   componentDidMount = (prevProps, prevState) => {
-    console.log("you're in the componentDidUpdate of the card component")
-    // if(prevProps.completedCourses!==this.props.completedCourses){
-    console.log(this.props.completedCourses)
-    console.log(this.props.courseId)
     if(this.props.completedCourses !== undefined) {
-    if(this.props.completedCourses.includes(this.props.courseId) && this.state.done == false) {
-      console.log("this.props.completedCourses == this.props.courseId" + this.props.courseId)
+    if(this.props.completedCourses.includes(this.props.courseId)){
       this.setState({ 
         isCompleted: true,
         disabled: false,
@@ -43,9 +38,41 @@ class CardComponent extends React.Component {
         classButton: "completedButtonGreen"
       })
     }
-  // }
-}
+  }
+  }
 
+  componentDidUpdate(prevProps){
+    console.log("you're in componentDidUpdate boi")
+    console.log(prevProps.completedCourses)
+    console.log(this.props.completedCourses)
+    if(prevProps.flag !== this.props.flag) {
+      console.log("you're in componentDidUpdate boi 2")
+      if(!this.props.completedCourses.includes(this.props.courseId)){
+        console.log("you're in componentDidUpdate boi 3")
+      this.setState({ 
+        disabled: true,
+        isCompleted: false,
+        done: false,
+        buttonValue: 'Mark as completed',
+        admin: false,
+        openModal: false,
+        openConfirmationModal: false,
+        toDelete: false,
+        buttonColor: 'inherit',
+        classButton: 'uncompletedButton'
+      })
+    } else if (this.props.completedCourses.includes(this.props.courseId)) {
+      this.setState({ 
+        isCompleted: true,
+        disabled: false,
+        classButton: 'completedButton',
+        headerColor: "#A1BE95",
+        done: true,
+        buttonValue: 'COMPLETED',
+        classButton: "completedButtonGreen"
+    })
+    }
+  }
   }
 
   handleButtonCourseLink = () => {
@@ -108,6 +135,7 @@ class CardComponent extends React.Component {
   }
 
   render() {
+    console.log(this.props.completedCourses)
     return (
         <div className='cardContainer' style={{display : this.state.toDelete ? 'none' : 'block'}}>
           <div

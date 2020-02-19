@@ -23,7 +23,8 @@ class AdminAllCourses extends React.Component{
         headerColorStandard: "#75B1A9",
         headerColorImportant: "#FA5457",
         headerColorCompleted: "#A1BE95",
-        latestCourses: []
+        latestCourses: [],
+        filteredObj: []
         }
     }
 
@@ -68,48 +69,105 @@ class AdminAllCourses extends React.Component{
         return this.props.admin ?
             <h2 className="penLogo">&#9998;</h2> : null
     }
+
+    setFilteredObjForMapping = (filterReturned) => {
+        this.setState({ filteredObj: filterReturned.filterObj})
+        console.log(filterReturned)
+        // this.NewCards()
+    }
+
     NewCards = () => {
-        console.log(this.state.latestCourses)
-        return (this.state.isLoading == false) ?
-        this.state.latestCourses.map((item, index) => {
-            return <CardComponent 
-                headerColor={item.is_important ?
-                    this.state.headerColorImportant
-                    :
-                    this.state.headerColorStandard}
-                completedCourses={this.state.completedCourses}
-                userId={this.state.userId}
-                courseId={item.id}
-                chapterCard={item.Category.category_name}
-                titleCard={item.title}
-                textCard={item.description}
-                keywordsCard={item.keywordsCard}
-                date={item.createdAt}
-                admin={this.props.admin}
-                link={item.link}
-                i={index}
-                toDelete={this.cardToDeleteFromBtn}
+        if(this.state.isLoading == false){
+            if(this.state.filteredObj.completed == null 
+                || this.state.filteredObj.completed == undefined )
+               {
+                   console.log(this.state.latestCourses)
+                    return this.state.latestCourses.map((item, index) => {
+                        return <CardComponent
+                            headerColor={item.is_important ?
+                                this.state.headerColorImportant
+                                :
+                                this.state.headerColorStandard}
+                            completedCourses={this.state.completedCourses}
+                            userId={this.state.userId}
+                            courseId={item.id}
+                            chapterCard={item.Category.category_name}
+                            titleCard={item.title}
+                            textCard={item.description}
+                            keywordsCard={item.keywordsCard}
+                            date={item.createdAt}
+                            admin={this.props.admin}
+                            link={item.link}
+                            i={index}
+                            toDelete={this.cardToDeleteFromBtn}
+                                    />
+                    })
+                } else {
+                    // let filteredCourses = this.state.latestCourses
+                    //     .filter((course => (
+                    //         this.state.filteredObj.completed ?
+                    //                 this.state.completedCourses.includes(course.id)
+                    //                 :
+                    //                 !this.state.completedCourses.includes(course.id)
+                    //                 )
+                    //             ))
+                    //             console.log(this.state.latestCourses)
+                    //             console.log(filteredCourses)
+                    //             console.log(this.state.filteredObj.completed)
+                    //             console.log(this.state.completedCourses)
+                    //     return filteredCourses.map((item, index) => {
+                        const completedCourses = this.state.completedCourses
+                        return this.state.latestCourses
+                        .filter((course => (
+                            this.state.filteredObj.completed ?
+                                    completedCourses.includes(course.id)
+                                    :
+                                    !completedCourses.includes(course.id)
+                                    )
+                                )).map((item, index) => {
+                            console.log(completedCourses.includes(item.id))
+                        return <CardComponent
+                            headerColor={item.is_important ?
+                                this.state.headerColorImportant
+                                :
+                                this.state.headerColorStandard}
+                            flag={this.state.filteredObj.completed}
+                            completedCourses={completedCourses}
+                            userId={this.state.userId}
+                            courseId={item.id}
+                            chapterCard={item.Category.category_name}
+                            titleCard={item.title}
+                            textCard={item.description}
+                            keywordsCard={item.keywordsCard}
+                            date={item.createdAt}
+                            admin={this.props.admin}
+                            link={item.link}
+                            i={index}
+                            toDelete={this.cardToDeleteFromBtn}
                         />
-        })
-        : 
-        <div>
-          <h2>
-            Cursurile se încarcă...
-          </h2>
-        </div>
+                    })
+                }
+            } else {
+                return (
+                <div>
+                    <h2>
+                        Cursurile se încarcă...
+                    </h2>
+                </div>
+                )
+            }
     }
 
     cardToDeleteFromBtn = (index) => {
         let q = this.state.latestCourses
         q.splice(index, 1)
-        console.log(q)
         this.setState({
             LastestCoursesUpdated: q
         })
     }
 
     render(){
-        console.log('local storage from all users table : ' + localStorage.getItem('userToken'))
+        console.log(this.state)
         if(!this.props.auth.token && localStorage.getItem('userToken') !== null) {
             this.props.auth.token = localStorage.getItem('userToken')
             this.props.auth.email = localStorage.getItem('userEmail')
@@ -126,7 +184,6 @@ class AdminAllCourses extends React.Component{
             this.props.auth.access_level = (localStorage.getItem('userAccessLevel') === "true")
         }
         if(!this.props.auth.token) this.props.history.push('/')
-        console.log(this.state.latestCourses)
 
         {return this.state.noCoursesAvailable ?
             (
@@ -137,7 +194,7 @@ class AdminAllCourses extends React.Component{
                         {this.props.auth.access_level ? <CourseModal/> : false}
                     </div>
                     <div className='AdminAllCoursesFilter'>
-                        <Filter />
+                        <Filter  filterObj={this.setFilteredObjForMapping}/>
                     </div>
                     <div className='AdminCourseCardContainer'>
                         No courses available.
@@ -154,7 +211,7 @@ class AdminAllCourses extends React.Component{
                         {this.props.auth.access_level ? <CourseModal/> : false}
                     </div>
                     <div className='AdminAllCoursesFilter'>
-                        <Filter />
+                        <Filter filterObj={this.setFilteredObjForMapping}/>
                     </div>
                     <div className='AdminCourseCardContainer'>
                         {this.NewCards()}

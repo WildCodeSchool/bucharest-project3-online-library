@@ -4,6 +4,7 @@ const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const models = require('../../models');
 const bcrypt = require('bcrypt')
+const sendNodeMailer = require('../nodemailer')
 
 router.post('/signin', function(req, res, next) {
     passport.authenticate('local', (err, user, info) => {
@@ -12,6 +13,27 @@ router.post('/signin', function(req, res, next) {
             const token = jwt.sign({ user }, 'no_shoes_allowed');
         return res.json({ user, token, message: info})
     }) (req, res)
+})
+
+router.put('/password/:email', function (req, res) {
+    var randomstring = Math.random().toString(36).slice(-8);
+    var criptpass=bcrypt.hashSync(randomstring, 10)
+    let updatedStatus =  models.Users.update(
+        { password: criptpass} 
+        ,{
+            where: {
+                email: req.params.email
+            }
+        }
+    )
+    sendNodeMailer(req.params.email, randomstring)
+    .then(rez => {
+        res.status(200).json('Passoword changed. ' + randomstring)
+    })
+    .catch(err => {
+        console.log(err)
+        res.status(400).json("Something went wrong, please try again.")
+    })
 })
 
 router.post('/signup', function(req, res, next) {
@@ -150,5 +172,12 @@ router.get('/categories', function(req, res, next) {
     .findAll()
     .then(allCategories => res.status(200).json(allCategories))
 })
+
+router.post('/sendMail', (req, res) => {
+    console.log(req.body)
+    // sendNodeMailer('grandgerard.olivier@gmail.com', req.body)
+    
+})
+
 
 module.exports = router

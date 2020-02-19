@@ -79,6 +79,7 @@ app.get("/quotes", (req, res) => {
         else res.status(401).json('fs.read() quotes error')
 });
 
+
 app.use((req, res, next) => {
     var err = new Error('Not found');
     err.status = 404;
@@ -91,6 +92,4 @@ models
     .then(() => app.listen(port, () => console.log(`Server listening on port ${port}. Message from sync()`)))
 
    
-
-
 

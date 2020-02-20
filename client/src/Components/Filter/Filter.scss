@@ -8,7 +8,7 @@
     font-weight: 700;
     width: 75%;
     text-align: left;
-    color:#828282;
+    color: #828282;
     border: none;
 }
 
@@ -16,18 +16,18 @@
     margin-top: 15px;
 }
 
-.filterTop{
+.filterTop {
     margin-bottom: 15px;
 }
 
-.filterInput{
+.filterInput {
     width: 23%;
     height: 2%;
     margin-left: 0.5%!important;
     margin-right: 0.5%!important;
 }
 
-.MuiOutlinedInput-input{
+.MuiOutlinedInput-input {
     padding: 10px 14px!important;
 }
 
@@ -40,59 +40,73 @@
 }
 
 // PLACEHOLDER WITHIN THE FILTERS
-.MuiInputLabel-outlined{
+.MuiInputLabel-outlined {
     // font-size: 0.9rem!important;
     line-height: 20%!important;
 }
-// PLACEHOLDER WITHIN THE FILTERS
 
-.MuiTypography-body1{
-    color: #828282;
+// PLACEHOLDER WITHIN THE FILTERS
+.MuiTypography-body1 {
+    color: rgb(28, 0, 128);
+    font-weight: bold!important;
+}
+
+// PLACEHOLDER WITHIN THE FILTERS
+#necomp {
+    color: #75B1A9!important;
+    font-weight: bold!important;
+}
+
+#comp {
+    color: #A1BE95!important;
+}
+
+#imp {
+    color: #FA5457!important;
     font-weight: bold!important;
 }
 
 // SELECT/DROPDOWN STYLING
-label + .MuiInput-formControl {
+label+.MuiInput-formControl {
     margin-top: 0px!important;
 }
 
-#categoryLabel{
+#categoryLabel {
     top: -13px!important;
     left: 10px!important;
 }
 
-.MuiSelect-icon{
-// RELATIVE POSITION ALLOWS FOR ALIGNING THE SELECT ARROW PROPERLY
+.MuiSelect-icon {
+    // RELATIVE POSITION ALLOWS FOR ALIGNING THE SELECT ARROW PROPERLY
     position: relative!important;
 }
 
-.MuiCheckbox-colorPrimary.Mui-checked{
+.MuiCheckbox-colorPrimary.Mui-checked {
     color: #75B1A9!important;
 }
 
-.MuiFormLabel-root.Mui-focused{
+.MuiFormLabel-root.Mui-focused {
     color: #75B1A9!important;
 }
 
-.MuiOutlinedInput-root.Mui-focused
-.MuiOutlinedInput-notchedOutline {
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
     border-color: #75B1A9!important;
 }
 
-.MuiInput-underline:after{
+.MuiInput-underline:after {
     border-bottom: #75B1A9!important;
 }
 
-.MuiInputBase-root{
+.MuiInputBase-root {
     line-height: 1.3em!important;
     font-size: 1.2rem!important;
 }
 
-.MuiFormLabel-root{
+.MuiFormLabel-root {
     font-size: 1.2rem!important;
 }
 
-.MuiMenuItem-root{
+.MuiMenuItem-root {
     font-size: 1.2rem!important;
 }
 
@@ -100,88 +114,71 @@ label + .MuiInput-formControl {
     .filterMain {
         margin-top: 15px;
     }
-    
-    .filterTop{
+    .filterTop {
         margin-bottom: 15px;
-        display:flex!important;
+        display: flex!important;
         flex-direction: column!important;
         align-items: center;
     }
-
     .filterBottom {
         margin-bottom: 15px;
-        display:flex!important;
+        display: flex!important;
         flex-direction: column!important;
         align-items: center!important;
     }
-
-    // .filterCheckboxesContainer{
-    //     display:flex!important;
-    //     flex-direction: column!important;
-    //     align-items: flex-start!important;    
-    // }
-
-    .filterInput{
+    .filterCheckboxesContainer {
+        display: flex!important;
+        flex-direction: column!important;
+        align-items: flex-start!important;
+    }
+    .filterInput {
         width: 70%;
         height: 2%;
-        margin-top:3%!important;
+        margin-top: 3%!important;
         margin-left: 0 !important;
         margin-right: 0 !important;
     }
-
-    #categoryLabel{
+    #categoryLabel {
         top: -7px!important;
         left: 10px!important;
     }
-
-    .checkboxInput{
-        margin-top:0%!important;
+    .checkboxInput {
+        margin-top: 0%!important;
         margin-left: 0!important;
     }
-
-    .MuiOutlinedInput-input{
+    .MuiOutlinedInput-input {
         padding: 10px 14px!important;
     }
-    
     // PLACEHOLDER WITHIN THE FILTERS
-    .MuiInputLabel-outlined{
+    .MuiInputLabel-outlined {
         // font-size: 0.9rem!important;
         line-height: 20%!important;
     }
     // PLACEHOLDER WITHIN THE FILTERS
-    
-    .MuiTypography-body1{
+    .MuiTypography-body1 {
         color: #828282;
         font-weight: bold!important;
     }
-    
     // SELECT/DROPDOWN STYLING
-    label + .MuiInput-formControl {
+    label+.MuiInput-formControl {
         margin-top: 0px!important;
     }
-    
-    #categoryLabel{
+    #categoryLabel {
         line-height: 0;
     }
-    
-    .MuiCheckbox-colorPrimary.Mui-checked{
+    .MuiCheckbox-colorPrimary.Mui-checked {
         color: #75B1A9!important;
     }
-    
-    .MuiFormLabel-root.Mui-focused{
+    .MuiFormLabel-root.Mui-focused {
         color: #75B1A9!important;
     }
-    
-    .MuiOutlinedInput-root.Mui-focused
-    .MuiOutlinedInput-notchedOutline {
+    .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
         border-color: #75B1A9!important;
     }
-    
-    .MuiInput-underline:after{
+    .MuiInput-underline:after {
         border-bottom: #75B1A9!important;
     }
-    
-    .MuiInputBase-root{
+    .MuiInputBase-root {
         line-height: 1.3em!important;
     }
 }

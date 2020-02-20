@@ -42,13 +42,8 @@ class CardComponent extends React.Component {
   }
 
   componentDidUpdate(prevProps){
-    console.log("you're in componentDidUpdate boi")
-    console.log(prevProps.completedCourses)
-    console.log(this.props.completedCourses)
     if(prevProps.flag !== this.props.flag) {
-      console.log("you're in componentDidUpdate boi 2")
       if(!this.props.completedCourses.includes(this.props.courseId)){
-        console.log("you're in componentDidUpdate boi 3")
       this.setState({ 
         disabled: true,
         isCompleted: false,
@@ -135,7 +130,6 @@ class CardComponent extends React.Component {
   }
 
   render() {
-    console.log(this.props.completedCourses)
     return (
         <div className='cardContainer' style={{display : this.state.toDelete ? 'none' : 'block'}}>
           <div

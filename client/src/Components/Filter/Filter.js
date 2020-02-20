@@ -56,6 +56,17 @@ class Filter extends React.Component{
         }
     }
 
+    handleChangeImportant = (e) => {
+        this.setState({
+            filterObj: {
+            ...this.state.filterObj,
+            is_important: !this.state.filterObj.important
+        },
+            all:false
+        })
+        this.filter()
+    }
+
     handleChangeCompleted= (e) => {
         console.log(e.target.value)
         if(e.target.value == "completed") {
@@ -113,13 +124,6 @@ class Filter extends React.Component{
         this.search(e.target.value)
     }
 
-    // handleChangeImportant = (e) => {
-    //     this.setState({filterObj: {
-    //         ...this.state.filterObj,
-    //         important: !this.state.filterObj.important}})
-    //     this.filter()
-    // }
-
     showFilter = () => {
         this.state.filterDisplay === 'none' 
         ? this.setState({filterDisplay : 'block'}) 
@@ -155,7 +159,7 @@ class Filter extends React.Component{
                         <div className="filterTop">
                         {/* <TextField id="outlined-basic" label="Cuvinte cheie" value={this.state.keyword} className="filterInput" variant="outlined" onChange={this.handleChange}/> */}
                         <TextField id="outlined-basic" label="Titlu" value={this.state.search} className="filterInput filterInputCenter" variant="outlined" onChange={this.handleChangeSearch}/>
-                        <FormControl className="filterInput">
+                        {/* <FormControl className="filterInput">
                             <InputLabel id="categoryLabel">Categorie</InputLabel>
                             <Select
                                     labelId="demo-simple-select-autowidth-label"
@@ -174,7 +178,7 @@ class Filter extends React.Component{
                                                     >{item}</MenuItem>
                                     })}
                             </Select>
-                        </FormControl>
+                        </FormControl> */}
                         </div>
                                         <FormControl component="fieldset" className="checkboxInput">
                                             <RadioGroup aria-label="gender" name="gender1" onChange={this.handleChangeCompleted} row>

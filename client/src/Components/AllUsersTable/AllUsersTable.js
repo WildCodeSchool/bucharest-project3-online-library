@@ -149,7 +149,7 @@ handleButtonClick(user){
 }
 
   componentDidMount(){
-    axios.get('auth/users')
+    axios.get('https://rocky-refuge-51400.herokuapp.com/auth/users')
       .then(res => {
         let userArray = [];
         res.data.forEach(user => {

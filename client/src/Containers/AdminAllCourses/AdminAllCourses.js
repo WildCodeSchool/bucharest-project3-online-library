@@ -24,7 +24,8 @@ class AdminAllCourses extends React.Component{
         headerColorImportant: "#FA5457",
         headerColorCompleted: "#A1BE95",
         latestCourses: [],
-        filteredObj: []
+        filteredObj: [],
+        searchStr: ''
         }
     }
 
@@ -73,11 +74,21 @@ class AdminAllCourses extends React.Component{
     setFilteredObjForMapping = (filterReturned) => {
         this.setState({ filteredObj: filterReturned.filterObj})
         console.log(filterReturned)
-        // this.NewCards()
+    }
+
+    setSearchStr = (searchReturned) => {
+        console.log('searchStr in adminAllCourses : '+ this.state.searchStr)
+        this.setState({searchStr : searchReturned })
     }
 
     NewCards = () => {
         if(this.state.isLoading == false){
+            
+            // SEARCH FEATURE OFF
+
+            if(this.state.searchStr == '') {
+
+                // FILTER FEATURE OFF
             if(this.state.filteredObj.completed == null 
                 || this.state.filteredObj.completed == undefined )
                {
@@ -103,19 +114,7 @@ class AdminAllCourses extends React.Component{
                                     />
                     })
                 } else {
-                    // let filteredCourses = this.state.latestCourses
-                    //     .filter((course => (
-                    //         this.state.filteredObj.completed ?
-                    //                 this.state.completedCourses.includes(course.id)
-                    //                 :
-                    //                 !this.state.completedCourses.includes(course.id)
-                    //                 )
-                    //             ))
-                    //             console.log(this.state.latestCourses)
-                    //             console.log(filteredCourses)
-                    //             console.log(this.state.filteredObj.completed)
-                    //             console.log(this.state.completedCourses)
-                    //     return filteredCourses.map((item, index) => {
+                    // FILTER FEATURE ON
                         const completedCourses = this.state.completedCourses
                         return this.state.latestCourses
                         .filter((course => (
@@ -147,6 +146,75 @@ class AdminAllCourses extends React.Component{
                         />
                     })
                 }
+            } else {
+                    // SEARCH FEATURE ON
+                    // FILTER FEATURE OFF
+                if(this.state.filteredObj.completed == null 
+                    || this.state.filteredObj.completed == undefined )
+                   {
+                        return this.state.latestCourses
+                        .filter((course => ( 
+                            course.title.toUpperCase().indexOf(this.state.searchStr.toUpperCase()) > -1
+                        )))
+                        .map((item, index) => {
+                            console.log(this.state.latestCourses)
+                            return <CardComponent
+                                headerColor={item.is_important ?
+                                    this.state.headerColorImportant
+                                    :
+                                    this.state.headerColorStandard}
+                                completedCourses={this.state.completedCourses}
+                                userId={this.state.userId}
+                                courseId={item.id}
+                                chapterCard={item.Category.category_name}
+                                titleCard={item.title}
+                                textCard={item.description}
+                                keywordsCard={item.keywordsCard}
+                                date={item.createdAt}
+                                admin={this.props.admin}
+                                link={item.link}
+                                i={index}
+                                toDelete={this.cardToDeleteFromBtn}
+                                        />
+                        })
+                    } else {
+
+                            // FILTER FEATURE ON
+
+                            const completedCourses = this.state.completedCourses
+                            return this.state.latestCourses
+                            .filter((course => (
+                                course.title.toUpperCase().indexOf(this.state.searchStr.toUpperCase()) > -1
+                            ))).filter((course => (
+                                this.state.filteredObj.completed ?
+                                        completedCourses.includes(course.id)
+                                        :
+                                        !completedCourses.includes(course.id)
+                                        )
+                                    )).map((item, index) => {
+                                console.log(completedCourses.includes(item.id))
+                            return <CardComponent
+                                headerColor={item.is_important ?
+                                    this.state.headerColorImportant
+                                    :
+                                    this.state.headerColorStandard}
+                                flag={this.state.filteredObj.completed}
+                                completedCourses={completedCourses}
+                                userId={this.state.userId}
+                                courseId={item.id}
+                                chapterCard={item.Category.category_name}
+                                titleCard={item.title}
+                                textCard={item.description}
+                                keywordsCard={item.keywordsCard}
+                                date={item.createdAt}
+                                admin={this.props.admin}
+                                link={item.link}
+                                i={index}
+                                toDelete={this.cardToDeleteFromBtn}
+                            />
+                        })
+                    }
+            }
             } else {
                 return (
                 <div>
@@ -211,7 +279,7 @@ class AdminAllCourses extends React.Component{
                         {this.props.auth.access_level ? <CourseModal/> : false}
                     </div>
                     <div className='AdminAllCoursesFilter'>
-                        <Filter filterObj={this.setFilteredObjForMapping}/>
+                        <Filter filterObj={this.setFilteredObjForMapping} searchStr={this.setSearchStr}/>
                     </div>
                     <div className='AdminCourseCardContainer'>
                         {this.NewCards()}

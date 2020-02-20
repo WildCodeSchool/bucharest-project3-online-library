@@ -51,12 +51,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-<<<<<<< HEAD
-  border-top-left-radius: 0.5em;
-  border-top-right-radius: 0.5em;
-=======
   border: 0.1em solid #FA5457;
->>>>>>> fdd15d2ae85b9dc716a01ec4db9168a5964ec53c
 }
 
 .chapterTitle {

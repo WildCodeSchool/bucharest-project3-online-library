@@ -18,12 +18,13 @@ class PersonalProfile extends Component {
       email: this.props.profile.email,
       judetul: this.props.profile.volunteering_county,
       centrul:this.props.profile.volunteering_center,
-      contractului: this.props.profile.contract_number,
+      nrcontractului: this.props.profile.contract_number,
       dataSemnarii: new Date(this.props.profile.date_joined).toLocaleDateString('en-GB'),
-      telefon: this.props.profile.phonenumber,
+      numarTelefon: this.props.profile.phonenumber,
       allCourses: [],
       completedCoursesId: [],
-      completedCourses: []
+      completedCourses: [],
+      edit: false
     };
   }
 
@@ -33,8 +34,6 @@ class PersonalProfile extends Component {
     })
         .then(res => res.json())
         .then(list => {
-          console.log(this.props.auth.id)
-          console.log(list)
           let listOfIds = list.map(item => item.course_id)
             this.setState({
                 completedCoursesId: listOfIds
@@ -61,28 +60,148 @@ this.setState({
   completedCoursesByUserCards = () => {
     let coursesCompletedAmongAllCourses= []
     this.state.allCourses.forEach(course => {
-      if (this.state.completedCoursesId.includes(course.id)) 
+      if (this.state.completedCoursesId.includes(course.id))
         coursesCompletedAmongAllCourses.push(course)
       else
         return false
     })
-    console.log('completedCoursesId' + this.state.completedCoursesId)
-    console.log('allCourses' + this.state.allCourses)
-    console.log('coursesCompletedAmongAllCourses : ' +coursesCompletedAmongAllCourses)
     return coursesCompletedAmongAllCourses.map((item, i) => {
-      console.log('item : ' + item.title)
       return <ProfileCourseCard {...item} key={i} />;
     })
   }
 
+  handleChangeUserDetails = (e) => {
+    this.setState({
+      [e.target.name] : e.target.value
+    })
+  }
+
+  editEnable = () => {
+    this.setState({
+      edit:!this.state.edit
+    })
+  } 
+
+  saveNewUserDetails = (e) => {
+    e.preventDefault()
+    fetch('https://rocky-refuge-51400.herokuapp.com/auth/users/'+ this.props.profile.id,{
+      method: "PUT",
+      headers: new Headers({
+        "Content-Type" : "application/json"
+      }),
+      body: JSON.stringify({
+        nume: this.state.nume,
+        prenume:  this.state.prenume,
+        email:  this.state.email,
+        judetul: this.state.judetul,
+        centrul:this.state.centrul,
+        nrcontractului: this.state.nrcontractului,
+        dataSemnarii: this.state.dataSemnarii,
+        numarTelefon: this.state.numarTelefon
+      })
+  })
+      .then(res => res.json())
+  }
+
   render() {
-    console.log(this.state.completedCoursesId)
+    console.log(this.state.dataSemnarii)
+    console.log(new Date(this.state.dataSemnarii.split('/')[2],
+                          this.state.dataSemnarii.split('/')[1],
+                          this.state.dataSemnarii.split('/')[0]))
+
     return (
       <div className="pp-container">
         <div className="leftSide">
           <h1>Detalii profil</h1>
           <div className="pp-base">
+            <button className='editBtns' onClick={this.editEnable}>Edit info</button>
             <form className="pp-formMain" autoComplete="off">
+              {this.state.edit ? 
+                <div className="pp-column">
+                  <TextField
+                  id="filled-required"
+                  label="Nume"
+                  name="nume"
+                  margin="normal"
+                  variant="filled"
+                  defaultValue={this.state.nume}
+                  onChange={this.handleChangeUserDetails}
+                />
+
+                  <TextField
+                  id="filled-required"
+                  label="Prenume"
+                  name="prenume"
+                  margin="normal"
+                  variant="filled"
+                  defaultValue={this.state.prenume}
+                  onChange={this.handleChangeUserDetails}
+                />
+
+                <TextField
+                  id="filled-required"
+                  label="Email"
+                  name="email"
+                  type="email"
+                  margin="normal"
+                  variant="filled"
+                  defaultValue={this.state.email}
+                  onChange={this.handleChangeUserDetails}
+                />
+
+                <TextField
+                  id="filled-required"
+                  label="Judetul in care esti voluntar"
+                  name="judetul"
+                  margin="normal"
+                  variant="filled"
+                  defaultValue={this.state.judetul}
+                  onChange={this.handleChangeUserDetails}
+                />
+    
+                <TextField
+                  id="filled-required"
+                  label="Centrul in care esti voluntar"
+                  name="centrul"
+                  margin="normal"
+                  variant="filled"
+                  defaultValue={this.state.centrul}
+                  onChange={this.handleChangeUserDetails}
+                />
+      
+                <TextField
+                  id="filled-required"
+                  label="Numarul contractului de voluntar"
+                  name="nrcontractului"
+                  margin="normal"
+                  variant="filled"
+                  defaultValue={this.state.nrcontractului}
+                  onChange={this.handleChangeUserDetails}
+                />
+              
+                <TextField
+                  id="filled-required"
+                  label="Data semnarii contractului"
+                  name="dataSemnarii"
+                  margin="normal"
+                  variant="filled"
+                  defaultValue={this.state.dataSemnarii}
+                  onChange={this.handleChangeUserDetails}
+                />
+                
+                <TextField
+                  id="filled-required"
+                  label="Numar Telefon"
+                  name="numarTelefon"
+                  margin="normal"
+                  variant="filled"
+                  defaultValue={this.state.numarTelefon}
+                  onChange={this.handleChangeUserDetails}
+                />
+
+                <button className='editBtns' onClick={this.saveNewUserDetails}>Save</button>
+                </div>
+              :
               <div className="pp-column">
                 <TextField
                   id="filled-required"
@@ -93,7 +212,7 @@ this.setState({
                   onChange={this.change}
                   value={this.state.nume}
                 />
-               
+
                 <TextField
                   id="filled-required"
                   label="Prenume"
@@ -140,9 +259,7 @@ this.setState({
                   label="Numarul contractului de voluntar"
                   margin="normal"
                   variant="filled"
-                  name="contractului"
-                  onChange={this.change}
-                  value={this.state.contractului}
+                  value={this.state.nrcontractului}
                 />
               
                 <TextField
@@ -157,14 +274,13 @@ this.setState({
                 
                 <TextField
                   id="filled-required"
-                  label="Numar Telefon"
+                  label="Numar numarTelefon"
                   margin="normal"
                   variant="filled"
-                  name="telefon"
-                  onChange={this.change}
-                  value={this.state.telefon}
+                  value={this.state.numarTelefon}
                 />
                 </div>
+              }
             </form>
           </div>
         </div>

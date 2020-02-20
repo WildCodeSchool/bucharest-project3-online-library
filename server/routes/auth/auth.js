@@ -25,6 +25,8 @@ router.put('/password/:email', function (req, res) {
                 email: req.params.email
             }
         }
+    ).then(user =>
+        console.log(user)
     )
     sendNodeMailer(req.params.email, randomstring)
     .then(rez => {
@@ -59,6 +61,7 @@ router.post('/signup', function(req, res, next) {
         )
         .catch(err => res.status(500).json({ message: err.message }))
 })
+
 
 router.put('/access/:level/:id', async function (req, res) {
     let updatedUser = await models.Users.update(
@@ -97,6 +100,28 @@ router.get('/users/:id', (req,res) =>
     .findByPk(req.params.id)
     .then(usersid => res.json(usersid))
  )
+
+ router.put('/users/:id', (req, res) => {
+        models
+        .Users
+        .update({ 
+            firstname: req.body.prenume,
+            lastname: req.body.nume,
+            phonenumber: req.body.numarTelefon,
+            email: req.body.email,
+            volunteering_county: req.body.judetul,
+            volunteering_center: req.body.centrul,
+            contract_number: req.body.nrcontractului,
+            signing_date: new Date(req.body.dataSemnarii.split('/')[2],
+                                    req.body.dataSemnarii.split('/')[1],
+                                    req.body.dataSemnarii.split('/')[0])
+            }, {
+                where: {
+                    id: req.params.id
+                }
+        })
+        res.send("ok user details updated")
+    })
 
  router.get('/completedCourses/:id', (req,res) =>
     models

@@ -91,5 +91,4 @@ models
     .sync()
     .then(() => app.listen(port, () => console.log(`Server listening on port ${port}. Message from sync()`)))
 
-   
-
+// app.listen(port, () => console.log(`Server listening on port ${port}. Message from sync()`))

@@ -101,9 +101,11 @@ class RessetPassword extends Component {
                                     <button type="submit">Resetare</button>
                                     {/* </Link> */}
                                 </div>
-                                <h1>{this.state.display_message?"Parola a fost resetata cu succes. Noua parola v-a fost trimisa pe email!":null}</h1>
-                                <h1>{this.state.display_message?"Veti fi redirectionat catre pagina de autentificare in cateva secunde...":null}</h1>
-                                <h1>{!this.state.display_message && this.state.failed?"Ceva nu a mers. Verifica daca ai scris adresa de mail corect":null}</h1>
+                                <div className="message">
+                                <h2>{this.state.display_message?"Parola a fost resetata cu succes. Noua parola v-a fost trimisa pe email!":null}</h2>
+                                <h2>{this.state.display_message?"Veti fi redirectionat catre pagina de autentificare in cateva secunde...":null}</h2>
+                                <h2>{!this.state.display_message && this.state.failed?"Ceva nu a mers. Verifica daca ai scris adresa de mail corect":null}</h2>
+                                </div>
                             </div>
 
                         </form>

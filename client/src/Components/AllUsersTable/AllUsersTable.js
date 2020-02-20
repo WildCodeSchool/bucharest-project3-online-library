@@ -90,8 +90,23 @@ class AllUsersTable extends React.Component{
     text: 'Centrul',
     name: 'Centrul',
     value: 'Centrul'
+  },
+  {
+    dataField: 'access',
+    text: 'access',
+    name: 'access',
+    value: 'Centrul'
   }
 ]
+
+  checkbox(){
+    return(
+      <div>
+        <input type='text'/>
+        <button>qsdqsdq</button>
+      </div>
+    )
+  }
 
   componentDidMount(){
     axios.get('auth/users')
@@ -103,7 +118,8 @@ class AllUsersTable extends React.Component{
             prenume: user.lastname,
             nume: user.firstname,
             judetul:user.volunteering_county,
-            centrul:user.volunteering_center
+            centrul:user.volunteering_center,
+            access: this.checkbox()
           }
           userArray.push(userObject)
 

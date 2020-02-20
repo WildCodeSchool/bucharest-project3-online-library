@@ -4,14 +4,16 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
 import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel'
-import Checkbox from '@material-ui/core/Checkbox';
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormLabel from '@material-ui/core/FormLabel';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
+
+import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
+import { createMuiTheme } from '@material-ui/core/styles';
+
 
 import './Filter.css'
 
@@ -40,7 +42,8 @@ class Filter extends React.Component{
             },
             all: false,
             flag:false,
-            filterDisplay :'block'
+            filterDisplay :'block',
+            search: ''
         }
     }
 
@@ -50,7 +53,6 @@ class Filter extends React.Component{
                 flag: true,
                 all: true
             })
-            console.log('done did it')
         }
     }
 
@@ -102,63 +104,19 @@ class Filter extends React.Component{
                 all: true,
             })
         }
-        // this.filter()
     }
 
-    handleChangeNonCompleted = (e) => {
+    handleChangeSearch = (e) => {
         this.setState({
-            filterObj: {
-                ...this.state.filterObj,
-                completed : false,
-            },
-            completedDisplay: false,
-            nonCompletedDisplay: true,
-            all: false
+            search: e.target.value
         })
+        this.search(e.target.value)
     }
 
-    handleChangeCheckboxAll = () => {
-        this.setState({
-            all: true
-        })
-    }
-
-    handleChange = (e) => {
-        this.setState({
-            filterObj: {
-                ...this.state.filterObj,
-                [e.target.name]: e.target.value
-            }
-        })
-    }
-    handleChangeCheckbox = (e) => {
-        this.setState({
-            filterObj: {
-                ...this.state.filterObj,
-                [e.target.name]: !this.state.filterObj[e.target.name]
-            }
-        })
-        this.filter()
-    }
-
-    handleChangeImportant = (e) => {
-        this.setState({filterObj: {
-            ...this.state.filterObj,
-            important: !this.state.filterObj.important}})
-        this.filter()
-    }
-
-    // handleChangeCompleted = (e) => {
+    // handleChangeImportant = (e) => {
     //     this.setState({filterObj: {
     //         ...this.state.filterObj,
-    //         completed: !this.state.completed}})
-    //     this.filter()
-    // }
-
-    // handleChangeNonCompleted = (e) => {
-    //     this.setState({filterObj: {
-    //         ...this.state.filterObj,
-    //         nonCompleted: !this.state.nonCompleted}})
+    //         important: !this.state.filterObj.important}})
     //     this.filter()
     // }
 
@@ -176,12 +134,15 @@ class Filter extends React.Component{
     }
 
     filter(obj) {
-        console.log(obj)
         this.props.filterObj(obj)
     }
 
+    search(str) {
+        this.props.searchStr(str)
+    }
+
     render(){
-        console.log(this.state)
+        console.log(this.state.search)
         return(
             <MuiThemeProvider theme={theme}>
             <div className="filterMain">
@@ -193,7 +154,7 @@ class Filter extends React.Component{
                     <div className="row filterRow" style={{display: this.state.filterDisplay}}>
                         <div className="filterTop">
                         {/* <TextField id="outlined-basic" label="Cuvinte cheie" value={this.state.keyword} className="filterInput" variant="outlined" onChange={this.handleChange}/> */}
-                        <TextField id="outlined-basic" label="Titlu" value={this.state.title} className="filterInput filterInputCenter" variant="outlined" onChange={this.handleChange}/>
+                        <TextField id="outlined-basic" label="Titlu" value={this.state.search} className="filterInput filterInputCenter" variant="outlined" onChange={this.handleChangeSearch}/>
                         <FormControl className="filterInput">
                             <InputLabel id="categoryLabel">Categorie</InputLabel>
                             <Select
@@ -215,60 +176,6 @@ class Filter extends React.Component{
                             </Select>
                         </FormControl>
                         </div>
-
-                        {/* <div className="filterBottom">
-                            <div className="filterCheckboxesContainer"> */}
-                                {/* <FormControlLabel className="checkboxInput"
-                                    control={
-                                        <Checkbox 
-                                            checked={this.state.important} 
-                                            onChange={this.handleChangeCheckbox} 
-                                            value="Important" 
-                                            name="important"
-                                            color="primary" />} 
-                                            label={(<span id="imp">Important</span>)}
-                                        />
-                                <FormControlLabel className="checkboxInput"
-                                    control={
-                                    <label htmlFor="completed">
-                                        Completed
-                                    </label>
-                                        <Checkbox 
-                                            checked={this.state.completedDisplay} 
-                                            onChange={this.handleChangeCompleted} 
-                                            value="Completed" 
-                                            color="secondary" />} 
-                                            label={(<span id="comp">Completat</span>)}
-                                        />
-                                <FormControlLabel className="checkboxInput"
-                                    control={
-                                        <Checkbox  
-                                            checked={this.state.nonCompleted} 
-                                            name="completed"
-                                            color="primary" 
-                                            label="Completat" 
-                                        />
-                                <FormControlLabel className="checkboxInput"
-                                    control={
-                                        <Checkbox 
-                                            checked={this.state.nonCompletedDisplay} 
-                                            onChange={this.handleChangeNonCompleted} 
-                                            value="Non-Completed" 
-                                            name="nonCompleted"
-                                            color="primary" />} 
-                                            label={(<span id="necomp">Necompletat</span>)} 
-                                    />
-                                <FormControlLabel className="checkboxInput"
-                                    control={
-                                        <Checkbox 
-                                            checked={this.state.all} 
-                                            onChange={this.handleChangeCheckboxAll} 
-                                            value="All" 
-                                            name="all"
-                                            color="primary" />} 
-                                            label="Toate" 
-                                    /> */}
-
                                         <FormControl component="fieldset" className="checkboxInput">
                                             <RadioGroup aria-label="gender" name="gender1" onChange={this.handleChangeCompleted} row>
                                                 <FormControlLabel value="completed" control={<Radio />} label="Completed" />
@@ -276,8 +183,6 @@ class Filter extends React.Component{
                                                 <FormControlLabel value="all" control={<Radio />} label="Toate" />
                                             </RadioGroup>
                                         </FormControl>
-                            {/* </div>
-                        </div> */}
                     </div>
                 </form>
 

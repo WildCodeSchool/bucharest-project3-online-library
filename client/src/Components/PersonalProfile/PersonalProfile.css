@@ -166,3 +166,12 @@ input:focus {
     height: 650px;
     overflow: auto;
 }
+
+.editBtns{
+    width: 32%;
+    height: 24.65px;
+    background: #75B1A9;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    color: white
+  }

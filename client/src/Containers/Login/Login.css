@@ -82,11 +82,11 @@ body {
     font-size: 1.3em;
 }
 
-.logo {
+.logo1 {
     width: 12em;
     height: 5.5em;
     margin-right: 1.5em;
-    /* align-self: flex-end; */
+    align-self: flex-end;
     /* font-size: 3em; */
     /* height: 2em !important; */
 }

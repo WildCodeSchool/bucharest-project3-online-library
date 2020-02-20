@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField';
 import {Link} from 'react-router-dom';
-import logo from '../../assets/images/logo.png';
+import logo1 from '../../assets/images/logo.png';
 import children from '../../assets/images/children.png';
 import './Login.css';
 
@@ -96,7 +96,7 @@ class Login extends Component {
                         {/* <nav className="headerNav">
                         </nav> */}
                         <h1 className="biblioteca">Biblioteca Ajungem MARI</h1>
-                        <img src={logo} alt="logo" className="logo"/>
+                        <img src={logo1} alt="logo" className="logo1"/>
                     </div>
                 </header>
                 

@@ -20,7 +20,8 @@ class AllUsersTable extends React.Component{
         prenume: 'John ',
         nume: 'Doe',
         judetul: 'Bucuresti',
-        centrul: 'Bucuresti'
+        centrul: 'Bucuresti',
+        level: <button>Salut</button>
       },{
         id: 3,
         prenume: 'Eloise',
@@ -55,6 +56,7 @@ class AllUsersTable extends React.Component{
     ],
       columns: this.headerArray,
       UpdatedColumns: this.headerArray,
+      message:''
     }
 }
 
@@ -91,25 +93,63 @@ class AllUsersTable extends React.Component{
     name: 'Centrul',
     value: 'Centrul'
   },
+
   {
-    dataField: 'access',
-    text: 'access',
-    name: 'access',
-    value: 'Centrul'
+    dataField: 'level',
+    text: 'Actions',
+    name: 'Level',
+    value: 'Level'
   }
 ]
 
-  checkbox(){
-    return(
-      <div>
-        <input type='text'/>
-        <button>qsdqsdq</button>
-      </div>
-    )
-  }
+generateButton = (user) => (
+  <button className={user.access_level?"admin-button":"user-button"} onClick={()=>this.handleButtonClick(user)}>
+    {user.access_level?"Admin":"User"}
+  </button>
+
+)
+
+handleButtonClick(user){
+  // fetch (access/!user.access_level/user.id)
+  fetch('https://rocky-refuge-51400.herokuapp.com/auth/access/'+!user.access_level + '/' + user.id,
+            {
+                method: 'PUT',
+                headers: new Headers({
+                    'Content-Type': 'application/json'
+                }),
+                body: JSON.stringify(this.state)
+            })
+            .then(res => res.json())
+            .then(res =>{
+              let prod = this.state.products;
+              // prod[prod.findIndex(el => el.id === user.id)].level = !user.access_level;
+              prod = this.state.products.map(elem => {
+                let id = elem.id
+                let prenume= elem.prenume
+                let nume= elem.nume
+                let judetul=elem.judetul
+                let centrul=elem.centrul
+                let access_level= elem.id==user.id?!elem.access_level:elem.access_level
+                let level = this.generateButton({id,access_level})
+                let obj = {id,prenume,nume,judetul,centrul,access_level,level}
+                return obj;
+              })
+              console.log(prod)
+              this.setState({
+                message: 'done!!!',
+                products: prod
+              })
+
+              
+
+            })
+            .catch(err => this.setState({
+                flash: err.message
+            }))
+}
 
   componentDidMount(){
-    axios.get('auth/users')
+    axios.get('https://rocky-refuge-51400.herokuapp.com/auth/users')
       .then(res => {
         let userArray = [];
         res.data.forEach(user => {
@@ -119,7 +159,8 @@ class AllUsersTable extends React.Component{
             nume: user.firstname,
             judetul:user.volunteering_county,
             centrul:user.volunteering_center,
-            access: this.checkbox()
+            access_level: user.access_level,
+            level:this.generateButton(user)
           }
           userArray.push(userObject)
 
@@ -163,6 +204,7 @@ class AllUsersTable extends React.Component{
   }
 
   render(){
+    console.log(this.state.products)
     console.log('local storage from all users table : ' + localStorage.getItem('userToken'))
     if(!this.props.auth.token && localStorage.getItem('userToken') !== null) {
       this.props.auth.token = localStorage.getItem('userToken')
@@ -196,7 +238,9 @@ class AllUsersTable extends React.Component{
                     keyField='id' 
                     data={ this.state.products } 
                     columns={ this.state.UpdatedColumns }
-                    filter={ filterFactory() } />
+                    filter={ filterFactory() } 
+                    
+                    />
             </div>
       </div>
       <Footer />

@@ -62,6 +62,7 @@ router.post('/signup', function(req, res, next) {
         .catch(err => res.status(500).json({ message: err.message }))
 })
 
+
 router.put('/access/:level/:id', async function (req, res) {
     let updatedUser = await models.Users.update(
             { access_level: req.params.level }

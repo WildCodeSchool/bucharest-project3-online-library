@@ -182,8 +182,8 @@ class Filter extends React.Component{
                         </div>
                                         <FormControl component="fieldset" className="checkboxInput">
                                             <RadioGroup aria-label="gender" name="gender1" onChange={this.handleChangeCompleted} row>
-                                                <FormControlLabel value="completed" control={<Radio />} label="Completed" />
-                                                <FormControlLabel value="nonCompleted" control={<Radio />} label="Non-Completed" />
+                                                <FormControlLabel value="completed" control={<Radio />} label={(<span id="comp">Completat</span>)} />
+                                                <FormControlLabel value="nonCompleted" control={<Radio />} label={(<span id="necomp">Necompletat</span>)} />
                                                 <FormControlLabel value="all" control={<Radio />} label="Toate" />
                                             </RadioGroup>
                                         </FormControl>

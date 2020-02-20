@@ -12,6 +12,8 @@
     width: 60px;
     padding: 2px;
     border-radius: 4px;
+    margin-top: 10px;
+    padding: 5px;
 }
 
 .user-button {
@@ -21,6 +23,8 @@
     width: 60px;
     padding: 2px;
     border-radius: 4px;
+    margin-top: 10px;
+    padding: 5px;
 }
 
 .allUsersMain h1 {
@@ -42,6 +46,7 @@
 
 .table-bordered {
     border: 1px solid #dee2e6;
+    border-bottom: none;
 }
 
 .table {
@@ -120,7 +125,7 @@
     display: block;
     position: relative;
     padding-left: 35px;
-    margin-bottom: 12px;
+    margin-bottom: 50px;
     cursor: pointer;
     font-size: 17px;
     -webkit-user-select: none;
